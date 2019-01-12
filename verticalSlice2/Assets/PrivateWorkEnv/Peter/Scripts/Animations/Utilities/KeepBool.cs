@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class KeepBool : StateMachineBehaviour
 {
-    public string boolName;
-    public bool status;
-    public bool resetOnExit = true;
+    [SerializeField]
+    private string boolName;
+    [SerializeField]
+    private bool status, resetOnExit = true;
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

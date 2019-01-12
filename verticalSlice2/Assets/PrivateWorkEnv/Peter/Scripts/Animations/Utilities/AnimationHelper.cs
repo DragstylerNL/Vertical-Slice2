@@ -7,29 +7,23 @@ namespace SA
     public class AnimationHelper : MonoBehaviour
     {
 
+        //For the Horizontal and Vertical movement animation
         [Range(-1, 1)]
-        public float vertical;
+        public float horizontal, vertical;
 
-        [Range(-1, 1)]
-        public float horizontal;
+        [SerializeField]
+        private List<string> oh_attacks, th_attacks;
 
-        public bool playAnim;
-
-        public string[] oh_attacks;
-        public string[] th_attacks;
-
-        public bool twoHanded;
-        public bool enableRM; //Root motion
-        public bool useItem;
-        public bool interacting;
-        public float interactingSlow = 0.5f;
-        public bool lockon;
+        [SerializeField]
+        private bool twoHanded, enableRM, useItem, interacting, lockon, playAnim;
+        private float interactingSlow = 0.5f;
 
         Animator anim;
 
         // Use this for initialization
         void Start()
         {
+            //Get the animator
             anim = GetComponent<Animator>();
         }
 
@@ -43,6 +37,7 @@ namespace SA
             //Check for the "interacting" bool
             interacting = anim.GetBool("interacting");
 
+            //Lockon to Enemy
             if (lockon == false)
             {
                 horizontal = 0;
@@ -55,12 +50,14 @@ namespace SA
             if (enableRM)
                 return;
 
+            //Animation: Use Item
             if (useItem)
             {
                 anim.Play("use_item");
                 useItem = false;
             }
 
+            //Animation Logic: Use Item 
             if (interacting)
             {
                 playAnim = false;
@@ -68,31 +65,30 @@ namespace SA
             }
 
             //Set the "twoHanded" to what ever it wants to be
-            anim.SetBool("two_handed", twoHanded);
+            anim.SetBool("twoHanded", twoHanded);
 
 
-            //Debug: Play the animation
+            //Play the animations
             if (playAnim)
             {
                 string targetAnim;
 
+                //Animation: Two Handed Attacks
                 if (twoHanded)
                 {
-                    int r = Random.Range(0, th_attacks.Length);
+                    int r = Random.Range(0, th_attacks.Count);//Random range animations
                     targetAnim = th_attacks[r];
-
-                    if (vertical > 0.5f)//When running and want to attack, play attack_3
-                        targetAnim = "oh_attack_3";
                 }
-                else
+                else //Animation: One Handed Attacks
                 {
-                    int r = Random.Range(0, oh_attacks.Length);
+                    int r = Random.Range(0, oh_attacks.Count);//Random range animations
                     targetAnim = oh_attacks[r];
                 }
 
-                if (vertical > 0.5f)//When running and want to attack, play attack_3
+                if (vertical > 0.5f)//When Moving and want to attack, play attack_3
                     targetAnim = "oh_attack_3";
 
+                //Reset variables
                 vertical = 0;
                 anim.CrossFade(targetAnim, 0.2f);
                 playAnim = false;
