@@ -2117,9 +2117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664bfc9e67be92f40a4ffdf95d23fa87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vertical: 0
   horizontal: 0
-  playAnim: 0
+  vertical: 0
   oh_attacks:
   - oh_attack_1
   - oh_attack_2
@@ -2131,8 +2130,8 @@ MonoBehaviour:
   enableRM: 0
   useItem: 0
   interacting: 0
-  interactingSlow: 0.5
   lockon: 0
+  playAnim: 0
 --- !u!137 &137224636426719402
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
