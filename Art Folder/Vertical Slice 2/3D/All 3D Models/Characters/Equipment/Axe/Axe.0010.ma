@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Axe.0010.ma
-//Last modified: Sat, Jan 12, 2019 12:27:52 AM
+//Last modified: Sat, Jan 12, 2019 01:36:23 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -11802,13 +11802,13 @@ createNode mesh -n "polySurfaceShape24" -p "polySurface24";
 createNode transform -s -n "persp";
 	rename -uid "03FA6042-4F33-513F-D743-78B038012E2D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.31681747713157399 2.0117100297431652 -12.539805600182085 ;
+	setAttr ".t" -type "double3" -0.36783223560110206 2.0649880184554208 -10.452413729884672 ;
 	setAttr ".r" -type "double3" 1.4616472705445807 -181.39999999981637 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "F0C94338-415D-5CEA-E225-FDAB26380304";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 12.555119186191851;
+	setAttr ".coi" 10.466424409579751;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
