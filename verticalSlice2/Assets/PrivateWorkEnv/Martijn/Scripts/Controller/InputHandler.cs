@@ -10,6 +10,7 @@ namespace SA
 
         float vertical;
         float horizontal;
+        bool runInput;
 
         float delta;
         StateManager states;
@@ -29,29 +30,47 @@ namespace SA
         {
             delta = Time.fixedDeltaTime;
             GetInput();
-
-        }
-
-        void Update()
-        {
-            delta = Time.deltaTime;
+            UpdateStates();
+            states.FixedTick(Time.deltaTime);
             camManager.Tick(delta);
         }
+
+       void Update()
+       {
+           delta = Time.deltaTime;
+            states.Tick(delta);
+       }
 
         void GetInput()
         {
             vertical = Input.GetAxis("Vertical");
             horizontal = Input.GetAxis("Horizontal");
+            runInput = Input.GetButton("RunInput");
+
 
         }
         void UpdateStates()
         {
 
-            states.Vertical = vertical;
-            states.Horizontal = horizontal;
+            states.vertical = vertical;
+            states.horizontal = horizontal;
+
+            Vector3 v = states.vertical * camManager.transform.forward;
+            Vector3 h = horizontal * camManager.transform.right;
+            states.moveDir = (v + h).normalized;
+            float m = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
+            states.moveAmount = Mathf.Clamp01(m);
 
 
-            states.Tick(Time.deltaTime);
+            if(runInput)
+            {
+                states.run = (states.moveAmount > 0);
+            }
+            else
+            {
+                states.run = false;
+            }
+
         }
     }
 }
