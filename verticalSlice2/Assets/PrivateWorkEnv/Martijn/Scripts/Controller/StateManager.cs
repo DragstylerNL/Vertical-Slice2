@@ -2,48 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateManager : MonoBehaviour {
+namespace SA
+{
 
-    public float Horizontal;
-    public float Vertical;
-
-    public GameObject activeModel;
-    [HideInInspector]
-    public Animator anim;
-    [HideInInspector]
-    public Rigidbody rigid;
-    [HideInInspector]
-    public float delta;
-
-    public void Init()
-    {
-        SetupAnimator();
-        rigid = GetComponent<Rigidbody>();
-    }
-
-    void SetupAnimator()
+    public class StateManager : MonoBehaviour
     {
 
-        if (activeModel == null)
+        public float Horizontal;
+        public float Vertical;
+
+        public GameObject activeModel;
+        [HideInInspector]
+        public Animator anim;
+        [HideInInspector]
+        public Rigidbody rigid;
+        [HideInInspector]
+        public float delta;
+
+        public void Init()
         {
-            anim = activeModel.GetComponent<Animator>();
-            if (anim == null)
-            {
-                Debug.Log("no model found");
-            }
-            else
-            {
-                activeModel = anim.gameObject;
-            }
+            SetupAnimator();
+            rigid = GetComponent<Rigidbody>();
         }
 
-        anim = GetComponentInChildren<Animator>();
+        void SetupAnimator()
+        {
+
+            if (activeModel == null)
+            {
+                anim = activeModel.GetComponent<Animator>();
+                if (anim == null)
+                {
+                    Debug.Log("no model found");
+                }
+                else
+                {
+                    activeModel = anim.gameObject;
+                }
+            }
+
+            anim = GetComponentInChildren<Animator>();
 
 
-    }
+        }
 
-    public void Tick(float d)
-    {
-        delta = d;
+        public void Tick(float d)
+        {
+            delta = d;
+        }
     }
 }
