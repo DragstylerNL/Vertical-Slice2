@@ -80,6 +80,11 @@ public class CameraManager : MonoBehaviour
 
         lookAngle += smoothX * targetSpeed;
         transform.rotation = Quaternion.Euler(0, lookAngle, 0);
+
+        tiltAngle -= smoothY * targetSpeed;
+        tiltAngle = Mathf.Clamp(tiltAngle, minAngle, maxAngle);
+        pivot.localRotation = Quaternion.Euler(tiltAngle, 0, 0);
+
     }
 
     public static CameraManager singleton;
