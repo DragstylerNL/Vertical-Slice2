@@ -29,7 +29,6 @@ namespace SA
         {
             delta = Time.fixedDeltaTime;
             GetInput();
-
         }
 
         void Update()
