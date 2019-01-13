@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sa
+namespace SA
 {
     public class CameraManager : MonoBehaviour
     {
@@ -90,7 +90,7 @@ namespace Sa
         }
 
         public static CameraManager singleton;
-        void awake()
+        void Awake()
         {
             singleton = this;
         }
