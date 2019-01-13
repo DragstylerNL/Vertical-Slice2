@@ -33,6 +33,8 @@ namespace SA
 
             camTrans = Camera.main.transform;
             pivot = camTrans.parent;
+            Debug.Log(camTrans.name);
+            Debug.Log(pivot.name);
         }
 
         public void Tick(float d)

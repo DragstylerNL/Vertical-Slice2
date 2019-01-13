@@ -51,7 +51,7 @@ namespace SA
             states.Horizontal = horizontal;
 
 
-            states.Tick(Time.deltaTime);
+            states.Tick(delta);
         }
     }
 }
