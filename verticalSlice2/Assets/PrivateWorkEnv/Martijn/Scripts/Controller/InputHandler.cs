@@ -6,22 +6,25 @@ namespace SA
 {
     public class InputHandler : MonoBehaviour
     {
-       
+
 
         float vertical;
         float horizontal;
+        bool runInput;
 
         float delta;
         StateManager states;
-        CameraManager camManager;
+        //CameraManager camManager;
 
         void Start()
         {
+
+            //init stateManeger and camManager
             states = GetComponent<StateManager>();
             states.Init();
 
-            camManager = CameraManager.singleton;
-            camManager.Init(this.transform);
+            //camManager = CameraManager.singleton;
+            //camManager.Init(this.transform);
         }
 
 
@@ -29,28 +32,49 @@ namespace SA
         {
             delta = Time.fixedDeltaTime;
             GetInput();
+            UpdateStates();
+            states.FixedTick(Time.deltaTime);
+            //Camera.main.Tick(delta);
         }
 
         void Update()
         {
+            //delta time
             delta = Time.deltaTime;
-            camManager.Tick(delta);
+            states.Tick(delta);
         }
 
         void GetInput()
         {
+            //inputs
             vertical = Input.GetAxis("Vertical");
             horizontal = Input.GetAxis("Horizontal");
+            runInput = Input.GetButton("RunInput");
+
 
         }
         void UpdateStates()
         {
+            //alle states
+            states.vertical = vertical;
+            states.horizontal = horizontal;
 
-            states.Vertical = vertical;
-            states.Horizontal = horizontal;
+            Vector3 v = states.vertical * Camera.main.transform.forward;
+            Vector3 h = horizontal * Camera.main.transform.right;
+            states.moveDir = (v + h).normalized;
+            float m = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
+            states.moveAmount = Mathf.Clamp01(m);
 
 
-            states.Tick(delta);
+            if (runInput)
+            {
+                states.run = (states.moveAmount > 0);
+            }
+            else
+            {
+                states.run = false;
+            }
+
         }
     }
 }
