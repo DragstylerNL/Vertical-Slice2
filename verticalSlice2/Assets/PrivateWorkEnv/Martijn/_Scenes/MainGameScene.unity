@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 624365490}
   m_Layer: 0
   m_Name: Camera Holder
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -400,16 +400,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockon: 0
-  followSpeed: 3
-  mouseSpeed: 2
-  controllerSpeed: 7
   target: {fileID: 927444767}
   pivot: {fileID: 0}
   camTrans: {fileID: 0}
-  minAngle: -35
-  maxAngle: 35
-  lookAngle: 0
-  tiltAngle: 0
 --- !u!4 &624365491
 Transform:
   m_ObjectHideFlags: 0
@@ -498,7 +491,7 @@ GameObject:
   - component: {fileID: 927444763}
   m_Layer: 0
   m_Name: Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,15 +512,11 @@ MonoBehaviour:
   vertical: 0
   moveAmount: 0
   moveDir: {x: 0, y: 0, z: 0}
-  moveSpeed: 3.5
-  runSpeed: 5.5
-  rotateSpeed: 9
-  toGround: 0.5
   run: 0
   onGround: 0
-  lockOn: 0
+  lockOn: 1
   anim: {fileID: 0}
-  rigid: {fileID: 0}
+  rb: {fileID: 0}
   delta: 0
   ignoreLayers:
     serializedVersion: 2

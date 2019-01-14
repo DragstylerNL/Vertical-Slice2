@@ -18,6 +18,8 @@ namespace SA
 
         void Start()
         {
+
+            //init stateManeger and camManager
             states = GetComponent<StateManager>();
             states.Init();
 
@@ -37,12 +39,14 @@ namespace SA
 
        void Update()
        {
+            //delta time
            delta = Time.deltaTime;
             states.Tick(delta);
        }
 
         void GetInput()
         {
+            //inputs
             vertical = Input.GetAxis("Vertical");
             horizontal = Input.GetAxis("Horizontal");
             runInput = Input.GetButton("RunInput");
@@ -51,7 +55,7 @@ namespace SA
         }
         void UpdateStates()
         {
-
+            //alle states
             states.vertical = vertical;
             states.horizontal = horizontal;
 

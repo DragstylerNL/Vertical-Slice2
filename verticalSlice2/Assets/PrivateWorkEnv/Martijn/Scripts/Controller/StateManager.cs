@@ -31,7 +31,7 @@ namespace SA
         [HideInInspector]
         public Animator anim;
         [HideInInspector]
-        public Rigidbody rigid;
+        public Rigidbody rb;
         [HideInInspector]
         public float delta;
         [HideInInspector]
@@ -41,10 +41,10 @@ namespace SA
         public void Init()
         {
             SetupAnimator();
-            rigid = GetComponent<Rigidbody>();
-            rigid.angularDrag = 999;
-            rigid.drag = 4;
-            rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            rb = GetComponent<Rigidbody>();
+            rb.angularDrag = 999;
+            rb.drag = 4;
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
             gameObject.layer = 8;
             ignoreLayers = ~(1 << 10);
@@ -77,7 +77,7 @@ namespace SA
         {
             delta = d;
 
-            rigid.drag = (moveAmount > 0||  onGround == false) ? 0 : 4;
+            rb.drag = (moveAmount > 0||  onGround == false) ? 0 : 4;
 
 
 
@@ -86,7 +86,7 @@ namespace SA
                 targetSpeed = runSpeed;
 
             if(onGround)
-                rigid.velocity = moveDir * (targetSpeed * moveAmount);
+                rb.velocity = moveDir * (targetSpeed * moveAmount);
 
             if (run)
                 lockOn = false;
