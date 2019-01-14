@@ -7,9 +7,9 @@ namespace SA
     public class CameraManager : MonoBehaviour
     {
         public bool lockon;
-        public float followSpeed = 9;
-        public float mouseSpeed = 2;
-        public float controllerSpeed = 7;
+        private float followSpeed = 9;
+        private float mouseSpeed = 2;
+        private float controllerSpeed = 7;
 
         public Transform target;
 
@@ -19,15 +19,15 @@ namespace SA
         public Transform camTrans;
 
         float turnSmoothing = .1f;
-        public float minAngle = -35;
-        public float maxAngle = 35;
+        private float minAngle = -35;
+        private float maxAngle = 35;
 
         float smoothX;
         float smoothY;
         float smoothXvelocity;
         float smoothYvelocity;
-        public float lookAngle;
-        public float tiltAngle;
+        private float lookAngle;
+        private float tiltAngle;
 
         public void Init(Transform t)
         {

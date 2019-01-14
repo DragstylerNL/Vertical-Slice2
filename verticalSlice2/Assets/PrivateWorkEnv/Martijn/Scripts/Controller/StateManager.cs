@@ -17,10 +17,10 @@ namespace SA
         public Vector3 moveDir;
 
         [Header("Stats")]
-        public float moveSpeed = 3;
-        public float runSpeed = 3.5f;
-        public float rotateSpeed = 5;
-        public float toGround = 0.5f;
+        private float moveSpeed = 3;
+        private float runSpeed = 3.5f;
+        private float rotateSpeed = 5;
+        private float toGround = 0.5f;
 
         [Header("States")]
         public bool run;
@@ -37,6 +37,7 @@ namespace SA
         [HideInInspector]
         public LayerMask ignoreLayers;
 
+        //rigid body setup
         public void Init()
         {
             SetupAnimator();
@@ -50,7 +51,7 @@ namespace SA
 
            
         }
-
+        //Animator 
         void SetupAnimator()
         {
 
@@ -90,7 +91,7 @@ namespace SA
             if (run)
                 lockOn = false;
 
-
+            //Lock on mode
             if (!lockOn)
             {
 
@@ -114,12 +115,14 @@ namespace SA
 
            anim.SetBool("onGround", onGround);
         }
+        //Run and walk animation
         void HandleMovementAnimations()
         {
             anim.SetBool("run", run);
             anim.SetFloat("vertical", moveAmount, 0.04f, delta);
 
         }
+        //Grounded
         public bool OnGround()
         {
             bool r = false;
