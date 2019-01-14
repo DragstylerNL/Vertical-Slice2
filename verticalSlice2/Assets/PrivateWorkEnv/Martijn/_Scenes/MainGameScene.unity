@@ -484,32 +484,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400048, guid: 94dd59496a9825c4392be87838f4570d,
     type: 3}
   m_PrefabInternal: {fileID: 806129946}
---- !u!114 &806129949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 806129947}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664bfc9e67be92f40a4ffdf95d23fa87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal: 0
-  vertical: 0
-  oh_attacks:
-  - oh_attack_1
-  - oh_attack_2
-  - oh_attack_3
-  th_attacks:
-  - th_attack_1
-  - th_attack_2
-  twoHanded: 0
-  enableRM: 0
-  useItem: 0
-  interacting: 0
-  lockon: 0
-  playAnim: 0
 --- !u!1 &927444762
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +525,7 @@ MonoBehaviour:
   toGround: 0.5
   run: 0
   onGround: 0
+  lockOn: 0
   anim: {fileID: 0}
   rigid: {fileID: 0}
   delta: 0
