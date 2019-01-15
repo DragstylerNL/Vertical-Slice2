@@ -45,7 +45,7 @@ namespace SA
             GetInput();
             UpdateStates();
             states.FixedTick(Time.deltaTime);
-            //Camera.main.Tick(delta);
+            camManager.Tick(delta);
         }
 
         void Update()

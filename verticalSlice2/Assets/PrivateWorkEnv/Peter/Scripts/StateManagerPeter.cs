@@ -179,8 +179,6 @@ namespace SA
         {
             anim.SetBool("run", run);
             anim.SetFloat("vertical", moveAmount, 0.04f, delta);
-            anim.SetFloat("horizontal", horizontal);
-            anim.SetBool("lockon", lockOn);
         }
         //Grounded
         public bool OnGround()
