@@ -514,7 +514,7 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0, z: 0}
   run: 0
   onGround: 0
-  lockOn: 1
+  lockOn: 0
   anim: {fileID: 0}
   rb: {fileID: 0}
   delta: 0
