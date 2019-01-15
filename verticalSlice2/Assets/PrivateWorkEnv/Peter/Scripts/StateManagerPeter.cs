@@ -15,6 +15,7 @@ namespace SA
         public float vertical;
         public float moveAmount;
         public Vector3 moveDir;
+        public bool rt, rb, lt, lb;
 
         [Header("Stats")]
         private float moveSpeed = 3;
@@ -26,31 +27,36 @@ namespace SA
         public bool run;
         public bool onGround;
         public bool lockOn;
+        public bool inAction;
+        public bool canMove;
 
 
         [HideInInspector]
         public Animator anim;
         [HideInInspector]
-        public Rigidbody rb;
+        public Rigidbody rigid;
         [HideInInspector]
         public float delta;
         [HideInInspector]
         public LayerMask ignoreLayers;
 
+        float _actionDelay;
+
         //rigid body setup
         public void Init()
         {
             SetupAnimator();
-            rb = GetComponent<Rigidbody>();
-            rb.angularDrag = 999;
-            rb.drag = 4;
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            rigid = GetComponent<Rigidbody>();
+            rigid.angularDrag = 999;
+            rigid.drag = 4;
+            rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
             gameObject.layer = 8;
             ignoreLayers = ~(1 << 10);
 
 
         }
+
         //Animator 
         void SetupAnimator()
         {
@@ -77,8 +83,29 @@ namespace SA
         {
             delta = d;
 
-            rb.drag = (moveAmount > 0 || onGround == false) ? 0 : 4;
+            DetectAction();
 
+            if (inAction)
+            {
+                _actionDelay += delta;
+                if(_actionDelay > 0)
+                {
+                    inAction = false;
+                    _actionDelay = 0;
+                }
+
+                return;
+            }
+
+
+            canMove = anim.GetBool("canMove");
+
+
+
+            if (!canMove)
+                return;
+
+            rigid.drag = (moveAmount > 0 || onGround == false) ? 0 : 4;
 
 
             float targetSpeed = moveSpeed;
@@ -86,7 +113,7 @@ namespace SA
                 targetSpeed = runSpeed;
 
             if (onGround)
-                rb.velocity = moveDir * (targetSpeed * moveAmount);
+                rigid.velocity = moveDir * (targetSpeed * moveAmount);
 
             if (run)
                 lockOn = false;
@@ -96,7 +123,6 @@ namespace SA
             //Lock on mode
             if (!lockOn)
             {
-
                 Vector3 targetDir = moveDir;
                 if (targetDir == Vector3.zero)
                     targetDir = transform.forward;
@@ -110,6 +136,36 @@ namespace SA
 
         }
 
+        public void DetectAction()
+        {
+            if (canMove == false)
+                return;
+
+            if (rb == false && rt == false && lb == false && lt == false)
+                return;
+
+            string targetAnim = null;
+
+            if (rb)
+                targetAnim = "oh_attack_1";
+            if (rt)
+                targetAnim = "oh_attack_2";
+            if (lb)
+                targetAnim = "oh_attack_3";
+            if (lt)
+                targetAnim = "th_attack_1";
+
+
+
+            if (string.IsNullOrEmpty(targetAnim))
+                return;
+
+            canMove = false;
+            inAction = true;
+            anim.CrossFade(targetAnim, 0.4f);
+            rigid.velocity = Vector3.zero;
+        }
+
         public void Tick(float d)
         {
             delta = d;
@@ -117,6 +173,7 @@ namespace SA
 
             anim.SetBool("onGround", onGround);
         }
+
         //Run and walk animation
         void HandleMovementAnimations()
         {
