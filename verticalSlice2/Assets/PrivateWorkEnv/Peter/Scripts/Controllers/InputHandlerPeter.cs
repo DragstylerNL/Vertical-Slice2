@@ -34,8 +34,8 @@ namespace SA
             states = GetComponent<StateManagerPeter>();
             states.Init();
 
-            camManager = CameraManagerPeter.singleton;
-            camManager.Init(this.transform);
+            //camManager = CameraManagerPeter.singleton;
+            //camManager.Init(this.transform);
         }
 
 
@@ -45,7 +45,7 @@ namespace SA
             GetInput();
             UpdateStates();
             states.FixedTick(Time.deltaTime);
-            camManager.Tick(delta);
+            //camManager.Tick(delta);
         }
 
         void Update()
@@ -85,8 +85,8 @@ namespace SA
             states.vertical = vertical;
             states.horizontal = horizontal;
 
-            Vector3 v = states.vertical * camManager.transform.forward;
-            Vector3 h = horizontal * camManager.transform.right;
+            Vector3 v = states.vertical * transform.forward;// camManager.transform.forward
+            Vector3 h = horizontal * transform.right;// camManager.transform.right
             states.moveDir = (v + h).normalized;
             float m = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
             states.moveAmount = Mathf.Clamp01(m);
