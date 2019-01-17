@@ -27,7 +27,7 @@ namespace SA
         public bool onGround;
         public bool lockOn;
 
-            
+
         [HideInInspector]
         public Animator anim;
         [HideInInspector]
@@ -49,7 +49,7 @@ namespace SA
             gameObject.layer = 8;
             ignoreLayers = ~(1 << 10);
 
-           
+
         }
         //Animator 
         void SetupAnimator()
@@ -77,7 +77,7 @@ namespace SA
         {
             delta = d;
 
-            rb.drag = (moveAmount > 0||  onGround == false) ? 0 : 4;
+            rb.drag = (moveAmount > 0 || onGround == false) ? 0 : 4;
 
 
 
@@ -85,7 +85,7 @@ namespace SA
             if (run)
                 targetSpeed = runSpeed;
 
-            if(onGround)
+            if (onGround)
                 rb.velocity = moveDir * (targetSpeed * moveAmount);
 
             if (run)
@@ -111,9 +111,9 @@ namespace SA
         public void Tick(float d)
         {
             delta = d;
-           onGround = OnGround();
+            onGround = OnGround();
 
-           anim.SetBool("onGround", onGround);
+            anim.SetBool("onGround", onGround);
         }
         //Run and walk animation
         void HandleMovementAnimations()
