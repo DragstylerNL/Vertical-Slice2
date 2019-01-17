@@ -36,6 +36,9 @@ namespace SA
         [HideInInspector]
         public Rigidbody rigid;
         [HideInInspector]
+        public AnimatorHook a_hook;
+
+        [HideInInspector]
         public float delta;
         [HideInInspector]
         public LayerMask ignoreLayers;
@@ -50,6 +53,9 @@ namespace SA
             rigid.angularDrag = 999;
             rigid.drag = 4;
             rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+            a_hook = activeModel.AddComponent<AnimatorHook>();
+            a_hook.Init(this);
 
             gameObject.layer = 8;
             ignoreLayers = ~(1 << 10);
@@ -87,14 +93,19 @@ namespace SA
 
             if (inAction)
             {
+                anim.applyRootMotion = true;
+
                 _actionDelay += delta;
-                if(_actionDelay > 0)
+                if(_actionDelay > 0.3f)
                 {
                     inAction = false;
                     _actionDelay = 0;
                 }
-
-                return;
+                else
+                {
+                    return;
+                }
+                
             }
 
 
@@ -104,6 +115,9 @@ namespace SA
 
             if (!canMove)
                 return;
+
+            anim.applyRootMotion = false;
+
 
             rigid.drag = (moveAmount > 0 || onGround == false) ? 0 : 4;
 
@@ -129,6 +143,10 @@ namespace SA
                 Quaternion tr = Quaternion.LookRotation(targetDir);
                 Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, delta * moveAmount * rotateSpeed);
                 transform.rotation = targetRotation;
+            }
+            else
+            {
+                transform.LookAt(GameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.up);
             }
 
             HandleMovementAnimations();
@@ -162,8 +180,8 @@ namespace SA
 
             canMove = false;
             inAction = true;
-            anim.CrossFade(targetAnim, 0.4f);
-            rigid.velocity = Vector3.zero;
+            anim.CrossFade(targetAnim, 0.2f);
+            //rigid.velocity = Vector3.zero;
         }
 
         public void Tick(float d)

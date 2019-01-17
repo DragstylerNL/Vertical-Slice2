@@ -72,9 +72,13 @@ namespace SA
             if (lt_axis != 0)
                 lt_input = true;
 
+            rb_input = Input.GetButton("RB");
+            lb_input = Input.GetButton("LB");
+
             Debug.Log(rt_input);
 
         }
+
         void UpdateStates()
         {
             //alle states

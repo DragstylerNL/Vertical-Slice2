@@ -65,6 +65,11 @@ namespace SA
 
         void HandleRotations(float d, float v, float h, float targetSpeed)
         {
+            if (lockon)
+            {
+                return;
+            }
+
             if (turnSmoothing > 0)
             {
                 smoothX = Mathf.SmoothDamp(smoothX, h, ref smoothXvelocity, turnSmoothing);
@@ -75,10 +80,7 @@ namespace SA
                 smoothX = h;
                 smoothY = v;
             }
-            if (lockon)
-            {
-
-            }
+            
 
             lookAngle += smoothX * targetSpeed;
             transform.rotation = Quaternion.Euler(0, lookAngle, 0);
