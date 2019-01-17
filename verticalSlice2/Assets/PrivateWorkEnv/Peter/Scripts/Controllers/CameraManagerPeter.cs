@@ -67,7 +67,7 @@ namespace SA
         {
             if (lockon)
             {
-                return;
+                //return;
             }
 
             if (turnSmoothing > 0)

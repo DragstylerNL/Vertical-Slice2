@@ -146,7 +146,7 @@ namespace SA
             }
             else
             {
-                transform.LookAt(GameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.up);
+                //transform.LookAt(GameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.up);
             }
 
             HandleMovementAnimations();
