@@ -16,6 +16,7 @@ namespace SA
         public float moveAmount;
         public Vector3 moveDir;
         public bool rt, rb, lt, lb;
+        public bool twoHanded;
 
         [Header("Stats")]
         private float moveSpeed = 3;
@@ -29,6 +30,8 @@ namespace SA
         public bool lockOn;
         public bool inAction;
         public bool canMove;
+        public bool isTwoHanded;
+
 
 
         [HideInInspector]
@@ -216,6 +219,11 @@ namespace SA
 
 
             return r;
+        }
+
+        public void HandleTwoHanded()
+        {
+            anim.SetBool("twoHanded", isTwoHanded);
         }
     }
 }
