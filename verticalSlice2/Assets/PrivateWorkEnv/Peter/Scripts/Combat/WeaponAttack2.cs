@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponAttack2 : MonoBehaviour
 {
-    void OnCollisionEnter(Collider collision)
+    void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Hit");
     }

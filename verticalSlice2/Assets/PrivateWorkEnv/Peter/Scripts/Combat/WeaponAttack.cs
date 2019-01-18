@@ -14,18 +14,17 @@ public class WeaponAttack : MonoBehaviour
         Debug.Log("Lol!");
     }
 
-
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Hit!");
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             if (canDamage)
             {
                 Debug.Log("Hit enemy!");
                 canDamage = false;
 
-                BossHP _hp = collision.gameObject.GetComponent<BossHP>();
+                BossHP _hp = other.gameObject.GetComponent<BossHP>();
 
                 _hp.bossHealth -= weaponDamage;
 
