@@ -30,7 +30,7 @@ namespace SA
         // Update is called once per frame
         void Update()
         {
-            //This is for the root motion applied when an attack ani ist running
+            //This is for the root motion applied when an attack ani is running
             enableRM = !anim.GetBool("canMove");
             anim.applyRootMotion = enableRM;
 
