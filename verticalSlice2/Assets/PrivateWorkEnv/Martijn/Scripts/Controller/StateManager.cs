@@ -24,8 +24,8 @@ namespace SA
 
         [Header("States")]
         public bool run;
-        public bool onGround;
-        public bool lockOn;
+        private bool onGround;
+        private bool lockOn;
 
             
         [HideInInspector]
