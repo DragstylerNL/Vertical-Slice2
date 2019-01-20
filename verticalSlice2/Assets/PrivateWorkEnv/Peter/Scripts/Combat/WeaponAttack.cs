@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeaponAttack : MonoBehaviour
 {
     [SerializeField]
-    private float weaponDamage = 250;
+    private float weaponDamage = 250, weaponPush = 500;
+
 
     [SerializeField]
     public bool canDamage
@@ -16,11 +17,11 @@ public class WeaponAttack : MonoBehaviour
     private bool _canDamage = true;
 
     //When the weapon touches something
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider _other)
     {
 
         if (_canDamage)
-            switch (other.gameObject.tag)
+            switch (_other.gameObject.tag)
             {
                 case "Enemy":
                     canDamage = false;
@@ -28,7 +29,7 @@ public class WeaponAttack : MonoBehaviour
                     print("Enemy Hit!");
 
                     //Damage the oponent
-                    InflictDamage(other.gameObject, weaponDamage);
+                    InflictDamage(_other.gameObject, weaponDamage);
 
                     //Set the canDamage to true
                     StartCoroutine(ResetCanDamage(3f));
@@ -40,11 +41,13 @@ public class WeaponAttack : MonoBehaviour
                     print("Enemy Hit!");
 
                     //Damage the oponent
-                    InflictDamage(other.gameObject, weaponDamage);
+                    InflictDamage(_other.gameObject, weaponDamage);
 
                     //Set the canDamage to true
                     StartCoroutine(ResetCanDamage(3f));
-                    break;
+
+                    PushOponent(_other.gameObject, weaponPush);
+                break;
             }
     }
 
@@ -58,6 +61,25 @@ public class WeaponAttack : MonoBehaviour
         _other.GetComponent<Health>().TakeDamage(_amount);
     }
 
+    /// <summary>
+    /// Pushes an GameObject with a force
+    /// </summary>
+    /// <param name="_other"></param>
+    /// <param name="_force">The amount of force</param>
+    void PushOponent(GameObject _other, float _force)
+    {
+        print("Push");
+
+        // Calculate Angle Between the collision point and the player
+        Vector3 _dir = transform.forward;//_other.transform.position - transform.position;
+
+        // We then get the opposite (-Vector3) and normalize it
+        _dir = -_dir.normalized;
+
+        // And finally we add force in the direction of dir and multiply it by force. 
+        // This will push back the player
+        _other.GetComponent<Rigidbody>().AddForce(_dir * _force);
+    }
 
 
     /// <summary>
