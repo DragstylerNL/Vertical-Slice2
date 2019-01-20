@@ -5,42 +5,49 @@ using UnityEngine;
 public class WeaponAttack : MonoBehaviour
 {
     [SerializeField]
-    private float weaponDamage = 250f;
+    private float weaponDamage = 250;
 
+    [SerializeField]
     private bool canDamage = true;
 
-    void Start()
+    //When the weapon touches something
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Lol!");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Hit!");
-        if (other.gameObject.CompareTag("Enemy"))
+        //If the object is an Enemy
+        if (other.gameObject.tag == "Enemy" && canDamage == true)
         {
-            if (canDamage)
-            {
-                Debug.Log("Hit enemy!");
-                canDamage = false;
+            canDamage = false;
 
-                BossHP _hp = other.gameObject.GetComponent<BossHP>();
+            print("Enemy Hit!");
 
-                _hp.bossHealth -= weaponDamage;
+            //Damage the oponent
+            InflictDamage(other.gameObject, -weaponDamage);
 
-
-
-                //Reset the canDamage
-                StartCoroutine(Timer());
-            }
-
+            //Set the canDamage to true
+            StartCoroutine(ResetCanDamage(3f));
         }
     }
 
-    private IEnumerator Timer()
+    /// <summary>
+    /// Inflicts damage to an object
+    /// </summary>
+    /// <param name="_other">The object you want to damage</param>
+    /// <param name="_amount">The amount of damage</param>
+    void InflictDamage(GameObject _other, float _amount)
     {
-        yield return new WaitForSeconds(3f);
+        _other.GetComponent<BossHP>().bossHealth += _amount;
+    }
+
+
+    /// <summary>
+    /// Resets the canDamage variable
+    /// </summary>
+    /// <param name="waitTime"></param>
+    /// <returns></returns>
+    private IEnumerator ResetCanDamage(float _waitTime)
+    {
+        yield return new WaitForSeconds(_waitTime);
         canDamage = true;
-        Debug.Log("Can damage again");
+        print("Can damage again!");
     }
 }
