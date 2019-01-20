@@ -27,9 +27,15 @@ public class RotateTowards : MonoBehaviour
 
 
         Vector3 eulerAngles = transform.rotation.eulerAngles;
-        eulerAngles.x = 0;
-        eulerAngles.z = 0;
-        eulerAngles.y = eulerAngles.y;
+
+        if (lockX)
+            eulerAngles.x = 0;
+
+        if (lockY)
+            eulerAngles.y = 0;
+
+        if (lockZ)
+            eulerAngles.z = 0;
 
         // Set the altered rotation back
         transform.rotation = Quaternion.Euler(eulerAngles);

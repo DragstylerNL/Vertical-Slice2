@@ -8,24 +8,44 @@ public class WeaponAttack : MonoBehaviour
     private float weaponDamage = 250;
 
     [SerializeField]
-    private bool canDamage = true;
+    public bool canDamage
+    {
+        get { return _canDamage; }
+        set { _canDamage = value; }
+    }
+    private bool _canDamage = true;
 
     //When the weapon touches something
     void OnTriggerEnter(Collider other)
     {
-        //If the object is an Enemy
-        if (other.gameObject.tag == "Enemy" && canDamage == true)
-        {
-            canDamage = false;
 
-            print("Enemy Hit!");
+        if (_canDamage)
+            switch (other.gameObject.tag)
+            {
+                case "Enemy":
+                    canDamage = false;
 
-            //Damage the oponent
-            InflictDamage(other.gameObject, -weaponDamage);
+                    print("Enemy Hit!");
 
-            //Set the canDamage to true
-            StartCoroutine(ResetCanDamage(3f));
-        }
+                    //Damage the oponent
+                    InflictDamage(other.gameObject, weaponDamage);
+
+                    //Set the canDamage to true
+                    StartCoroutine(ResetCanDamage(3f));
+                break;
+
+                case "Player":
+                    canDamage = false;
+
+                    print("Enemy Hit!");
+
+                    //Damage the oponent
+                    InflictDamage(other.gameObject, weaponDamage);
+
+                    //Set the canDamage to true
+                    StartCoroutine(ResetCanDamage(3f));
+                    break;
+            }
     }
 
     /// <summary>
@@ -35,8 +55,9 @@ public class WeaponAttack : MonoBehaviour
     /// <param name="_amount">The amount of damage</param>
     void InflictDamage(GameObject _other, float _amount)
     {
-        _other.GetComponent<BossHP>().bossHealth += _amount;
+        _other.GetComponent<Health>().TakeDamage(_amount);
     }
+
 
 
     /// <summary>
