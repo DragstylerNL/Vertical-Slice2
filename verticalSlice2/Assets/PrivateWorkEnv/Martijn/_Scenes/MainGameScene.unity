@@ -511,7 +511,47 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+--- !u!114 &927444763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 927444762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e65fc51df11c24cb99571d49dc0315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeModel: {fileID: 806129947}
+  horizontal: 0
+  vertical: 0
+  moveAmount: 0
+  moveDir: {x: 0, y: 0, z: 0}
+  run: 0
+  onGround: 0
+  lockOn: 0
+  anim: {fileID: 0}
+  rb: {fileID: 0}
+  delta: 0
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &927444764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 927444762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf20bf3daf13c34f918fe4d4ee1b615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &927444765
+=======
 --- !u!54 &2099859597
+>>>>>>> Peter
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
