@@ -54,6 +54,7 @@ public class Health : MonoBehaviour {
         // if sliderHealth does not equal HP
         if (ui_Health.value > _HP)
         {
+            // updates the health value on the slider
             ui_Health.value -= ((ui_Health.value - _HP) / 5) + 2.5f;
             if (ui_Health.value < _HP) { ui_Health.value = _HP; }
         }
