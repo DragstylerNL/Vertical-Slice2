@@ -23,7 +23,9 @@ public class BossHP : Health
     void Update()
     {
         // call cool boss animation
-        BossAnimation();
+        if (!isAnimDone) { BossAnimation(); }
+        EveryFrame();
+        
     }
 
     void BossAnimation()

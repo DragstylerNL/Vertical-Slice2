@@ -11,4 +11,9 @@ public class PlayerHP : Health {
 
 	}
 
+    void Update()
+    {
+        EveryFrame();
+    }
+
 }

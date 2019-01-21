@@ -51,7 +51,7 @@ public class Health : MonoBehaviour {
     }
 
     // ==== Update
-    void Update()
+    public void EveryFrame()
     {
         // if the timer before the degen health is not 0 but more, count down 
         if(_degenTimer > 0)
