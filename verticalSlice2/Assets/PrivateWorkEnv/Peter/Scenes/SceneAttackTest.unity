@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponDamage: 100
-  weaponPush: 1500
+  weaponPush: 2500
 --- !u!4 &1806099933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400442, guid: 9a764a195980d3242b9035fb15f44483,

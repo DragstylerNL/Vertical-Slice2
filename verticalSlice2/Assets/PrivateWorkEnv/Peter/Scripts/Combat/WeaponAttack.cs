@@ -46,6 +46,7 @@ public class WeaponAttack : MonoBehaviour
                     //Set the canDamage to true
                     StartCoroutine(ResetCanDamage(3f));
 
+                    //Pushes 
                     PushOponent(this.gameObject.transform.parent.gameObject, _other.gameObject, weaponPush);
                 break;
             }
@@ -72,10 +73,10 @@ public class WeaponAttack : MonoBehaviour
         print("Push");
 
         // Calculate Angle Between the collision point and the player
-        Vector3 _dir = new Vector3(0, -30, 0);//_other.transform.position - transform.position;
+        Vector3 _dir = -_other.transform.forward; //new Vector3(0, -30, 0);//_other.transform.position - transform.position;
 
         // We then get the opposite (-Vector3) and normalize it
-        _dir = -_dir.normalized;
+        _dir = _dir.normalized;
 
         // And finally we add force in the direction of dir and multiply it by force. 
         // This will push back the player
