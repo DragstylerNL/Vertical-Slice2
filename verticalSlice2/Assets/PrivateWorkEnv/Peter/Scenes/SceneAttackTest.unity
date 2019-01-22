@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Equipment_Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.004
@@ -536,7 +540,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351678879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99a7af871e93d3849b9296d2e19e40e6, type: 3}
   m_Name: 
@@ -781,6 +785,7 @@ MonoBehaviour:
   mouseSpeed: 2
   controllerSpeed: 7
   target: {fileID: 927444767}
+  lockonTarget: {fileID: 0}
   minAngle: -35
   maxAngle: 35
   lookAngle: 0
@@ -1035,6 +1040,7 @@ MonoBehaviour:
   inAction: 0
   canMove: 0
   isTwoHanded: 0
+  lockOnTarget: {fileID: 1878918582}
   anim: {fileID: 0}
   rigid: {fileID: 0}
   a_hook: {fileID: 0}
@@ -1626,6 +1632,7 @@ GameObject:
   - component: {fileID: 1878918579}
   - component: {fileID: 1878918580}
   - component: {fileID: 1878918581}
+  - component: {fileID: 1878918582}
   m_Layer: 0
   m_Name: EnemyController
   m_TagString: Enemy
@@ -1697,6 +1704,18 @@ CapsuleCollider:
   m_Height: 1.8057213
   m_Direction: 1
   m_Center: {x: 0, y: 1.0976543, z: -0}
+--- !u!114 &1878918582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878918577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1491466cfa13ed34198212697c7154a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1931419980
 PrefabInstance:
   m_ObjectHideFlags: 0

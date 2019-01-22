@@ -23,6 +23,9 @@ namespace SA
         float lt_axis;
         bool lt_input;
 
+        bool leftAxis_down;
+        bool rightAxis_down;
+
         float delta;
         StateManagerPeter states;
         CameraManagerPeter camManager;
@@ -62,7 +65,7 @@ namespace SA
             horizontal = Input.GetAxis("Horizontal");
             b_input = Input.GetButton("B");
             x_input = Input.GetButton("X");
-            y_input = Input.GetButton("Y");
+            y_input = Input.GetButtonUp("Y");
             a_input = Input.GetButton("A");
 
             rt_input = Input.GetButton("RT");
@@ -77,6 +80,9 @@ namespace SA
 
             rb_input = Input.GetButton("RB");
             lb_input = Input.GetButton("LB");
+
+            rightAxis_down = Input.GetButtonUp("Lockon");
+            
 
             //Debug.Log(rt_input);
 
@@ -94,14 +100,15 @@ namespace SA
             float m = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
             states.moveAmount = Mathf.Clamp01(m);
 
+            states.rollInput = b_input;
 
             if (b_input)
             {
-                states.run = (states.moveAmount > 0);
+                //states.run = (states.moveAmount > 0);
             }
             else
             {
-                states.run = false;
+                //states.run = false;
             }
 
             states.rt = rt_input;
@@ -113,6 +120,17 @@ namespace SA
             {
                 states.isTwoHanded = !states.isTwoHanded;
                 states.HandleTwoHanded();
+            }
+
+            if (rightAxis_down)
+            {
+                states.lockOn = !states.lockOn;
+
+                if (states.lockOnTarget == null)
+                    states.lockOn = false;
+
+                camManager.lockonTarget = states.lockOnTarget.transform;
+                camManager.lockon = states.lockOn;
             }
 
         }
