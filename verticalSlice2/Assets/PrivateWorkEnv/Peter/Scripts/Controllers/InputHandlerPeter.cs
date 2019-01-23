@@ -95,7 +95,7 @@ namespace SA
             states.horizontal = horizontal;
 
             Vector3 v = states.vertical * camManager.transform.forward;// 
-            Vector3 h = horizontal * camManager.transform.right;// camManager.transform.right
+            Vector3 h = horizontal * camManager.transform.right;
             states.moveDir = (v + h).normalized;
             float m = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
             states.moveAmount = Mathf.Clamp01(m);

@@ -23,6 +23,8 @@ namespace SA
         private float runSpeed = 3.5f;
         private float rotateSpeed = 5;
         private float toGround = 0.5f;
+        public float rollSpeed = 1;
+
 
         [Header("States")]
         public bool run;
@@ -35,6 +37,7 @@ namespace SA
 
         [Header("Other")]
         public EnemyTarget lockOnTarget;
+        public AnimationCurve rollCurve;
 
 
         [HideInInspector]
@@ -118,15 +121,15 @@ namespace SA
             canMove = anim.GetBool("canMove");
 
 
-
+            //Check if you can move
             if (!canMove)
                 return;
 
+            //a_hook.rmMultiplier = 1;
+            a_hook.CloseRoll();
             HandleRolls();
 
             anim.applyRootMotion = false;
-
-
             rigid.drag = (moveAmount > 0 || onGround == false) ? 0 : 4;
 
 
@@ -211,19 +214,39 @@ namespace SA
             float _v = vertical;
             float _h = horizontal;
 
-            if (lockOn == false)
+            _v = (moveAmount > 0.3f) ? 1 : 0;
+            _h = 0;
+
+            //if (lockOn == false)
+            //{
+            //    _v = (moveAmount > 0.3f) ? 1 : 0;
+            //    _h = 0;
+            //}
+            //else
+            //{
+            //    //Elimenate any of the small inputs
+            //    if (Mathf.Abs(_v) < 0.3f)
+            //        _v = 0;
+            //    if (Mathf.Abs(_h) < 0.3f)
+            //        _h = 0;
+            //}
+
+            if (_v != 0)
             {
-                _v = (moveAmount > 0.3f)? 1 : 0;
-                _h = 0;
+                if (moveDir == Vector3.zero)
+                    moveDir = transform.forward;
+                Quaternion _targetRot = Quaternion.LookRotation(moveDir);
+                transform.rotation = _targetRot;
+                a_hook.InitForRoll();
+                a_hook.rmMultiplier = rollSpeed;
             }
             else
             {
-                //Elimenate any of the small inputs
-                if (Mathf.Abs(_v) < 0.3f)
-                    _v = 0;
-                if (Mathf.Abs(_h) < 0.3f)
-                    _h = 0;
+                a_hook.rmMultiplier = 1.3f;
             }
+
+            
+            
 
             anim.SetFloat("vertical", _v);
             anim.SetFloat("horizontal", _h);
@@ -231,6 +254,7 @@ namespace SA
             canMove = false;
             inAction = true;
             anim.CrossFade("Rolls", 0.2f);
+            
         }
 
         //Run and walk animation
