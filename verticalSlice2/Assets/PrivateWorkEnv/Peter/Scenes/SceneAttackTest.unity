@@ -1536,6 +1536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Equipment_Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 100442, guid: 9a764a195980d3242b9035fb15f44483, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400442, guid: 9a764a195980d3242b9035fb15f44483, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
