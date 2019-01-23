@@ -1,8 +1,7 @@
 ﻿
 using UnityEngine;
 using UnityEngine.AI;
-namespace SA
-{
+
     public class EnemyMovement : MonoBehaviour
     {
         private Animator _animator;
@@ -29,4 +28,3 @@ namespace SA
             _animator.SetBool("run", run);
         }
     }
-}
