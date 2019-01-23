@@ -1033,7 +1033,7 @@ MonoBehaviour:
   rb: 0
   lt: 0
   lb: 0
-  twoHanded: 0
+  rollInput: 0
   run: 0
   onGround: 0
   lockOn: 0
@@ -1178,6 +1178,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 94dd59496a9825c4392be87838f4570d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d3128130d9d4514ab51b6aeb2981724, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94dd59496a9825c4392be87838f4570d, type: 3}
 --- !u!1 &1491926687
@@ -1786,7 +1790,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: e7400d31a9dee8347810bf23504b25ab, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1328a97f9b3c7814bb700fc1ae1f91ea, type: 2}
+      objectReference: {fileID: 2100000, guid: 140d4004eeec14140867215397da117b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7400d31a9dee8347810bf23504b25ab, type: 3}
 --- !u!4 &1931419981 stripped
@@ -1965,6 +1969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795946315880847368, guid: 16f770d581197a040860964a6600dfba,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f770d581197a040860964a6600dfba, type: 3}
