@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-
+    [SerializeField]
     private float timer;
     private Transform ts;
     [Range(0, 360)]public float StartBonus;
