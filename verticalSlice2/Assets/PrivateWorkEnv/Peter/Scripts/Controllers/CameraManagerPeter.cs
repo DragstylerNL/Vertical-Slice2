@@ -12,10 +12,12 @@ namespace SA
         public float controllerSpeed = 7;
 
         public Transform target;
-        public Transform lockonTarget;
+        public EnemyTarget lockonTarget;
+        public Transform lockonTransform;
 
         Transform pivot;
         Transform camTrans;
+        StateManagerPeter states;
 
         float turnSmoothing = .1f;
         public float minAngle = -35;
@@ -28,9 +30,12 @@ namespace SA
         public float lookAngle;
         public float tiltAngle;
 
-        public void Init(Transform t)
+        bool usedRightAxis;
+
+        public void Init(StateManagerPeter st)
         {
-            target = t;
+            states = st;
+            target = st.transform;
 
             camTrans = Camera.main.transform;
             pivot = camTrans.parent;
@@ -45,6 +50,34 @@ namespace SA
             float c_v = Input.GetAxis("RightAxis Y");
 
             float targetSpeed = mouseSpeed;
+
+            if (lockonTarget != null)
+            {
+                //Find a transform to apply the lockonTarget
+                if (lockonTransform == null)
+                {
+                    lockonTransform = lockonTarget.GetTarget();
+                    states.lockOnTransform = lockonTransform;
+                }
+
+                if (Mathf.Abs(c_h) > 0.6f)
+                {
+                    if (!usedRightAxis)
+                    {
+                        lockonTransform = lockonTarget.GetTarget(c_h > 0);
+                        states.lockOnTransform = lockonTransform;
+                        usedRightAxis = true;
+                    }
+                }
+            }
+
+            if (usedRightAxis)
+            {
+                if (Mathf.Abs(c_h) < 0.6f)
+                {
+                    usedRightAxis = false;
+                }
+            }
 
             if (c_h != 0 || c_v != 0)
             {
@@ -84,7 +117,7 @@ namespace SA
 
             if (lockon && lockonTarget != null)
             {
-                Vector3 targetDir = lockonTarget.position - transform.position;
+                Vector3 targetDir = lockonTransform.position - transform.position;
                 targetDir.Normalize();
                 //targetDir.y = 0;
 

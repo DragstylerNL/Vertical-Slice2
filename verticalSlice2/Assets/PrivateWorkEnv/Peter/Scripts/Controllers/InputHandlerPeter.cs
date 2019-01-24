@@ -38,7 +38,7 @@ namespace SA
             states.Init();
 
             camManager = CameraManagerPeter.singleton;
-            camManager.Init(this.transform);
+            camManager.Init(states);//Pass the state manager
         }
 
 
@@ -116,12 +116,14 @@ namespace SA
             states.rb = rb_input;
             states.lb = lb_input;
 
+            //Switch two handed
             if (y_input)
             {
                 states.isTwoHanded = !states.isTwoHanded;
                 states.HandleTwoHanded();
             }
 
+            //Switch LockOn
             if (rightAxis_down)
             {
                 states.lockOn = !states.lockOn;
@@ -129,10 +131,10 @@ namespace SA
                 if (states.lockOnTarget == null)
                     states.lockOn = false;
 
-                camManager.lockonTarget = states.lockOnTarget.transform;
+                camManager.lockonTarget = states.lockOnTarget;//transform
+                states.lockOnTransform = camManager.lockonTransform;
                 camManager.lockon = states.lockOn;
             }
-
         }
     }
 }

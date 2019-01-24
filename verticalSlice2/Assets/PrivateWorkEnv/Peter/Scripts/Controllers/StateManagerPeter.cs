@@ -37,6 +37,7 @@ namespace SA
 
         [Header("Other")]
         public EnemyTarget lockOnTarget;
+        public Transform lockOnTransform;
         public AnimationCurve rollCurve;
 
 
@@ -146,8 +147,13 @@ namespace SA
             
 
             //LockOn mode
-            Vector3 targetDir = (lockOn == false)? moveDir
-                : lockOnTarget.transform.position - transform.position;
+            Vector3 targetDir = (lockOn == false) ? 
+                moveDir
+                : 
+                (lockOnTransform != null) ? 
+                    lockOnTransform.transform.position - transform.position 
+                    : 
+                    moveDir;
 
             targetDir.y = 0;
             if (targetDir == Vector3.zero)
