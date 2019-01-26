@@ -6,6 +6,9 @@ namespace SA
 {
     public class CameraManagerPeter : MonoBehaviour
     {
+        [SerializeField]
+        private Camera camObj;
+
         public bool lockon;
         public float followSpeed = 9;
         public float mouseSpeed = 2;
@@ -37,7 +40,9 @@ namespace SA
             states = st;
             target = st.transform;
 
-            camTrans = Camera.main.transform;
+
+            camTrans = camObj.transform;
+            //camTrans = Camera.fin GameObject.FindGameObjectWithTag(camTag).transform;// Camera.main.transform;
             pivot = camTrans.parent;
         }
 
@@ -138,6 +143,7 @@ namespace SA
 
         }
 
+       
         public static CameraManagerPeter singleton;
         void Awake()
         {

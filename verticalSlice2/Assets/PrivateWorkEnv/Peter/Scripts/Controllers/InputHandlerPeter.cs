@@ -28,7 +28,7 @@ namespace SA
 
         float delta;
         StateManagerPeter states;
-        CameraManagerPeter camManager;
+        public CameraManagerPeter camManager;
 
         void Start()
         {
@@ -37,7 +37,7 @@ namespace SA
             states = GetComponent<StateManagerPeter>();
             states.Init();
 
-            camManager = CameraManagerPeter.singleton;
+            //camManager = CameraManagerPeter.singleton;
             camManager.Init(states);//Pass the state manager
         }
 
