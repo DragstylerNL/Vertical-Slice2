@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Animation_Boss_Walking.ma
-//Last modified: Sat, Jan 26, 2019 11:23:36 PM
+//Last modified: Sat, Jan 26, 2019 11:24:20 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -14,15 +14,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "18B14924-4241-617E-5A79-8C8FBD3191B7";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -5.1343957379115546 5.4882775895518989 8.302013600745294 ;
-	setAttr ".r" -type "double3" -15.338352717171055 -1111.399999999516 1.8631314572020572e-15 ;
+	setAttr ".t" -type "double3" -4.3003381469990449 4.8927717624684526 3.9705145036247007 ;
+	setAttr ".r" -type "double3" -20.138352717171152 -1128.9999999995136 0 ;
 	setAttr ".rp" -type "double3" 9.7699626167013776e-14 3.0198066269804258e-14 0 ;
 	setAttr ".rpt" -type "double3" -1.6611834275017116e-13 -7.4675859624861277e-15 -7.1648143468380397e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "188F1361-4853-2D94-E3CA-E59C87ADE894";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 9.334143139464457;
+	setAttr ".coi" 5.4418040752067931;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
