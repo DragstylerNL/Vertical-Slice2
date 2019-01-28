@@ -11,6 +11,7 @@ namespace SA
         [SerializeField]
         private int deviceNumber;
 
+
         float vertical;
         float horizontal;
         bool b_input;
@@ -43,7 +44,16 @@ namespace SA
             //camManager = CameraManagerPeter.singleton;
             camManager.Init(states);//Pass the state manager
 
-            print("Joystick: " + Input.GetJoystickNames()[deviceNumber]);
+
+            int _joystickLength = Input.GetJoystickNames().Length;
+
+            if (deviceNumber == 0)
+            for (int i = 0; i < _joystickLength; i++)
+            {
+                print("Joystick" + i + "(" + (i+1) + ") : " + Input.GetJoystickNames()[i]);
+            }
+
+            
         }
 
 
@@ -85,7 +95,7 @@ namespace SA
             x_input = Input.GetButton("X");
             y_input = Input.GetButton("Y");
 
-            print("Player" + deviceNumber + ": " + horizontal);
+            //print("Player" + deviceNumber + ": " + horizontal);
             
 
             
@@ -102,13 +112,14 @@ namespace SA
             if (rt_axis != 0)
                 rt_input = true;
 
+            /* Temporarily Disabled
             lt_input = Input.GetButton("LT");
             lt_axis = Input.GetAxis("LT");
             if (lt_axis != 0)
                 lt_input = true;
 
             rb_input = Input.GetButton("RB");
-            lb_input = Input.GetButton("LB");
+            lb_input = Input.GetButton("LB");*/
 
             rightAxis_down = Input.GetButtonUp("gp_" + deviceNumber + "_Lockon");
             
