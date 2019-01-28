@@ -25,6 +25,6 @@ using UnityEngine.AI;
             
             run = run && !_animator.GetBool("attackRange");
 
-            _animator.SetBool("run", run);
+            _animator.SetBool("run", run);  
         }
     }

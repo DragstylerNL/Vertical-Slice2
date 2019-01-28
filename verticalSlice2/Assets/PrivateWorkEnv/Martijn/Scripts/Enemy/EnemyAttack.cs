@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         _animator = GetComponent<Animator>();
     }
-
+    //trigger enter
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == _player)
@@ -22,16 +22,17 @@ public class EnemyAttack : MonoBehaviour
         }
         
     }
-
+    //collision enter
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject == _player)
         {
             _collidedWithPlayer = true;
+            
         }
       
     }
-
+    //colision exit
     void OnCollisionExit(Collision other)
     {
         if (other.gameObject == _player)
@@ -40,7 +41,7 @@ public class EnemyAttack : MonoBehaviour
         }
     
     }
-
+    //trigger exit
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject == _player)
@@ -49,12 +50,12 @@ public class EnemyAttack : MonoBehaviour
         }
       
     }
-
+    //attack
     void Attack()
     {
         if (_collidedWithPlayer)
         {
-            print("player has been hit");
+           
         }
     }
 }
