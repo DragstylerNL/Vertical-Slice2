@@ -5,14 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    /// <summary>
-    /// Loads the scene.
-    /// </summary>
-    /// <param name="CanvasScene">Scene name.</param>
-    public void LoadScene(string CanvasScene)
-    {
-        SceneManager.LoadScene(CanvasScene);
-    }
+
+    string nextSceneName;
+    AsyncOperation async;
+
+    //private void Start()
+    //{
+    //    SceneManager.LoadSceneAsync("CanvasScene");
+    //}
+
+
+    //public void ActivateScene()
+    //{
+    //    SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
+    //}
 
 
     /// <summary>
@@ -21,5 +27,12 @@ public class MenuManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    void loadNextScene()
+    {
+        nextSceneName = "CanvasScene";
+        async = SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Additive);
+        async.allowSceneActivation = false;
     }
 }
