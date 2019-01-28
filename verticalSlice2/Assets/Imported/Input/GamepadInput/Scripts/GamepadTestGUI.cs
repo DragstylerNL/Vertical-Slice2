@@ -5,8 +5,10 @@ public class GamepadTestGUI : MonoBehaviour {
 
 	GamepadInput _input;
 
-	public GamepadInput input {
-		get {
+	public GamepadInput input
+    {
+		get
+        {
 			if (!_input)
 				_input = GetComponent<GamepadInput> ();
 			return _input;
@@ -59,29 +61,37 @@ public class GamepadTestGUI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnGUI () {
+	void OnGUI ()
+    {
 
 		if (!show && !alwaysActive)
 			return;
 
-		if (!Input.GetKey (KeyCode.LeftShift)) {
+		if (!Input.GetKey (KeyCode.LeftShift))
+        {
 			if (input.gamepads.Count == 0)
 				GUILayout.Label ("No gamepads connected");
 
 			GUILayout.BeginHorizontal ();
-			foreach (GamepadDevice gamepad in input.gamepads) {
+			foreach (GamepadDevice gamepad in input.gamepads)
+            {
 				string str = "";
 				str += "Device #" + gamepad.deviceId + "\n";
 				str += "System name: " + gamepad.systemName + "\n";
 				str += "Display name: " + gamepad.displayName + "\n";
 				str += "\n";
+
 				int[] buttonValues = (int[])System.Enum.GetValues (typeof(GamepadButton));
-				for (int i = 0; i < buttonValues.Length; i++) {
+
+				for (int i = 0; i < buttonValues.Length; i++)
+                {
 					str += (GamepadButton)buttonValues [i] + ": " + gamepad.GetButton ((GamepadButton)buttonValues [i]) + "\n";
 				}
 				
 				int[] axisValues = (int[])System.Enum.GetValues (typeof(GamepadAxis));
-				for (int i = 0; i < axisValues.Length; i++) {
+
+				for (int i = 0; i < axisValues.Length; i++)
+                {
 					str += (GamepadAxis)axisValues [i] + ": " + gamepad.GetAxis ((GamepadAxis)axisValues [i]) + "\n";
 				}
 				GUILayout.Label (str);
@@ -90,7 +100,8 @@ public class GamepadTestGUI : MonoBehaviour {
 
 			GUILayout.EndHorizontal ();
 		} 
-		else {
+		else
+        {
 			GUILayout.BeginHorizontal ();
 			for (int joyId = 0; joyId < 4; joyId++) 
 			{

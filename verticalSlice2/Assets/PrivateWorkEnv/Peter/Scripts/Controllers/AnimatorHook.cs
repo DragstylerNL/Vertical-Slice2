@@ -8,6 +8,7 @@ namespace SA
     public class AnimatorHook : MonoBehaviour
     {
         Animator anim;
+
         StateManagerPeter states;
 
         public float rmMultiplier;
@@ -50,6 +51,7 @@ namespace SA
             {
                 Vector3 delta = anim.deltaPosition;
                 delta.y = 0;
+
                 Vector3 v = (delta * rmMultiplier) / states.delta;
                 states.rigid.velocity = v;
             }
@@ -65,6 +67,7 @@ namespace SA
                 float _zValue = states.rollCurve.Evaluate(rollT);
                 Vector3 _v1 = Vector3.forward * _zValue;
                 Vector3 _relative = transform.TransformDirection(_v1);
+
                 Vector3 _v2 = (_relative * rmMultiplier);
                 states.rigid.velocity = _v2;
             }

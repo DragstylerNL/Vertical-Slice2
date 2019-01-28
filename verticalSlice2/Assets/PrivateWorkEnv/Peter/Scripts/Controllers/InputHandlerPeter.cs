@@ -7,6 +7,9 @@ namespace SA
     public class InputHandlerPeter : MonoBehaviour
     {
 
+        //The number of the device
+        [SerializeField]
+        private int deviceNumber;
 
         float vertical;
         float horizontal;
@@ -39,6 +42,8 @@ namespace SA
 
             //camManager = CameraManagerPeter.singleton;
             camManager.Init(states);//Pass the state manager
+
+            print("Joystick: " + Input.GetJoystickNames()[deviceNumber]);
         }
 
 
@@ -60,16 +65,40 @@ namespace SA
 
         void GetInput()
         {
-            //inputs
-            vertical = Input.GetAxis("Vertical");
-            horizontal = Input.GetAxis("Horizontal");
-            b_input = Input.GetButton("B");
-            x_input = Input.GetButton("X");
-            y_input = Input.GetButtonUp("Y");
-            a_input = Input.GetButton("A");
+            //print(gInput.gamepads.Count);
+            /*GamepadDevice _device = gInput.gamepads[deviceNumber];
 
-            rt_input = Input.GetButton("RT");
-            rt_axis = Input.GetAxis("RT");
+            if (gInput.gamepads.Count == 0)
+                print("No gamepads connected");
+            else
+            {
+                //GamepadDevice _device = gInput.gamepads[deviceNumber];
+            }*/
+            
+
+            
+            //inputs
+            horizontal = Input.GetAxis("gp_" + deviceNumber + "_horizontal");
+            vertical = Input.GetAxis("gp_" + deviceNumber + "_vertical");
+            a_input = Input.GetButton("A");
+            b_input = Input.GetButton("gp_" + deviceNumber + "_B");
+            x_input = Input.GetButton("X");
+            y_input = Input.GetButton("Y");
+
+            print("Player" + deviceNumber + ": " + horizontal);
+            
+
+            
+            //inputs
+            /*vertical = _device.GetAxis(GamepadAxis.LeftStickY); //Input.GetAxis("Vertical");
+            horizontal = _device.GetAxis(GamepadAxis.LeftStickX); //Input.GetAxis("Horizontal");
+            a_input = _device.GetButton(GamepadButton.Action1); //Input.GetButton("A");
+            b_input = _device.GetButton(GamepadButton.Action2); //Input.GetButton("B");
+            x_input = _device.GetButton(GamepadButton.Action3);
+            y_input = _device.GetButton(GamepadButton.Action4);*/
+            
+            rt_input = Input.GetButton("gp_" + deviceNumber + "_RT");
+            rt_axis = Input.GetAxis("gp_" + deviceNumber + "_RT");
             if (rt_axis != 0)
                 rt_input = true;
 
@@ -81,7 +110,7 @@ namespace SA
             rb_input = Input.GetButton("RB");
             lb_input = Input.GetButton("LB");
 
-            rightAxis_down = Input.GetButtonUp("Lockon");
+            rightAxis_down = Input.GetButtonUp("gp_" + deviceNumber + "_Lockon");
             
 
             //Debug.Log(rt_input);

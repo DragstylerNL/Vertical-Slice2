@@ -64,6 +64,7 @@ namespace SA
             rigid.drag = 4;
             rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
+            //Add the AnimatorHook component and run the Init
             a_hook = activeModel.AddComponent<AnimatorHook>();
             a_hook.Init(this);
 
