@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: e7400d31a9dee8347810bf23504b25ab
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Back_Side
+    100002: Blade
+    100004: Cloth
+    100006: Cloth 1
+    100008: Cloth 2
+    100010: Cloth 3
+    100012: Cloth1
+    100014: Cloth1 1
+    100016: Cloth2
+    100018: Cloth_Lowest
+    100020: Cloth_Lowest 1
+    100022: Cloth_Lowest 2
+    100024: Cloth_Lowest 3
+    100026: Cloth_Middle
+    100028: Cloth_Middle 1
+    100030: Cloth_Middle 2
+    100032: Cloth_Middle 3
+    100034: Cloth_TOP
+    100036: Cloth_TOP 1
+    100038: Cloth_TOP 2
+    100040: Cloth_TOP 3
+    100042: //RootNode
+    100044: Final
+    100046: Front_Side
+    100048: imagePlane1
+    100050: pCube1
+    100052: pCube1 1
+    100054: pTorus1
+    100056: pTorus1 1
+    100058: pTorus2
+    100060: pTorus2 1
+    100062: pTorus3
+    100064: pTorus3 1
+    100066: transform1
+    100068: transform1 1
+    100070: transform10
+    100072: transform10 1
+    100074: transform11
+    100076: transform12
+    100078: transform13
+    100080: transform14
+    100082: transform15
+    100084: transform16
+    100086: transform2
+    100088: transform2 1
+    100090: transform3
+    100092: transform3 1
+    100094: transform4
+    100096: transform4 1
+    100098: transform5
+    100100: transform5 1
+    100102: transform6
+    100104: transform6 1
+    100106: transform7
+    100108: transform7 1
+    100110: transform8
+    100112: transform8 1
+    100114: transform9
+    100116: transform9 1
+    400000: Back_Side
+    400002: Blade
+    400004: Cloth
+    400006: Cloth 1
+    400008: Cloth 2
+    400010: Cloth 3
+    400012: Cloth1
+    400014: Cloth1 1
+    400016: Cloth2
+    400018: Cloth_Lowest
+    400020: Cloth_Lowest 1
+    400022: Cloth_Lowest 2
+    400024: Cloth_Lowest 3
+    400026: Cloth_Middle
+    400028: Cloth_Middle 1
+    400030: Cloth_Middle 2
+    400032: Cloth_Middle 3
+    400034: Cloth_TOP
+    400036: Cloth_TOP 1
+    400038: Cloth_TOP 2
+    400040: Cloth_TOP 3
+    400042: //RootNode
+    400044: Final
+    400046: Front_Side
+    400048: imagePlane1
+    400050: pCube1
+    400052: pCube1 1
+    400054: pTorus1
+    400056: pTorus1 1
+    400058: pTorus2
+    400060: pTorus2 1
+    400062: pTorus3
+    400064: pTorus3 1
+    400066: transform1
+    400068: transform1 1
+    400070: transform10
+    400072: transform10 1
+    400074: transform11
+    400076: transform12
+    400078: transform13
+    400080: transform14
+    400082: transform15
+    400084: transform16
+    400086: transform2
+    400088: transform2 1
+    400090: transform3
+    400092: transform3 1
+    400094: transform4
+    400096: transform4 1
+    400098: transform5
+    400100: transform5 1
+    400102: transform6
+    400104: transform6 1
+    400106: transform7
+    400108: transform7 1
+    400110: transform8
+    400112: transform8 1
+    400114: transform9
+    400116: transform9 1
+    2100000: lambert1
+    2300000: Final
+    3300000: Final
+    4300000: Final
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

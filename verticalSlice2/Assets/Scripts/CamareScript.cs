@@ -8,10 +8,11 @@ public class CamareScript : MonoBehaviour {
     public Vector3 offset;
     public float camSpeed;
 
-    // ==== references
+    // ==== references and desired position
     private Transform _tsCamera;
     private Transform _tsPlayer;
     private Transform _tsEnemy;
+    private Vector3 _desPos = new Vector3();
 
     // ==== initialization
     void Awake () {

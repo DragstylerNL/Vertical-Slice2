@@ -6,7 +6,7 @@ namespace SA
 {
     public class InputHandler : MonoBehaviour
     {
-       
+
 
         float vertical;
         float horizontal;
@@ -37,12 +37,12 @@ namespace SA
             camManager.Tick(delta);
         }
 
-       void Update()
-       {
+        void Update()
+        {
             //delta time
-           delta = Time.deltaTime;
+            delta = Time.deltaTime;
             states.Tick(delta);
-       }
+        }
 
         void GetInput()
         {
@@ -67,7 +67,7 @@ namespace SA
             states.moveAmount = Mathf.Clamp01(m);
 
 
-            if(runInput)
+            if (runInput)
             {
                 states.run = (states.moveAmount > 0);
             }
