@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Animation_Player_walk.ma
-//Last modified: Tue, Jan 29, 2019 12:36:29 PM
+//Last modified: Tue, Jan 29, 2019 09:49:54 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "CB69F8DA-415B-0A2E-3171-5AA861635EA4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.5162070704533126 6.225929034093916 -12.824157873079402 ;
-	setAttr ".r" -type "double3" -15.938352738714128 -1257.3999999981918 0 ;
+	setAttr ".t" -type "double3" -0.15161111247625964 11.274790418585644 -16.042918260490115 ;
+	setAttr ".r" -type "double3" -27.938352738713789 -1618.9999999980721 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0851D067-4961-71E8-165A-9DBA57444756";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 13.467162872674169;
+	setAttr ".coi" 17.166003798608429;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -4618,7 +4618,7 @@ createNode parentConstraint -n "Animation_Player_walk:Helmet_parentConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.01084393911706826 -2.2573921700325168 -10.169190513789525 ;
-	setAttr ".lr" -type "double3" -0.11565309436165397 0.82085582590789985 1.1846857773180046 ;
+	setAttr ".lr" -type "double3" 0.052288875810979844 -1.3880860138825155 -0.12862455699333961 ;
 	setAttr ".rst" -type "double3" -1.7347234759768071e-18 4.4408920985006262e-16 0 ;
 	setAttr -k on ".w0";
 createNode transform -n "Animation_Player_walk:R_NECK" -p "Animation_Player_walk:ARMOR";
@@ -4813,7 +4813,7 @@ createNode parentConstraint -n "Animation_Player_walk:R_NECK_parentConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.13336720972812213 0.67314052554279336 0.30761244727856651 ;
 	setAttr ".tg[0].tor" -type "double3" -31.001087980457612 7.5594754708312477 5.9409097356942251 ;
-	setAttr ".lr" -type "double3" -39.610207257359178 -4.0454852562438735 6.0650902872266448 ;
+	setAttr ".lr" -type "double3" -38.839344355261247 3.2491373765815776 4.7720977339332435 ;
 	setAttr ".rst" -type "double3" 0.14421115815639499 1.9716815948486328 10.425821304321282 ;
 	setAttr ".rsrr" -type "double3" -38.393452945999471 8.2566698032944732 4.9224325724403162 ;
 	setAttr -k on ".w0";
@@ -5009,7 +5009,7 @@ createNode parentConstraint -n "Animation_Player_walk:L_NECK_parentConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.15389031261398392 0.68559080656159033 0.30921952237857941 ;
 	setAttr ".tg[0].tor" -type "double3" -149.15700686656041 3.6152612656864007 169.83396307303366 ;
-	setAttr ".lr" -type "double3" 36.129010550496076 162.9100808121724 -8.8188497502729657 ;
+	setAttr ".lr" -type "double3" 37.270657031285822 170.16088452000238 -9.8401084007001902 ;
 	setAttr ".rst" -type "double3" -0.14304636418819425 1.9842351675033578 10.425821304321282 ;
 	setAttr ".rsrr" -type "double3" 38.108427088454796 175.11892701595775 -9.6270871247896679 ;
 	setAttr -k on ".w0";
@@ -9428,7 +9428,7 @@ createNode parentConstraint -n "Animation_Player_walk:L_Shoulder_parentConstrain
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.003737246809450312 0.1239228043435312 -0.39776207051964629 ;
 	setAttr ".tg[0].tor" -type "double3" -98.01267786284572 39.818411639198835 83.562052318129886 ;
-	setAttr ".lr" -type "double3" -6.961485556165405 -13.013838764463795 -36.555220395358383 ;
+	setAttr ".lr" -type "double3" -12.381034075795007 -11.025433563430951 -37.714820464207314 ;
 	setAttr ".rst" -type "double3" 0.049602009356021992 -2.2075984477996835 0.70254487222234019 ;
 	setAttr ".rsrr" -type "double3" -8.5501046419143201 8.7953132340995044 39.437557069363834 ;
 	setAttr -k on ".w0";
@@ -9692,7 +9692,7 @@ createNode parentConstraint -n "Animation_Player_walk:L_Arm_parentConstraint1" -
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.034637637395496856 0.44460124578033988 -0.21099973064750599 ;
 	setAttr ".tg[0].tor" -type "double3" -80.870918981245012 -4.7239857419028803 70.861892497156461 ;
-	setAttr ".lr" -type "double3" 35.803870307652858 -5.6763315812185828 -91.833551146127206 ;
+	setAttr ".lr" -type "double3" 31.916749514145028 -12.10564635280052 -94.195933671374974 ;
 	setAttr ".rst" -type "double3" 0.30215513706207275 0.88097846508026167 8.6275663375854474 ;
 	setAttr ".rsrr" -type "double3" 1.6836125837011229 17.496604371653078 -6.7812801022547857 ;
 	setAttr -k on ".w0";
@@ -10015,7 +10015,7 @@ createNode parentConstraint -n "Animation_Player_walk:R_SHOULDER_parentConstrain
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.019249908576088992 0.36826061611671224 0.042678897648526615 ;
 	setAttr ".tg[0].tor" -type "double3" 28.593793615306474 -84.322522906234454 160.23855252298802 ;
-	setAttr ".lr" -type "double3" 20.118811122397613 -20.590470417104086 -6.5424167667310469 ;
+	setAttr ".lr" -type "double3" 21.923641272101737 -15.457190120476403 -7.6800028706703456 ;
 	setAttr ".rst" -type "double3" -0.88898080587387085 1.9472880363464355 10.128638267517086 ;
 	setAttr ".rsrr" -type "double3" 8.9351340137356434 -0.39865768383616718 -91.917004207821975 ;
 	setAttr -k on ".w0";
@@ -10279,7 +10279,7 @@ createNode parentConstraint -n "Animation_Player_walk:R_UNDERARM_parentConstrain
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.027185112747825202 0.49979670853041802 -0.20943488162317037 ;
 	setAttr ".tg[0].tor" -type "double3" -96.626562425620335 -8.6922504987375131 110.84198714971315 ;
-	setAttr ".lr" -type "double3" -159.13850375727273 5.0367949941480754 -83.927432429090317 ;
+	setAttr ".lr" -type "double3" -163.77697319284223 9.7093165776472592 -84.43283387024232 ;
 	setAttr ".rst" -type "double3" 0.053906150162219779 0.69990795850753806 9.4027757644653303 ;
 	setAttr ".rsrr" -type "double3" 2.07999334613022 161.3400168068504 11.071155468080233 ;
 	setAttr -k on ".w0";
@@ -10535,7 +10535,7 @@ createNode parentConstraint -n "Animation_Player_walk:Mesh_L_CHESTPLATE_parentCo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.44538568064219658 0.47675622487622782 0.39582565290992122 ;
 	setAttr ".tg[0].tor" -type "double3" 1.6532148800028006 168.32094124131814 1.3891446534874154 ;
-	setAttr ".lr" -type "double3" 10.007619702462001 156.26082059056407 4.3386775487981408 ;
+	setAttr ".lr" -type "double3" 9.4341197537864474 163.57623877797252 2.8537349546105446 ;
 	setAttr ".rst" -type "double3" -0.43454173207283026 1.7882059812545772 10.538449287414547 ;
 	setAttr ".rsrr" -type "double3" 9.1550100940212982 168.59607256345126 2.8921513765536853 ;
 	setAttr -k on ".w0";
@@ -10792,7 +10792,7 @@ createNode parentConstraint -n "Animation_Player_walk:R_CHEASTPLATE_parentConstr
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.44144578176009169 0.44721814414811822 0.36425959029609345 ;
 	setAttr ".tg[0].tor" -type "double3" -4.1038880293857911 15.616850827127696 -6.1858672149233165 ;
-	setAttr ".lr" -type "double3" -10.081099171031655 2.4340348097470317 -6.7406052220899708 ;
+	setAttr ".lr" -type "double3" -10.95559608474656 9.7175637129755046 -8.1209791741704027 ;
 	setAttr ".rst" -type "double3" 0.45228973031044017 1.7548699378967281 10.51092433929443 ;
 	setAttr ".rsrr" -type "double3" -11.664613234566039 14.696739232482354 -8.1654456164527467 ;
 	setAttr -k on ".w0";
@@ -12791,7 +12791,7 @@ createNode parentConstraint -n "Animation_Player_walk:TORSO_parentConstraint1" -
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.019714592679656459 0.16076794608676082 0.092751569991209704 ;
 	setAttr ".tg[0].tor" -type "double3" 7.3603997458932326 -2.1809207475715899 -0.28164922493281774 ;
-	setAttr ".lr" -type "double3" -0.037208419282194066 -6.3987171582561704 0.65142159991568471 ;
+	setAttr ".lr" -type "double3" -0.059475575083469664 -7.5563198415305974 0.65326094190984074 ;
 	setAttr ".rst" -type "double3" 0.02276713773608208 4.4408920985006262e-16 10.312627792358397 ;
 	setAttr ".rsrr" -type "double3" 5.5875493629584248e-15 -2.1990232020712126 -1.4020106318393165e-16 ;
 	setAttr -k on ".w0";
@@ -13040,7 +13040,7 @@ createNode parentConstraint -n "Animation_Player_walk:L_heupding_parentConstrain
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.235460514728525 -0.24388887102477175 0.025373468782972031 ;
 	setAttr ".tg[0].tor" -type "double3" 21.158822753195889 0.67552232728584416 0.51810325455098005 ;
-	setAttr ".lr" -type "double3" 13.735078702243493 -3.4630117888961816 1.0776192935511255 ;
+	setAttr ".lr" -type "double3" 13.704295256192021 -4.6204181927577421 1.0789232985361077 ;
 	setAttr ".rst" -type "double3" 0.044998567551374435 -0.1543612182140337 10.13015747070312 ;
 	setAttr ".rsrr" -type "double3" 13.803475735051622 0.73628957882823765 0.42736021924199624 ;
 	setAttr -k on ".w0";
@@ -13291,7 +13291,7 @@ createNode parentConstraint -n "Animation_Player_walk:R_heupding_parentConstrain
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.241120462275383 -0.25484983554404073 0.034895005516323907 ;
 	setAttr ".tg[0].tor" -type "double3" 156.00340470267443 -0.6505609807619841 -179.4525238731683 ;
-	setAttr ".lr" -type "double3" -16.570547737794985 -183.48396833843293 1.1100291329340257 ;
+	setAttr ".lr" -type "double3" -16.539106579075721 -184.64135717260285 1.1113909646490365 ;
 	setAttr ".rst" -type "double3" -0.021262775919712262 -0.16095250665578154 10.135730535619652 ;
 	setAttr ".rsrr" -type "double3" -16.64131787141201 -179.28470624347278 0.45968763860297052 ;
 	setAttr -k on ".w0";
@@ -13568,7 +13568,7 @@ createNode parentConstraint -n "Animation_Player_walk:Mesh_L_Beenplaat_parentCon
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.10515901719018991 0.67995727492135183 0.1869397698520589 ;
 	setAttr ".tg[0].tor" -type "double3" -4.6557306212672689 15.90728289078662 174.27186125277402 ;
-	setAttr ".lr" -type "double3" 47.713838770955405 15.111141993837943 9.9752565259815409 ;
+	setAttr ".lr" -type "double3" 45.583016316200947 15.692645674018896 9.3504114808138574 ;
 	setAttr ".rst" -type "double3" -0.16653439402580267 0.094368033111095206 10.617714881896973 ;
 	setAttr ".rsrr" -type "double3" 0.25984619939124481 16.901861513488626 -4.29685788159538 ;
 	setAttr -k on ".w0";
@@ -13844,7 +13844,7 @@ createNode parentConstraint -n "Animation_Player_walk:R_beenplaat_parentConstrai
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.040353223134186683 0.59021986810197014 0.19106098628284943 ;
 	setAttr ".tg[0].tor" -type "double3" -178.37803783424852 18.325886727710149 5.3705194186220213 ;
-	setAttr ".lr" -type "double3" -61.036969536543459 163.62215041436193 -15.391608312734025 ;
+	setAttr ".lr" -type "double3" -2.3775324758339482 157.56499569753427 5.0440506338575783 ;
 	setAttr ".rst" -type "double3" 0.12496176362037664 0.093999996781349848 10.605728149414063 ;
 	setAttr ".rsrr" -type "double3" -0.016775951596612791 160.50888436030905 4.823945058009711 ;
 	setAttr -k on ".w0";
@@ -14644,7 +14644,7 @@ createNode parentConstraint -n "Animation_Player_walk:LeftHand_CTRLs_GRP_Constra
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 137.10113708087707 42.012955811901698 -45.973941386735504 ;
+	setAttr ".lr" -type "double3" 119.21349075561061 105.29802685260016 -60.635808135593514 ;
 	setAttr ".rst" -type "double3" 2.0044804391902558 4.1704012383514542 -0.20228620220684002 ;
 	setAttr ".rsrr" -type "double3" 10.004018182391182 84.26511554936846 -79.954436301564115 ;
 	setAttr -k on ".w0";
@@ -14929,7 +14929,7 @@ createNode parentConstraint -n "Animation_Player_walk:RightHand_CTRLs_GRP_Constr
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -49.965288116253205 -48.162903522483127 -140.2997078181935 ;
+	setAttr ".lr" -type "double3" 107.36409002139595 -83.734821822020209 57.919783590149969 ;
 	setAttr ".rst" -type "double3" -2.0045030652052329 4.1703551636015392 -0.18598811077989866 ;
 	setAttr ".rsrr" -type "double3" 10.580914835769404 -84.572467912899356 79.37967976997983 ;
 	setAttr -k on ".w0";
@@ -14988,7 +14988,7 @@ createNode parentConstraint -n "Animation_Player_walk:LeftFoot_Options_Constrain
 		-2.7755575615628926e-17 ;
 	setAttr ".tg[0].tor" -type "double3" 6.361109362927032e-15 -6.3611093629270304e-15 
 		-8.7465253740246656e-15 ;
-	setAttr ".lr" -type "double3" 17.812809128151084 0.037350698938883743 -175.58125140490873 ;
+	setAttr ".lr" -type "double3" 16.960626571066516 -0.10483895987613454 -176.16690858281163 ;
 	setAttr ".rst" -type "double3" 0.234833486254451 0.2312857611819123 -0.074919549986547665 ;
 	setAttr ".rsrr" -type "double3" 55.576776438901327 -8.5491540390939225 186.29702028882662 ;
 	setAttr -k on ".w0";
@@ -15047,7 +15047,7 @@ createNode parentConstraint -n "Animation_Player_walk:RightFoot_Options_Constrai
 		8.326672684688679e-17 ;
 	setAttr ".tg[0].tor" -type "double3" 2.2263882770244624e-14 -7.9513867036587919e-15 
 		1.5902773407317584e-15 ;
-	setAttr ".lr" -type "double3" 14.818497985182308 -2.333831613606177 176.41705969549267 ;
+	setAttr ".lr" -type "double3" 68.850713875718498 -1.7963345319703394 172.56587136963344 ;
 	setAttr ".rst" -type "double3" -0.23483294874104488 0.23132121125294619 -0.074831317179314322 ;
 	setAttr ".rsrr" -type "double3" 56.681156904276975 8.1815110216279034 -186.32061058137347 ;
 	setAttr -k on ".w0";
@@ -15114,7 +15114,7 @@ createNode parentConstraint -n "Animation_Player_walk:LeftHand_Options_Constrain
 		8.8817841970012582e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 1.1169213510295709e-13 2.3854160110976374e-14 
 		-5.3671860249696843e-15 ;
-	setAttr ".lr" -type "double3" 136.1814634313105 52.718030903088192 -44.102781140313134 ;
+	setAttr ".lr" -type "double3" 124.58007175909648 50.612922579302229 -56.180770129747813 ;
 	setAttr ".rst" -type "double3" 2.0044804391902571 4.1704012383514524 -0.20228620220684154 ;
 	setAttr ".rsrr" -type "double3" 10.004018182391182 84.26511554936846 -79.954436301564115 ;
 	setAttr -k on ".w0";
@@ -15181,7 +15181,7 @@ createNode parentConstraint -n "Animation_Player_walk:RightHand_Options_Constrai
 		-8.8817841970012504e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 7.0444316577727109e-15 1.9878466759146974e-14 
 		-1.5902773407317581e-14 ;
-	setAttr ".lr" -type "double3" 128.85898697949352 -123.65298792297953 38.358349147795153 ;
+	setAttr ".lr" -type "double3" 116.97684578543739 -122.84801796071892 48.396775742938857 ;
 	setAttr ".rst" -type "double3" -2.0045030652052316 4.1703551636015401 -0.18598811077989882 ;
 	setAttr ".rsrr" -type "double3" 10.580914835769404 -84.572467912899356 79.37967976997983 ;
 	setAttr -k on ".w0";
@@ -18331,7 +18331,7 @@ createNode transform -n "Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Foot_GRP" 
 createNode transform -n "Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Knee_GRP" -p
 		 "Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Foot_GRP";
 	rename -uid "87C7ABD6-41E6-38A5-7F80-469A9A81C726";
-	setAttr ".t" -type "double3" 2.7755575615628914e-17 0 0.70259487564657264 ;
+	setAttr ".t" -type "double3" 2.7755575615628914e-17 0 0.88807235679384544 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 1 ;
 createNode pointConstraint -n "Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Knee_GRP_pointConstraint1" 
 		-p "Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Knee_GRP";
@@ -18371,7 +18371,7 @@ createNode parentConstraint -n "Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Foo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.054666952068826269 1.1597573889557637 0.15561351600069062 ;
 	setAttr ".tg[0].tor" -type "double3" -7.8372359698386251 13.043923485132881 175.52188190586577 ;
-	setAttr ".lr" -type "double3" -39.247065409980337 3.4795968253922696 -6.8820445132475232 ;
+	setAttr ".lr" -type "double3" 13.224942483085064 8.5658898318310932 4.7524830296046314 ;
 	setAttr ".rst" -type "double3" 0 4.4408920985006262e-16 1.1102230246251565e-16 ;
 	setAttr ".rsrr" -type "double3" 9.6554200269847217e-32 1.5902773407317584e-15 6.9574633657014427e-15 ;
 	setAttr -k on ".w0";
@@ -19095,7 +19095,7 @@ createNode parentConstraint -n "Animation_Player_walk:RightLeg_IK_CTRL_Follow_Fo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.057721271736880908 1.1609182325088236 0.14760418615390852 ;
 	setAttr ".tg[0].tor" -type "double3" -7.4159738352486446 -12.575116991026571 -175.53033335048698 ;
-	setAttr ".lr" -type "double3" 24.649905399316676 -10.320068158400355 -6.9069253819487022 ;
+	setAttr ".lr" -type "double3" -35.512489762451679 -6.3912910465501422 5.7508096016246046 ;
 	setAttr ".rst" -type "double3" 2.7755575615628914e-17 4.4408920985006262e-16 1.5265566588595902e-16 ;
 	setAttr ".rsrr" -type "double3" 7.9513867036587919e-16 1.5902773407317584e-15 -1.5902773407317584e-15 ;
 	setAttr -k on ".w0";
@@ -20223,7 +20223,7 @@ createNode orientConstraint -n "Animation_Player_walk:Head_Constraint" -p "Anima
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0.071170911523716393 18.009493185516895 0.018457656328150523 ;
+	setAttr ".lr" -type "double3" -0.061070677312265266 -4.1069872182162683 0.0016093832707533848 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:Neck_Constraint" -p "Animation_Player_walk:Bind_Neck";
 	rename -uid "D904ABB4-4D00-5F01-0A5C-16963A88CA25";
@@ -20364,7 +20364,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftHandIndex3_Constraint"
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 22.420373916625987 1.8119956254959078 -6.5937805175781277 ;
+	setAttr ".lr" -type "double3" 22.42037391662598 1.8119956254959078 -6.5937805175781143 ;
 	setAttr ".rsrr" -type "double3" 22.420373916625977 1.8119956254959098 -6.5937805175781277 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:LeftHandIndex2_Constraint" 
@@ -20384,7 +20384,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftHandIndex2_Constraint"
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -4.2880287170410174 0.0016727441689101702 0.045094616711141726 ;
+	setAttr ".lr" -type "double3" -4.2880287170410121 0.0016727441689149403 0.045094616711140116 ;
 	setAttr ".rsrr" -type "double3" -4.2880287170410289 0.0016727441689181222 0.045094616711140061 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:LeftHandIndex1_Constraint" 
@@ -20404,7 +20404,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftHandIndex1_Constraint"
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -40.643001556396634 1.4746698987315075e-05 -6.3840338828582748e-06 ;
+	setAttr ".lr" -type "double3" -40.643001556396577 1.4746698961471405e-05 -6.3840338921550298e-06 ;
 	setAttr ".rsrr" -type "double3" -40.643001556396456 1.4746698958415817e-05 -6.3840339007181958e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:LeftHand_FK_IK_Constraint" 
@@ -20425,7 +20425,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftHand_FK_IK_Constraint"
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 18.89600944519055 -6.9498135429479416e-05 0.00039719080092297563 ;
+	setAttr ".lr" -type "double3" 18.896009445190561 -6.9498135430468927e-05 0.00039719080092095592 ;
 	setAttr ".rsrr" -type "double3" 18.897406519630465 2.0273993948213915 0.69403123795179511 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -20448,7 +20448,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftForeArm_FK_IK_Constrai
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 12.393807806034161 10.533259125683548 3.0379747043553906 ;
+	setAttr ".lr" -type "double3" 11.359026621058865 11.399375977963151 -20.294298447471871 ;
 	setAttr ".rsrr" -type "double3" -2.8954458236694185 -0.4147188663482656 -15.298931121826211 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -20479,7 +20479,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftArm_FK_IK_Constraint" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 76.541865875318109 13.225382696696856 4.8895839964648697 ;
+	setAttr ".lr" -type "double3" 73.214085546505018 36.662049992858023 5.3658867301108595 ;
 	setAttr ".rsrr" -type "double3" 1.8864014148712445 -0.098460808396349728 7.3610053062438947 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -20541,7 +20541,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftHand_FK_Constraint" -p
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 18.896009445190547 -6.9498135429548995e-05 0.00039719080092317886 ;
+	setAttr ".lr" -type "double3" 18.896009445190561 -6.949813543053856e-05 0.00039719080092115921 ;
 	setAttr ".rsrr" -type "double3" 18.89600944519055 -6.9498135425347956e-05 0.00039719080090108477 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:LeftForeArm_FK_Constraint" 
@@ -20561,7 +20561,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftForeArm_FK_Constraint"
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 12.393807806034165 10.533259125683548 3.0379747043553884 ;
+	setAttr ".lr" -type "double3" 11.35902662105887 11.399375977963153 -20.294298447471871 ;
 	setAttr ".rsrr" -type "double3" -2.8954458236693954 -0.41471886634826288 -15.298931121826243 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:LeftArm_FK_Constraint" -p "Animation_Player_walk:FK_LeftArm";
@@ -20579,7 +20579,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftArm_FK_Constraint" -p 
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 76.541865875318095 13.225382696696858 4.8895839964648742 ;
+	setAttr ".lr" -type "double3" 73.214085546505018 36.662049992858009 5.365886730110863 ;
 	setAttr ".rsrr" -type "double3" 1.8864014148712727 -0.098460808396362301 7.3610053062439027 ;
 	setAttr -k on ".w0";
 createNode joint -n "Animation_Player_walk:IK_LeftArm" -p "Animation_Player_walk:Bind_LeftShoulder";
@@ -20588,7 +20588,7 @@ createNode joint -n "Animation_Player_walk:IK_LeftArm" -p "Animation_Player_walk
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off ".v";
 	setAttr ".t" -type "double3" -2.601570903149053e-10 0.36198306083679199 -9.9960217880834534e-10 ;
-	setAttr ".r" -type "double3" -21.554236437465736 30.333760393196094 -27.805123156127369 ;
+	setAttr ".r" -type "double3" 5.6548957336657661 35.005906206302974 31.194016032367102 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 1 1.0000000000000004 ;
 	setAttr ".jo" -type "double3" -15.509483557984417 -9.9392333795734924e-17 -4.8385040439913301 ;
 	setAttr ".ssc" no;
@@ -20642,7 +20642,7 @@ createNode orientConstraint -n "Animation_Player_walk:IK_LeftHand_orientConstrai
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 25.713575584200658 -6.1129107598141132 6.4458757483144185 ;
+	setAttr ".lr" -type "double3" 26.682568648236515 -4.6838396829296469 -4.8683200372407791 ;
 	setAttr ".rsrr" -type "double3" 18.923406915400051 4.0547025334394009 1.3890201400010043 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_walk:effector1" -p "Animation_Player_walk:IK_LeftForeArm";
@@ -20701,7 +20701,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftShoulder_Constraint" -
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 2.0168592599242881 -22.274723237830937 10.689954245796264 ;
+	setAttr ".lr" -type "double3" -0.64680071471842837 -26.148691864601236 -5.3658332991308297 ;
 	setAttr ".rsrr" -type "double3" 0.08796697854979868 0.0013346611522295211 -0.011922715231759418 ;
 	setAttr -k on ".w0";
 createNode joint -n "Animation_Player_walk:Bind_RightShoulder" -p "Animation_Player_walk:Bind_Spine2";
@@ -20823,7 +20823,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightHandIndex3_Constraint
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 28.072795867919943 4.4492197036743244 -10.039459228515609 ;
+	setAttr ".lr" -type "double3" 28.072795867919929 4.4492197036743253 -10.039459228515621 ;
 	setAttr ".rsrr" -type "double3" 28.072795867919925 4.4492197036743182 -10.03945922851562 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:RightHandIndex2_Constraint" 
@@ -20843,7 +20843,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightHandIndex2_Constraint
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 8.700521469116234 0.54074555635452048 -7.0991315841674725 ;
+	setAttr ".lr" -type "double3" 8.7005214691162571 0.54074555635451893 -7.0991315841674734 ;
 	setAttr ".rsrr" -type "double3" 8.7005214691162269 0.5407455563545408 -7.0991315841674751 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:RightHandIndex1_Constraint" 
@@ -20863,7 +20863,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightHandIndex1_Constraint
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -37.361396789550824 3.0705482156431303e-06 2.3480260848280441e-06 ;
+	setAttr ".lr" -type "double3" -37.361396789550788 3.0705482321786034e-06 2.3480261074946771e-06 ;
 	setAttr ".rsrr" -type "double3" -37.361396789550781 3.0705482365368839e-06 2.3480261117378311e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:RightHand_FK_IK_Constraint" 
@@ -20884,7 +20884,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightHand_FK_IK_Constraint
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -8.1659641636787494 -3.3074574456566253 32.940470214959333 ;
+	setAttr ".lr" -type "double3" -8.1659641636787477 -3.3074574456566195 32.940470214959312 ;
 	setAttr ".rsrr" -type "double3" 4.7066580297408702 -2.074648142968063 -0.78459754172445373 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -20907,7 +20907,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightForeArm_FK_IK_Constra
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -3.530868325155029 -0.73876210541442278 -3.0106048445282894 ;
+	setAttr ".lr" -type "double3" -3.0419299655977619 1.2802157386778146 -16.599208522493637 ;
 	setAttr ".rsrr" -type "double3" -2.8404877185821116 0.41519936919211203 15.628761291503896 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -20938,7 +20938,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightArm_FK_IK_Constraint"
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 84.678934209738273 -16.609394517075703 -1.3982236785411295 ;
+	setAttr ".lr" -type "double3" 86.314605249309253 0.084696827915198447 -1.2901338845029611 ;
 	setAttr ".rsrr" -type "double3" 1.800655126571665 0.086242757737604647 -6.8432574272155797 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21000,7 +21000,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightHand_FK_Constraint" -
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -8.1659641636787441 -3.3074574456566253 32.940470214959312 ;
+	setAttr ".lr" -type "double3" -8.1659641636787441 -3.307457445656619 32.940470214959312 ;
 	setAttr ".rsrr" -type "double3" 4.7142214775082332 0.025186913087964415 -0.61201757192616102 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:RightForeArm_FK_Constraint" 
@@ -21020,7 +21020,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightForeArm_FK_Constraint
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -3.5308683251550246 -0.73876210541442211 -3.0106048445282827 ;
+	setAttr ".lr" -type "double3" -3.0419299655977574 1.2802157386778152 -16.59920852249363 ;
 	setAttr ".rsrr" -type "double3" -2.8404877185820618 0.41519936919209938 15.628761291503908 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:RightArm_FK_Constraint" -p "Animation_Player_walk:FK_RightArm";
@@ -21039,7 +21039,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightArm_FK_Constraint" -p
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 84.678934209738287 -16.609394517075703 -1.3982236785411286 ;
+	setAttr ".lr" -type "double3" 86.314605249309238 0.084696827915198822 -1.2901338845029604 ;
 	setAttr ".rsrr" -type "double3" 1.8006551265716626 0.086242757737570827 -6.8432574272155753 ;
 	setAttr -k on ".w0";
 createNode joint -n "Animation_Player_walk:IK_RightArm" -p "Animation_Player_walk:Bind_RightShoulder";
@@ -21048,7 +21048,7 @@ createNode joint -n "Animation_Player_walk:IK_RightArm" -p "Animation_Player_wal
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off ".v";
 	setAttr ".t" -type "double3" -1.0544573547655034e-10 0.3619830310344696 7.570819526847572e-10 ;
-	setAttr ".r" -type "double3" -3.785589151433379 -12.865742988224738 -43.776520061002408 ;
+	setAttr ".r" -type "double3" -10.826082653302521 -12.270773479528586 12.453928456916259 ;
 	setAttr ".s" -type "double3" 0.99999999999999967 1 0.99999999999999956 ;
 	setAttr ".jo" -type "double3" -15.641987337018703 -9.9392333795734887e-17 6.1069951162511593 ;
 	setAttr ".ssc" no;
@@ -21061,7 +21061,7 @@ createNode joint -n "Animation_Player_walk:IK_RightForeArm" -p "Animation_Player
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -1.1087461782022245e-09 0.63374131917953502 -5.5723070602198277e-10 ;
-	setAttr ".r" -type "double3" -2.8659050671406288 7.5621934010448175 16.274911096677656 ;
+	setAttr ".r" -type "double3" -2.8632636417487576 6.8194624482918664 6.854768739187695 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 1.0000000000000002 ;
 	setAttr ".jo" -type "double3" 2.9645102869309339 -3.1805546814635168e-15 -16.628345178029576 ;
 	setAttr ".ssc" no;
@@ -21101,7 +21101,7 @@ createNode orientConstraint -n "Animation_Player_walk:IK_RightHand_orientConstra
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 12.258099002126809 5.7828061403696003 8.2124992308215088 ;
+	setAttr ".lr" -type "double3" 12.9812307321386 6.9209018310804717 1.2812710666708023 ;
 	setAttr ".rsrr" -type "double3" 4.7054197529609887 -4.1744964505999596 -0.9572452925612841 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_walk:effector2" -p "Animation_Player_walk:IK_RightForeArm";
@@ -21160,7 +21160,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightShoulder_Constraint" 
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -1.1303367828315707 3.0738192658934009 11.424583248360497 ;
+	setAttr ".lr" -type "double3" 0.91071692025411766 -1.3935619785076452 -5.6043144378557193 ;
 	setAttr ".rsrr" -type "double3" 0.085260264573950292 0.0012783041456521376 0.010989825241272653 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:Spine2_Constraint" -p "Animation_Player_walk:Bind_Spine2";
@@ -21194,7 +21194,7 @@ createNode orientConstraint -n "Animation_Player_walk:Spine1_Constraint" -p "Ani
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -0.028961464037964256 -11.113387883653667 -0.72498138300505499 ;
+	setAttr ".lr" -type "double3" 0.078647982820939696 1.5203837133874718 0.59300368187635999 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:Spine_Constraint" -p "Animation_Player_walk:Bind_Spine";
 	rename -uid "B26105DD-46F9-5BBA-53ED-C7B739D85812";
@@ -21211,7 +21211,7 @@ createNode orientConstraint -n "Animation_Player_walk:Spine_Constraint" -p "Anim
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -0.029104579819293343 -5.4915035119767754 -0.6277196429471994 ;
+	setAttr ".lr" -type "double3" 0.041083462074607967 2.749799919171481 0.43632094034733693 ;
 	setAttr ".rsrr" -type "double3" -0.00051719829207128466 -0.012640130706131458 0.078583262860774994 ;
 	setAttr -k on ".w0";
 createNode joint -n "Animation_Player_walk:Bind_LeftUpLeg" -p "Animation_Player_walk:Bind_Hips";
@@ -21294,7 +21294,7 @@ createNode orientConstraint -n "Animation_Player_walk:Bind_LeftToe_End_orientCon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -2.8033039540993181e-06 5.6498000615042044e-30 -1.4725910686650222e-06 ;
+	setAttr ".lr" -type "double3" -2.8033039572798734e-06 5.6498000615042044e-30 -1.4725910686650218e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:LeftToeBase_FK_IK_Constraint" 
 		-p "Animation_Player_walk:Bind_LeftToeBase";
@@ -21314,7 +21314,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftToeBase_FK_IK_Constrai
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 4.3032512483916568e-05 -5.3408829488165613e-06 -4.6578621798778319e-06 ;
+	setAttr ".lr" -type "double3" 0.00011535724590018713 -3.0604281170648524e-06 -1.41150711548421e-06 ;
 	setAttr ".rsrr" -type "double3" 2.8033038950602729e-06 3.9310730680819577e-15 1.4725910575330808e-06 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21337,7 +21337,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftFoot_FK_IK_Constraint"
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 6.8148042649967575 6.1526516535460987 -5.2124188524985904 ;
+	setAttr ".lr" -type "double3" 13.17019178494667 11.535554320225497 -3.6750782761454577 ;
 	setAttr ".rsrr" -type "double3" 2.7102729957397784 0.47349247594769339 8.2361920965170246 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21369,7 +21369,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftLeg_FK_IK_Constraint" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -30.226086612089318 -2.1387275690031662 -1.071517124881249 ;
+	setAttr ".lr" -type "double3" -52.798670800737774 -1.4659390819751443 -0.74602773261838784 ;
 	setAttr ".rsrr" -type "double3" -8.7539720535278338 0.083368994295597618 -0.096219919621938446 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21400,7 +21400,7 @@ createNode orientConstraint -n "Animation_Player_walk:LeftUpLeg_FK_IK_Constraint
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -15.26048566704314 0.8549602948674746 -5.0370994975258174 ;
+	setAttr ".lr" -type "double3" 53.848809369428601 0.55314090704502383 -4.0836527453643239 ;
 	setAttr ".rsrr" -type "double3" 6.5814805030822789 0.57954192161560092 -4.9370994567871147 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21485,7 +21485,7 @@ createNode orientConstraint -n "Animation_Player_walk:Bind_RightToe_End_orientCo
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 6.5280312877890558e-06 1.2751483756908573e-06 -7.7478915391674651e-06 ;
+	setAttr ".lr" -type "double3" 6.5280312909696052e-06 1.2751483778774884e-06 -7.7478915385711098e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:RightToeBase_FK_IK_Constraint" 
 		-p "Animation_Player_walk:Bind_RightToeBase";
@@ -21505,7 +21505,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightToeBase_FK_IK_Constra
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 0.18903678406113436 0.013445021493029374 0.019962522447290194 ;
+	setAttr ".lr" -type "double3" -5.1937722919002175e-05 -5.7925684396131203e-06 1.0703541794662696e-05 ;
 	setAttr ".rsrr" -type "double3" -6.5280314239006884e-06 -1.2751474818764517e-06 
 		7.7478916714452276e-06 ;
 	setAttr ".int" 2;
@@ -21529,7 +21529,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightFoot_FK_IK_Constraint
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -5.9597035781666046 -15.309143851152177 13.109828640939153 ;
+	setAttr ".lr" -type "double3" 14.392838485213355 -10.459447480715445 6.8417197768790237 ;
 	setAttr ".rsrr" -type "double3" 2.3855868133203955 -0.83481771724786125 -8.0882211410088036 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21561,7 +21561,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightLeg_FK_IK_Constraint"
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -2.9428841293248675 3.2379746373085325 1.4524347143525647 ;
+	setAttr ".lr" -type "double3" -39.263661766710712 2.0464928371108053 0.93615782321967622 ;
 	setAttr ".rsrr" -type "double3" -8.6583271026611115 -0.091902308166027055 0.098090976476670547 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21592,7 +21592,7 @@ createNode orientConstraint -n "Animation_Player_walk:RightUpLeg_FK_IK_Constrain
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 32.899710294718631 1.9467899894618439 4.9083055435387983 ;
+	setAttr ".lr" -type "double3" -9.7336180644309671 1.7920706845908956 2.4354306081113672 ;
 	setAttr ".rsrr" -type "double3" 6.8154544830322283 -0.60058724880218461 5.0913453102111852 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21890,7 +21890,7 @@ createNode joint -n "Animation_Player_walk:IK_LeftUpLeg" -p "Animation_Player_wa
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off ".v";
 	setAttr ".t" -type "double3" 0.23482553660869598 -0.16696316003799438 0.014158837497234344 ;
-	setAttr ".r" -type "double3" -15.260485667043142 0.8549602948674746 -5.0370994975258201 ;
+	setAttr ".r" -type "double3" 53.848809369428608 0.55314090704502417 -4.083652745364323 ;
 	setAttr ".s" -type "double3" 1 0.99999999999999989 0.99999999999999989 ;
 	setAttr ".jo" -type "double3" -5.5745065648456844 0.41918817932166841 -175.713167345172 ;
 	setAttr ".ssc" no;
@@ -21905,7 +21905,7 @@ createNode joint -n "Animation_Player_walk:IK_LeftLeg" -p "Animation_Player_walk
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -3.5660152608585349e-09 1.2296211719512948 -5.0649649335765545e-09 ;
-	setAttr ".r" -type "double3" -30.226086612089304 -2.1387275690031662 -1.0715171248812503 ;
+	setAttr ".r" -type "double3" -52.798670800737789 -1.4659390819751446 -0.74602773261838828 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999978 1.0000000000000002 ;
 	setAttr ".jo" -type "double3" 3.0766170610184984 1.987846675914698e-16 1.6191518769718669 ;
 	setAttr ".ssc" no;
@@ -21968,7 +21968,7 @@ createNode orientConstraint -n "Animation_Player_walk:IK_LeftToe_End_orientConst
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -2.8033039540993176e-06 0 -1.4725910686650218e-06 ;
+	setAttr ".lr" -type "double3" -2.803303957279873e-06 0 -1.4725910686650213e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:IK_LeftToeBase_orientConstraint1" 
 		-p "Animation_Player_walk:IK_LeftToeBase";
@@ -21987,7 +21987,7 @@ createNode orientConstraint -n "Animation_Player_walk:IK_LeftToeBase_orientConst
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 4.3032512464535058e-05 -5.3408829515995482e-06 -4.6578621782875555e-06 ;
+	setAttr ".lr" -type "double3" 0.0001153572458807062 -3.0604281202454086e-06 -1.4115071138939353e-06 ;
 	setAttr ".rsrr" -type "double3" 2.8033038765732998e-06 1.9237492749100844e-14 1.4725910559428042e-06 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_walk:effector5" -p "Animation_Player_walk:IK_LeftFoot";
@@ -22011,7 +22011,7 @@ createNode orientConstraint -n "Animation_Player_walk:IK_LeftFoot_orientConstrai
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 41.933516092595212 -8.2593880641851527 -6.93442028118747 ;
+	setAttr ".lr" -type "double3" 48.000003695923112 -2.6079262166044708 -6.951933794693721 ;
 	setAttr ".rsrr" -type "double3" 37.278611702656896 -17.276621417811814 13.080652563206741 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_walk:effector3" -p "Animation_Player_walk:IK_LeftLeg";
@@ -22050,7 +22050,7 @@ createNode joint -n "Animation_Player_walk:IK_RightUpLeg" -p "Animation_Player_w
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off ".v";
 	setAttr ".t" -type "double3" -0.23482553660869598 -0.16696316003799438 0.011244822293519974 ;
-	setAttr ".r" -type "double3" 32.899710294718638 1.9467899894618448 4.9083055435387974 ;
+	setAttr ".r" -type "double3" -9.7336180644309618 1.7920706845908956 2.4354306081113668 ;
 	setAttr ".jo" -type "double3" -5.7181632289658584 -0.42984795906964657 175.71529420313414 ;
 	setAttr ".ssc" no;
 	setAttr ".pa" -type "double3" 51.730436756983636 -4.0231680016036497 3.1799842573140809 ;
@@ -22064,7 +22064,7 @@ createNode joint -n "Animation_Player_walk:IK_RightLeg" -p "Animation_Player_wal
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 7.1854050487374366e-10 1.2299259901046751 -2.7527439980246093e-09 ;
-	setAttr ".r" -type "double3" -2.9428841293248698 3.2379746373085321 1.4524347143525633 ;
+	setAttr ".r" -type "double3" -39.263661766710726 2.0464928371108049 0.93615782321967478 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999967 1 ;
 	setAttr ".jo" -type "double3" 2.9431321120562086 9.9392333795734899e-17 -1.6181807643777948 ;
 	setAttr ".ssc" no;
@@ -22128,7 +22128,7 @@ createNode orientConstraint -n "Animation_Player_walk:IK_RightToe_End_orientCons
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 6.5280312877890532e-06 1.2751483756908571e-06 -7.7478915391674634e-06 ;
+	setAttr ".lr" -type "double3" 6.5280312909696035e-06 1.2751483778774881e-06 -7.7478915385711081e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_walk:IK_RightToeBase_orientConstraint1" 
 		-p "Animation_Player_walk:IK_RightToeBase";
@@ -22147,7 +22147,7 @@ createNode orientConstraint -n "Animation_Player_walk:IK_RightToeBase_orientCons
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0.18903678406112145 0.013445021493016246 0.019962522447298122 ;
+	setAttr ".lr" -type "double3" -5.1937722931724393e-05 -5.7925684561122422e-06 1.0703541804204368e-05 ;
 	setAttr ".rsrr" -type "double3" -6.5280314840330549e-06 -1.2751475023512705e-06 
 		7.7478916444105159e-06 ;
 	setAttr -k on ".w0";
@@ -22172,7 +22172,7 @@ createNode orientConstraint -n "Animation_Player_walk:IK_RightFoot_orientConstra
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 28.5226425625636 0.085021152757114221 11.546634817020049 ;
+	setAttr ".lr" -type "double3" 48.275120000488236 4.5386458216748542 10.655648825384397 ;
 	setAttr ".rsrr" -type "double3" 35.997550619162297 17.64487933112833 -12.877682211185837 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_walk:effector4" -p "Animation_Player_walk:IK_RightLeg";
@@ -40334,7 +40334,7 @@ createNode parentConstraint -n "Final_parentConstraint1" -p "Animation_Player_wa
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.72217601550951505 0.12145983450086829 0.81185654182282729 ;
 	setAttr ".tg[0].tor" -type "double3" 135.75767088400309 6.7717173294298121 95.032318013174418 ;
-	setAttr ".lr" -type "double3" -66.814985412976355 146.24159847330108 84.706253386369369 ;
+	setAttr ".lr" -type "double3" -73.617650704508662 142.72610718946606 80.840091955961668 ;
 	setAttr ".rst" -type "double3" -0.71065741517565995 2.013953691237381 0.58445555996582255 ;
 	setAttr ".rsrr" -type "double3" 84.954941605667216 14.81788724289914 -119.29446481705521 ;
 	setAttr -k on ".w0";
@@ -41138,7 +41138,7 @@ createNode parentConstraint -n "Animation_Player_walk:group1_parentConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.010775237614663258 0.066326759113542577 -0.15273984206507052 ;
 	setAttr ".tg[0].tor" -type "double3" 105.60969755855265 79.854284731527187 -138.42598344505444 ;
-	setAttr ".lr" -type "double3" 38.787141727642442 -4.7771320670605455 2.9204933181278467 ;
+	setAttr ".lr" -type "double3" 32.68372728813528 -0.42841952631406599 0.23379085886057963 ;
 	setAttr ".rst" -type "double3" 0.43480544802573068 2.6022740378635207 1.6085259714697111 ;
 	setAttr ".rsrr" -type "double3" -38.352732912752593 -78.455091320754846 23.61930144660974 ;
 	setAttr -k on ".w0";
@@ -43729,7 +43729,7 @@ createNode script -n "Animation_Player_walk:uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1566\n            -height 775\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 2206\n            -height 775\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n"
 		+ "            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n"
 		+ "            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n"
@@ -43755,8 +43755,8 @@ createNode script -n "Animation_Player_walk:uiConfigurationScriptNode";
 		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
 		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n"
 		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1566\\n    -height 775\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1566\\n    -height 775\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 2206\\n    -height 775\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 2206\\n    -height 775\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "Animation_Player_walk:sceneConfigurationScriptNode";
@@ -44554,8 +44554,8 @@ createNode animCurveTU -n "LeftShoulder_CTRL_AnimDataMult";
 createNode animCurveTA -n "Spine1_CTRL_rotateX";
 	rename -uid "25470FE8-4C99-5778-0425-9DA57AD6D429";
 	setAttr ".tan" 18;
-	setAttr -s 3 ".ktv[0:2]"  1 -0.028961464037964263 13 0.081515213619043486
-		 25 -0.028961464037964263;
+	setAttr -s 3 ".ktv[0:2]"  1 -0.028419066930296565 13 0.080796908258685879
+		 25 -0.028419066930296565;
 	setAttr -s 3 ".kit[2]"  1;
 	setAttr -s 3 ".kot[2]"  1;
 	setAttr -s 3 ".kix[2]"  0.49999999999999994;
@@ -44565,8 +44565,8 @@ createNode animCurveTA -n "Spine1_CTRL_rotateX";
 createNode animCurveTA -n "Spine1_CTRL_rotateY";
 	rename -uid "F9FB5DF2-4B9C-F46C-4524-B1B5A654B543";
 	setAttr ".tan" 18;
-	setAttr -s 3 ".ktv[0:2]"  1 -11.113387883653665 13 7.7657643140116548
-		 25 -11.113387883653665;
+	setAttr -s 3 ".ktv[0:2]"  1 0.40168198020003998 13 1.5428369949272434
+		 25 0.40168198020003998;
 	setAttr -s 3 ".kit[2]"  1;
 	setAttr -s 3 ".kot[2]"  1;
 	setAttr -s 3 ".kix[2]"  0.49999999999999994;
@@ -44576,8 +44576,8 @@ createNode animCurveTA -n "Spine1_CTRL_rotateY";
 createNode animCurveTA -n "Spine1_CTRL_rotateZ";
 	rename -uid "6077075A-41B6-55FD-5F87-65A4575E2B93";
 	setAttr ".tan" 18;
-	setAttr -s 3 ".ktv[0:2]"  1 -0.72498138300505499 13 0.6284120166410847
-		 25 -0.72498138300505499;
+	setAttr -s 3 ".ktv[0:2]"  1 -0.73076297710886373 13 0.6195727883731118
+		 25 -0.73076297710886373;
 	setAttr -s 3 ".kit[2]"  1;
 	setAttr -s 3 ".kot[2]"  1;
 	setAttr -s 3 ".kix[2]"  0.49999999999999994;
@@ -44597,8 +44597,8 @@ createNode animCurveTU -n "Spine1_CTRL_AnimDataMult";
 createNode animCurveTA -n "Head_CTRL_rotateX";
 	rename -uid "E81B72D0-4E4C-1C29-9139-B0BF9292981F";
 	setAttr ".tan" 18;
-	setAttr -s 3 ".ktv[0:2]"  1 0.071170911523716393 13 -0.065122304177415172
-		 25 0.071170911523716393;
+	setAttr -s 3 ".ktv[0:2]"  1 0.067835532587834146 13 -0.063657933000933156
+		 25 0.067835532587834146;
 	setAttr -s 3 ".kit[2]"  1;
 	setAttr -s 3 ".kot[2]"  1;
 	setAttr -s 3 ".kix[2]"  0.49999999999999994;
@@ -44608,8 +44608,8 @@ createNode animCurveTA -n "Head_CTRL_rotateX";
 createNode animCurveTA -n "Head_CTRL_rotateY";
 	rename -uid "1DB9E3B5-4CF5-10A8-66BD-F589C6DDD762";
 	setAttr ".tan" 18;
-	setAttr -s 3 ".ktv[0:2]"  1 18.009493185516895 13 -12.888783858309267
-		 25 18.009493185516895;
+	setAttr -s 3 ".ktv[0:2]"  1 3.8314930157824887 13 -4.2663191709647661
+		 25 3.8314930157824887;
 	setAttr -s 3 ".kit[2]"  1;
 	setAttr -s 3 ".kot[2]"  1;
 	setAttr -s 3 ".kix[2]"  0.49999999999999994;
@@ -44619,8 +44619,8 @@ createNode animCurveTA -n "Head_CTRL_rotateY";
 createNode animCurveTA -n "Head_CTRL_rotateZ";
 	rename -uid "47CBA71B-4983-7C12-EA12-1BB62A699122";
 	setAttr ".tan" 18;
-	setAttr -s 3 ".ktv[0:2]"  1 0.01845765632815053 13 0.011412352920215639
-		 25 0.01845765632815053;
+	setAttr -s 3 ".ktv[0:2]"  1 0.00098634130239467414 13 0.0016218882453249289
+		 25 0.00098634130239467414;
 	setAttr -s 3 ".kit[2]"  1;
 	setAttr -s 3 ".kot[2]"  1;
 	setAttr -s 3 ".kix[2]"  0.49999999999999994;
@@ -44667,8 +44667,8 @@ createNode animCurveTU -n "Spine_CTRL_AnimDataMult";
 	setAttr ".tan" 18;
 	setAttr -s 3 ".ktv[0:2]"  1 1 13 1 25 1;
 select -ne :time1;
-	setAttr ".o" 25;
-	setAttr ".unw" 25;
+	setAttr ".o" 12;
+	setAttr ".unw" 12;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
