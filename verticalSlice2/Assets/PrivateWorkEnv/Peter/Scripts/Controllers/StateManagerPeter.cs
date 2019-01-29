@@ -16,13 +16,15 @@ namespace SA
         public float moveAmount;
         public Vector3 moveDir;
         public bool rt, rb, lt, lb;
-        public bool twoHanded;
+        public bool rollInput;
 
         [Header("Stats")]
         private float moveSpeed = 3;
         private float runSpeed = 3.5f;
         private float rotateSpeed = 5;
         private float toGround = 0.5f;
+        public float rollSpeed = 1;
+
 
         [Header("States")]
         public bool run;
@@ -31,7 +33,12 @@ namespace SA
         public bool inAction;
         public bool canMove;
         public bool isTwoHanded;
+        
 
+        [Header("Other")]
+        public EnemyTarget lockOnTarget;
+        public Transform lockOnTransform;
+        public AnimationCurve rollCurve;
 
 
         [HideInInspector]
@@ -57,6 +64,7 @@ namespace SA
             rigid.drag = 4;
             rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
+            //Add the AnimatorHook component and run the Init
             a_hook = activeModel.AddComponent<AnimatorHook>();
             a_hook.Init(this);
 
@@ -115,13 +123,15 @@ namespace SA
             canMove = anim.GetBool("canMove");
 
 
-
+            //Check if you can move
             if (!canMove)
                 return;
 
+            //a_hook.rmMultiplier = 1;
+            a_hook.CloseRoll();
+            HandleRolls();
+
             anim.applyRootMotion = false;
-
-
             rigid.drag = (moveAmount > 0 || onGround == false) ? 0 : 4;
 
 
@@ -137,22 +147,30 @@ namespace SA
 
             
 
-            //Lock on mode
-            if (!lockOn)
-            {
-                Vector3 targetDir = moveDir;
-                if (targetDir == Vector3.zero)
-                    targetDir = transform.forward;
-                Quaternion tr = Quaternion.LookRotation(targetDir);
-                Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, delta * moveAmount * rotateSpeed);
-                transform.rotation = targetRotation;
-            }
-            else
-            {
-                //transform.LookAt(GameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.up);
-            }
+            //LockOn mode
+            Vector3 targetDir = (lockOn == false) ? 
+                moveDir
+                : 
+                (lockOnTransform != null) ? 
+                    lockOnTransform.transform.position - transform.position 
+                    : 
+                    moveDir;
 
-            HandleMovementAnimations();
+            targetDir.y = 0;
+            if (targetDir == Vector3.zero)
+                targetDir = transform.forward;
+            Quaternion tr = Quaternion.LookRotation(targetDir);
+            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, delta * moveAmount * rotateSpeed);
+            transform.rotation = targetRotation;
+
+            //Update animator
+            anim.SetBool("lockon", lockOn);
+
+
+            if (lockOn == false)
+                HandleMovementAnimations();
+            else
+                HandleLockOnAnimations(moveDir);
 
 
         }
@@ -195,12 +213,74 @@ namespace SA
             anim.SetBool("onGround", onGround);
         }
 
+        void HandleRolls()
+        {
+            if (!rollInput)
+                return;
+
+            float _v = vertical;
+            float _h = horizontal;
+
+            _v = (moveAmount > 0.3f) ? 1 : 0;
+            _h = 0;
+
+            //if (lockOn == false)
+            //{
+            //    _v = (moveAmount > 0.3f) ? 1 : 0;
+            //    _h = 0;
+            //}
+            //else
+            //{
+            //    //Elimenate any of the small inputs
+            //    if (Mathf.Abs(_v) < 0.3f)
+            //        _v = 0;
+            //    if (Mathf.Abs(_h) < 0.3f)
+            //        _h = 0;
+            //}
+
+            if (_v != 0)
+            {
+                if (moveDir == Vector3.zero)
+                    moveDir = transform.forward;
+                Quaternion _targetRot = Quaternion.LookRotation(moveDir);
+                transform.rotation = _targetRot;
+                a_hook.InitForRoll();
+                a_hook.rmMultiplier = rollSpeed;
+            }
+            else
+            {
+                a_hook.rmMultiplier = 1.3f;
+            }
+
+            
+            
+
+            anim.SetFloat("vertical", _v);
+            anim.SetFloat("horizontal", _h);
+
+            canMove = false;
+            inAction = true;
+            anim.CrossFade("Rolls", 0.2f);
+            
+        }
+
         //Run and walk animation
         void HandleMovementAnimations()
         {
             anim.SetBool("run", run);
             anim.SetFloat("vertical", moveAmount, 0.04f, delta);
         }
+
+        void HandleLockOnAnimations(Vector3 moveDir)
+        {
+            Vector3 relativeDir = transform.InverseTransformDirection(moveDir);
+            float _h = relativeDir.x;
+            float _v = relativeDir.z;
+
+            anim.SetFloat("vertical", _v, 0.2f, delta);
+            anim.SetFloat("horizontal", _h, 0.2f, delta);
+        }
+
         //Grounded
         public bool OnGround()
         {

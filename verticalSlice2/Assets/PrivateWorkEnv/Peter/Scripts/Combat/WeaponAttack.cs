@@ -7,6 +7,12 @@ public class WeaponAttack : MonoBehaviour
     [SerializeField]
     private float weaponDamage = 250, weaponPush = 500;
 
+    [SerializeField]
+    private string oponentName = "Enemy";
+
+    [SerializeField]
+    private string bossName = "Enemy";
+
 
     [SerializeField]
     public bool canDamage
@@ -19,36 +25,35 @@ public class WeaponAttack : MonoBehaviour
     //When the weapon touches something
     void OnTriggerEnter(Collider _other)
     {
-
         if (_canDamage)
-            switch (_other.gameObject.tag)
+        {
+            string _tag = _other.gameObject.tag;
+
+            //Look for the tag
+            if (_tag == oponentName)
             {
-                case "Enemy":
-                    canDamage = false;
-
-                    print("Enemy Hit!");
-
-                    //Damage the oponent
-                    InflictDamage(_other.gameObject, weaponDamage);
-
-                    //Set the canDamage to true
-                    StartCoroutine(ResetCanDamage(3f));
-                break;
-
-                case "Player":
-                    canDamage = false;
-
-                    print("Enemy Hit!");
-
-                    //Damage the oponent
-                    InflictDamage(_other.gameObject, weaponDamage);
-
-                    //Set the canDamage to true
-                    StartCoroutine(ResetCanDamage(3f));
-
-                    PushOponent(_other.gameObject, weaponPush);
-                break;
+                CollideOponent(_other);
             }
+            else if (_tag == bossName)
+            {
+                CollideOponent(_other);
+            }
+            else if (_tag == "Player")
+            {
+                canDamage = false;
+
+                print("Enemy Hit!");
+
+                //Damage the oponent
+                InflictDamage(_other.gameObject, weaponDamage);
+
+                //Set the canDamage to true
+                StartCoroutine(ResetCanDamage(3f));
+
+                //Pushes 
+                PushOponent(this.gameObject.transform.parent.gameObject, _other.gameObject, weaponPush);
+            }
+        }
     }
 
     /// <summary>
@@ -64,17 +69,18 @@ public class WeaponAttack : MonoBehaviour
     /// <summary>
     /// Pushes an GameObject with a force
     /// </summary>
+    /// <param name="_from">The object that pushes</param>
     /// <param name="_other"></param>
     /// <param name="_force">The amount of force</param>
-    void PushOponent(GameObject _other, float _force)
+    void PushOponent(GameObject _from, GameObject _other, float _force)
     {
         print("Push");
 
         // Calculate Angle Between the collision point and the player
-        Vector3 _dir = transform.forward;//_other.transform.position - transform.position;
+        Vector3 _dir = -_other.transform.forward; //new Vector3(0, -30, 0);//_other.transform.position - transform.position;
 
         // We then get the opposite (-Vector3) and normalize it
-        _dir = -_dir.normalized;
+        _dir = _dir.normalized;
 
         // And finally we add force in the direction of dir and multiply it by force. 
         // This will push back the player
@@ -92,5 +98,19 @@ public class WeaponAttack : MonoBehaviour
         yield return new WaitForSeconds(_waitTime);
         canDamage = true;
         print("Can damage again!");
+    }
+
+
+    private void CollideOponent(Collider _other)
+    {
+        canDamage = false;
+
+        print(_other.gameObject.tag + " Hit!");
+
+        //Damage the oponent
+        InflictDamage(_other.gameObject, weaponDamage);
+
+        //Set the canDamage to true
+        StartCoroutine(ResetCanDamage(3f));
     }
 }
