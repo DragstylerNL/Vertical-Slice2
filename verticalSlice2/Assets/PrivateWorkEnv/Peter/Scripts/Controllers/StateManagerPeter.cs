@@ -10,6 +10,10 @@ namespace SA
         [Header("Init")]
         public GameObject activeModel;
 
+        //Weapon damage collider
+        [SerializeField]
+        private Collider damageCollider;
+
         [Header("Inputs")]
         public float horizontal;
         public float vertical;
@@ -64,7 +68,9 @@ namespace SA
             rigid.drag = 4;
             rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
+            //Add the AnimatorHook component and run the Init
             a_hook = activeModel.AddComponent<AnimatorHook>();
+            a_hook.damageCollider = damageCollider;
             a_hook.Init(this);
 
             gameObject.layer = 8;

@@ -7,6 +7,13 @@ public class WeaponAttack : MonoBehaviour
     [SerializeField]
     private float weaponDamage = 250, weaponPush = 500;
 
+    [SerializeField]
+    private string oponentName = "Enemy";
+
+    [SerializeField]
+    private string bossName = "Enemy";
+
+    private bool _canDamage = true;
 
     [SerializeField]
     public bool canDamage
@@ -14,42 +21,37 @@ public class WeaponAttack : MonoBehaviour
         get { return _canDamage; }
         set { _canDamage = value; }
     }
-    private bool _canDamage = true;
+    
 
     //When the weapon touches something
     void OnTriggerEnter(Collider _other)
     {
+        string _tag = _other.gameObject.tag;
 
-        if (_canDamage)
-            switch (_other.gameObject.tag)
-            {
-                case "Enemy":
-                    canDamage = false;
+        //Look for the tag
+        if (_tag == oponentName)
+        {
+            CollideOponent(_other);
+        }
+        else if (_tag == bossName)
+        {
+            CollideOponent(_other);
+        }
+        else if (_tag == "Player")
+        {
+            canDamage = false;
 
-                    print("Enemy Hit!");
+            print("Enemy Hit!");
 
-                    //Damage the oponent
-                    InflictDamage(_other.gameObject, weaponDamage);
+            //Damage the oponent
+            InflictDamage(_other.gameObject, weaponDamage);
 
-                    //Set the canDamage to true
-                    StartCoroutine(ResetCanDamage(3f));
-                break;
+            //Set the canDamage to true
+            StartCoroutine(ResetCanDamage(3f));
 
-                case "Player":
-                    canDamage = false;
-
-                    print("Enemy Hit!");
-
-                    //Damage the oponent
-                    InflictDamage(_other.gameObject, weaponDamage);
-
-                    //Set the canDamage to true
-                    StartCoroutine(ResetCanDamage(3f));
-
-                    //Pushes 
-                    PushOponent(this.gameObject.transform.parent.gameObject, _other.gameObject, weaponPush);
-                break;
-            }
+            //Pushes 
+            PushOponent(this.gameObject.transform.parent.gameObject, _other.gameObject, weaponPush);
+        }
     }
 
     /// <summary>
@@ -83,7 +85,6 @@ public class WeaponAttack : MonoBehaviour
         _other.GetComponent<Rigidbody>().AddForce(_dir * _force);
     }
 
-
     /// <summary>
     /// Resets the canDamage variable
     /// </summary>
@@ -94,5 +95,14 @@ public class WeaponAttack : MonoBehaviour
         yield return new WaitForSeconds(_waitTime);
         canDamage = true;
         print("Can damage again!");
+    }
+
+
+    private void CollideOponent(Collider _other)
+    {
+        print(_other.gameObject.tag + " Hit!");
+
+        //Damage the oponent
+        InflictDamage(_other.gameObject, weaponDamage);
     }
 }

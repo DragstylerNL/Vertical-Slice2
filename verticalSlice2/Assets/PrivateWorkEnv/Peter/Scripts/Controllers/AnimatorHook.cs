@@ -8,7 +8,11 @@ namespace SA
     public class AnimatorHook : MonoBehaviour
     {
         Animator anim;
+
         StateManagerPeter states;
+
+        //Weapon damage collider
+        public Collider damageCollider; // The StateManager needs to change this
 
         public float rmMultiplier;
         bool rolling;
@@ -50,6 +54,7 @@ namespace SA
             {
                 Vector3 delta = anim.deltaPosition;
                 delta.y = 0;
+
                 Vector3 v = (delta * rmMultiplier) / states.delta;
                 states.rigid.velocity = v;
             }
@@ -65,9 +70,20 @@ namespace SA
                 float _zValue = states.rollCurve.Evaluate(rollT);
                 Vector3 _v1 = Vector3.forward * _zValue;
                 Vector3 _relative = transform.TransformDirection(_v1);
+
                 Vector3 _v2 = (_relative * rmMultiplier);
                 states.rigid.velocity = _v2;
             }
+        }
+
+        public void OpenDamageColliders()
+        {
+            damageCollider.enabled = true;
+        }
+
+        public void CloseDamageColliders()
+        {
+            damageCollider.enabled = false;
         }
     }
 }

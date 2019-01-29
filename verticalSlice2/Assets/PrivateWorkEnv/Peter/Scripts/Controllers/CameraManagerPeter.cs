@@ -9,6 +9,9 @@ namespace SA
         [SerializeField]
         private Camera camObj;
 
+        [SerializeField]
+        private int deviceNumber;
+
         public bool lockon;
         public float followSpeed = 9;
         public float mouseSpeed = 2;
@@ -51,8 +54,8 @@ namespace SA
             float h = Input.GetAxis("Mouse X");
             float v = Input.GetAxis("Mouse Y");
 
-            float c_h = Input.GetAxis("RightAxis X");
-            float c_v = Input.GetAxis("RightAxis Y");
+            float c_h = Input.GetAxis("gp_" + deviceNumber + "_horizontal_cam");
+            float c_v = Input.GetAxis("gp_" + deviceNumber + "_vertical_cam");
 
             float targetSpeed = mouseSpeed;
 
@@ -151,3 +154,8 @@ namespace SA
         }
     }
 }
+
+
+
+
+
