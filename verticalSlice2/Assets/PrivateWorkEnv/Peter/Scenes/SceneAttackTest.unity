@@ -132,6 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDamage: 250
   weaponPush: 500
+  oponentName: Enemy
+  bossName: Enemy
 --- !u!65 &103536477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -786,6 +788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8430a45752acd42b3cdb1284731b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camObj: {fileID: 351678882}
+  deviceNumber: 0
   lockon: 0
   followSpeed: 9
   mouseSpeed: 2
@@ -885,19 +889,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 806129946}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &806129950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806129947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9767b0bd784c8340890dddcfbb95ec9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rmMultiplier: 0
 --- !u!1 &884611055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeModel: {fileID: 806129947}
+  damageCollider: {fileID: 103536477}
   horizontal: 0
   vertical: 0
   moveAmount: 0
@@ -1053,8 +1045,8 @@ MonoBehaviour:
   inAction: 0
   canMove: 0
   isTwoHanded: 0
-  lockOnTarget: {fileID: 0}
-  lockOnTransform: {fileID: 0}
+  lockOnTarget: {fileID: 927857047}
+  lockOnTransform: {fileID: 644239500}
   rollCurve:
     serializedVersion: 2
     m_Curve:
@@ -1175,6 +1167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01c228090eeec445ad3edd66eea3322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deviceNumber: 0
+  camManager: {fileID: 624365490}
 --- !u!1 &927857040 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100048, guid: 94dd59496a9825c4392be87838f4570d,
@@ -1190,7 +1184,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 927857040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c18cb6d4191008499da4fab3134d809, type: 3}
+  m_Script: {fileID: 11500000, guid: e0199e00ce0622343b80cfbed664f770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &927857043
@@ -1207,6 +1201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 2
   maxRangeToPlayer: 1.5
+  currentRange: 0
 --- !u!195 &927857044
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1898,6 +1893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDamage: 100
   weaponPush: 2500
+  oponentName: Enemy
+  bossName: Enemy
 --- !u!4 &1806099933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400442, guid: 9a764a195980d3242b9035fb15f44483,
@@ -2257,6 +2254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDamage: 0
   weaponPush: 0
+  oponentName: Enemy
+  bossName: Enemy
 --- !u!65 &2134336406
 BoxCollider:
   m_ObjectHideFlags: 0

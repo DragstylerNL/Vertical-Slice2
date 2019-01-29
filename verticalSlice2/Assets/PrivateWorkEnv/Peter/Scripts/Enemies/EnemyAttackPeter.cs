@@ -13,7 +13,7 @@ namespace AI
         private GameObject _player;
         private bool _collidedWithPlayer;
 
-        //Everyone in the AI namespace needs to use this
+        //Everyone in the AI namespace needs to access this
         public float attackRange = 2f, maxRangeToPlayer = 1.5f;
         public float currentRange;
 
