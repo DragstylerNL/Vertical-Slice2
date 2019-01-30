@@ -9,6 +9,9 @@ public class Health : MonoBehaviour {
     // healthSlider, healthValues, and timer for animations
     public Slider ui_Health;
     public Slider ui_HealthDegen;
+
+    public float HP { get { return _HP; } set { _HP = value; } }
+
     private float _HP;
     private float _MaxHP;
 

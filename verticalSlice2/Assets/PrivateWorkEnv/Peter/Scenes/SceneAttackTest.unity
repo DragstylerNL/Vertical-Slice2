@@ -133,7 +133,6 @@ MonoBehaviour:
   weaponDamage: 250
   weaponPush: 500
   oponentName: Enemy
-  bossName: Enemy
 --- !u!65 &103536477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -286,7 +285,7 @@ PrefabInstance:
     - target: {fileID: 1540560347383661794, guid: 46f8f606ae352c143a280a067baec74f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1540560347383661794, guid: 46f8f606ae352c143a280a067baec74f,
         type: 3}
@@ -469,7 +468,6 @@ GameObject:
   - component: {fileID: 351678880}
   - component: {fileID: 351678882}
   - component: {fileID: 351678881}
-  - component: {fileID: 351678883}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -541,20 +539,24 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &351678883
+--- !u!1 &441770137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1372953473906472, guid: 71d07795f0e494dd18c3c7e427728fdc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1804815301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &441770138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351678879}
-  m_Enabled: 0
+  m_GameObject: {fileID: 441770137}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a7af871e93d3849b9296d2e19e40e6, type: 3}
+  m_Script: {fileID: 11500000, guid: f2718f41dd71c06479815abcebe86ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 1, y: 1.5, z: -3}
-  camSpeed: 1
 --- !u!4 &482141883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400094, guid: 94dd59496a9825c4392be87838f4570d,
@@ -1224,23 +1226,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &927857045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927857040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbafb64cfb184364f8c108bf3392da16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 927444767}
-  speed: 1
-  lockX: 1
-  lockY: 0
-  lockZ: 1
 --- !u!114 &927857046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,7 +1267,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927857040}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1.9599533
@@ -1714,6 +1699,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameCanvases
       objectReference: {fileID: 0}
+    - target: {fileID: 223710487534079750, guid: 71d07795f0e494dd18c3c7e427728fdc,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 351678882}
+    - target: {fileID: 223710487534079750, guid: 71d07795f0e494dd18c3c7e427728fdc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223761154438426614, guid: 71d07795f0e494dd18c3c7e427728fdc,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 351678882}
     - target: {fileID: 4117524156866194, guid: 71d07795f0e494dd18c3c7e427728fdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1764,8 +1764,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1974888344393188, guid: 71d07795f0e494dd18c3c7e427728fdc, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223048425724942388, guid: 71d07795f0e494dd18c3c7e427728fdc,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 351678882}
+    - target: {fileID: 224500351177049756, guid: 71d07795f0e494dd18c3c7e427728fdc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224171130705964072, guid: 71d07795f0e494dd18c3c7e427728fdc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224963262487465450, guid: 71d07795f0e494dd18c3c7e427728fdc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578667467250900, guid: 71d07795f0e494dd18c3c7e427728fdc, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223094306751674506, guid: 71d07795f0e494dd18c3c7e427728fdc,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 351678882}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d07795f0e494dd18c3c7e427728fdc, type: 3}
 --- !u!1001 &1806099928
@@ -1894,7 +1923,6 @@ MonoBehaviour:
   weaponDamage: 100
   weaponPush: 2500
   oponentName: Enemy
-  bossName: Enemy
 --- !u!4 &1806099933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400442, guid: 9a764a195980d3242b9035fb15f44483,
@@ -2255,7 +2283,6 @@ MonoBehaviour:
   weaponDamage: 0
   weaponPush: 0
   oponentName: Enemy
-  bossName: Enemy
 --- !u!65 &2134336406
 BoxCollider:
   m_ObjectHideFlags: 0
