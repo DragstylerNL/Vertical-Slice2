@@ -10,9 +10,6 @@ public class WeaponAttack : MonoBehaviour
     [SerializeField]
     private string oponentName = "Enemy";
 
-    [SerializeField]
-    private string bossName = "Enemy";
-
     private bool _canDamage = true;
 
     [SerializeField]
@@ -33,24 +30,20 @@ public class WeaponAttack : MonoBehaviour
         {
             CollideOponent(_other);
         }
-        else if (_tag == bossName)
-        {
-            CollideOponent(_other);
-        }
         else if (_tag == "Player")
         {
-            canDamage = false;
-
-            print("Enemy Hit!");
+            //canDamage = false;
 
             //Damage the oponent
-            InflictDamage(_other.gameObject, weaponDamage);
+            CollideOponent(_other);
+
+            //InflictDamage(_other.gameObject, weaponDamage);
 
             //Set the canDamage to true
-            StartCoroutine(ResetCanDamage(3f));
+            //StartCoroutine(ResetCanDamage(3f));
 
             //Pushes 
-            PushOponent(this.gameObject.transform.parent.gameObject, _other.gameObject, weaponPush);
+            //PushOponent(this.gameObject.transform.parent.gameObject, _other.gameObject, weaponPush);
         }
     }
 
