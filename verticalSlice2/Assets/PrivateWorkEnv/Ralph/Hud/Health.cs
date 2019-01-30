@@ -9,6 +9,9 @@ public class Health : MonoBehaviour {
     // healthSlider, healthValues, and timer for animations
     public Slider ui_Health;
     public Slider ui_HealthDegen;
+
+    public float HP { get { return _HP; } set { _HP = value; } }
+
     private float _HP;
     private float _MaxHP;
 
@@ -44,17 +47,21 @@ public class Health : MonoBehaviour {
     // ==== updates the health value on the slider
     public void UpdateUI()
     {
-        // set the actual current health
-        ui_Health.value = _HP;
         // set timer before the degenerating bar kicks in
         _degenTimer = 2f;
     }
 
     // ==== Update
-    void Update()
+    public void EveryFrame()
     {
+        // if sliderHealth does not equal HP
+        if (ui_Health.value > _HP)
+        {
+            ui_Health.value -= ((ui_Health.value - _HP) / 5) + 2.5f;
+            if (ui_Health.value < _HP) { ui_Health.value = _HP; }
+        }
         // if the timer before the degen health is not 0 but more, count down 
-        if(_degenTimer > 0)
+        if (_degenTimer > 0)
         {
             _degenTimer -= Time.deltaTime;
         }
