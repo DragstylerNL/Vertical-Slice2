@@ -18,7 +18,13 @@ public class WeaponAttack : MonoBehaviour
         get { return _canDamage; }
         set { _canDamage = value; }
     }
+
+    private MainGameController mainGameController;
     
+    void Start()
+    {
+        mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
+    }
 
     //When the weapon touches something
     void OnTriggerEnter(Collider _other)
@@ -97,5 +103,8 @@ public class WeaponAttack : MonoBehaviour
 
         //Damage the oponent
         InflictDamage(_other.gameObject, weaponDamage);
+
+        //Make a sound
+        mainGameController.audioSystem.PlayThisSound(1);//Weapon slash
     }
 }
