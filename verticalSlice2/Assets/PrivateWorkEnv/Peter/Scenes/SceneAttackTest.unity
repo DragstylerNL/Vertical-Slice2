@@ -1029,6 +1029,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26fb10dc459615469accc572a4eb520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
+  canControl: 1
+  gManager: {fileID: 0}
+  audioSystem: {fileID: 0}
+  revivePlayer: 0
   activeModel: {fileID: 806129947}
   damageCollider: {fileID: 103536477}
   horizontal: 0
@@ -1764,7 +1769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1974888344393188, guid: 71d07795f0e494dd18c3c7e427728fdc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 223048425724942388, guid: 71d07795f0e494dd18c3c7e427728fdc,
         type: 3}
