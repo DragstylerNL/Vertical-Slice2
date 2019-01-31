@@ -421,6 +421,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera Holder P2
       objectReference: {fileID: 0}
+    - target: {fileID: 1541742901, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 927444767}
+    - target: {fileID: 1541742901, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
+      propertyPath: deviceNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 351678882, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4037438848667199773, guid: 88454d585dd1d6e47a3fba9a0c36a33a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,14 +488,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1541742901, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 927444767}
-    - target: {fileID: 1541742901, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
-      propertyPath: deviceNumber
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5083576373648683329, guid: 88454d585dd1d6e47a3fba9a0c36a33a,
         type: 3}
       propertyPath: m_Name
@@ -493,10 +497,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: MainCamera1
-      objectReference: {fileID: 0}
-    - target: {fileID: 351678882, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
@@ -902,6 +902,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controller2
       objectReference: {fileID: 0}
+    - target: {fileID: 8065573779899416442, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player2
+      objectReference: {fileID: 0}
     - target: {fileID: 8065573779899416447, guid: 8bb5d346524b2c643b2ce3486f465ce5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -991,6 +996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: boxMan2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065573780190627644, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: oponentName
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 8065573779872533210, guid: 8bb5d346524b2c643b2ce3486f465ce5,
         type: 3}
@@ -1200,6 +1210,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ENV
       objectReference: {fileID: 0}
+    - target: {fileID: 7459390266270734770, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1264,11 +1279,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459390266270734770, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7459390266272663410, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
         type: 3}
@@ -2661,6 +2671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera Holder P1
       objectReference: {fileID: 0}
+    - target: {fileID: 1541742901, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1483244104}
     - target: {fileID: 4037438848667199773, guid: 88454d585dd1d6e47a3fba9a0c36a33a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2716,10 +2730,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1541742901, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1483244104}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
 --- !u!1001 &8795946316671190646

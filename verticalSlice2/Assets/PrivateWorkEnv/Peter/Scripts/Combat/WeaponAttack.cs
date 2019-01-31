@@ -21,11 +21,11 @@ namespace SA
             set { _canDamage = value; }
         }
 
-        private MainGameController mainGameController;
+        //private MainGameController mainGameController;
 
         void Start()
         {
-            mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
+            //mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
         }
 
         //When the weapon touches something
@@ -109,6 +109,7 @@ namespace SA
             //Make a sound
             //mainGameController.audioSystem.PlayThisSound(1);//Weapon slash
             _other.gameObject.GetComponent<StateManagerPeter>().audioSystem.PlayThisSound(1);
+            _other.gameObject.GetComponent<StateManagerPeter>().audioSystem.PlayThisSound((int)Mathf.Round(Random.Range(6f, 9f)));
         }
     }
 }

@@ -11,6 +11,8 @@ namespace SA
 
         StateManagerPeter states;
 
+        bool canRollSound = true;
+
         //Weapon damage collider
         public Collider damageCollider; // The StateManager needs to change this
 
@@ -38,12 +40,16 @@ namespace SA
             rmMultiplier = 1;
             rollT = 0;
             rolling = false;
+
+            canRollSound = true;
         }
 
         void OnAnimatorMove()
         {
             if (states.canMove)
                 return;
+
+
 
             states.rigid.drag = 0;
 
@@ -52,6 +58,8 @@ namespace SA
 
             if (rolling == false)
             {
+                canRollSound = true;
+
                 Vector3 delta = anim.deltaPosition;
                 delta.y = 0;
 
@@ -60,6 +68,14 @@ namespace SA
             }
             else
             {
+                if (canRollSound)
+                {
+                    gameObject.GetComponentInParent<StateManagerPeter>().audioSystem.PlayThisSound(0);
+                    canRollSound = false;
+                }
+                    
+                
+
                 rollT += states.delta / 0.6f;
 
                 if (rollT > 1)
@@ -84,6 +100,12 @@ namespace SA
         public void CloseDamageColliders()
         {
             damageCollider.enabled = false;
+        }
+
+        public void SoundFootStep()
+        {
+            if (states.anim.applyRootMotion == false)
+            gameObject.GetComponentInParent<StateManagerPeter>().audioSystem.PlayThisSound((int)Mathf.Round(Random.Range(2f,4f)));
         }
     }
 }
