@@ -82,8 +82,8 @@ namespace SA
 
             //Make a sound
             //mainGameController.audioSystem.PlayThisSound(1);//Weapon slash
-            _other.gameObject.GetComponent<StateManagerPeter>().audioSystem.PlayThisSound(1);
-            _other.gameObject.GetComponent<StateManagerPeter>().audioSystem.PlayThisSound((int)Mathf.Round(Random.Range(6f, 9f)));
+            _other.gameObject.GetComponent<StateManagerPeter>().audioSystem.PlayThisSound(1);//Weapon hit
+            //_other.gameObject.GetComponent<StateManagerPeter>().audioSystem.PlayThisSound((int)Mathf.Round(Random.Range(6f, 9f)));//Pain
         }
     }
 }
