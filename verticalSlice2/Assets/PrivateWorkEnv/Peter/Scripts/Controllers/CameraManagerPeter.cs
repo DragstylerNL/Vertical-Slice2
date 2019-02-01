@@ -51,8 +51,8 @@ namespace SA
 
         public void Tick(float d)
         {
-            float h = Input.GetAxis("Mouse X");
-            float v = Input.GetAxis("Mouse Y");
+            //float h = Input.GetAxis("Mouse X");
+            //float v = Input.GetAxis("Mouse Y");
 
             float c_h = Input.GetAxis("gp_" + deviceNumber + "_horizontal_cam");
             float c_v = Input.GetAxis("gp_" + deviceNumber + "_vertical_cam");
@@ -87,7 +87,7 @@ namespace SA
                 }
             }
 
-            if (c_h != 0 || c_v != 0)
+            /*if (c_h != 0 || c_v != 0)
             {
                 h = c_h;
                 v = c_v;
@@ -95,7 +95,13 @@ namespace SA
                 targetSpeed = controllerSpeed;
             }
             FollowTarget(d);
-            HandleRotations(d, v, h, targetSpeed);
+            HandleRotations(d, v, h, targetSpeed);*/
+
+            if (deviceNumber == 1)
+                c_h = c_h + 180;
+
+            FollowTarget(d);
+            HandleRotations(d, c_v, c_h, targetSpeed);
         }
 
         public void FollowTarget(float d)
