@@ -7,8 +7,22 @@ namespace SA
 
     public class StateManagerPeter : MonoBehaviour
     {
+        
+        public bool isDead = false;
+        public bool canControl = true;
+        public GameManagerDexter gManager;
+
+        [HideInInspector]
+        public AudioSystem audioSystem;
+
+        public bool revivePlayer = false;
+
         [Header("Init")]
         public GameObject activeModel;
+
+        //Weapon damage collider
+        [SerializeField]
+        private Collider damageCollider;
 
         [Header("Inputs")]
         public float horizontal;
@@ -58,6 +72,8 @@ namespace SA
         //rigid body setup
         public void Init()
         {
+            audioSystem = transform.GetChild(0).GetComponent<AudioSystem>();
+
             SetupAnimator();
             rigid = GetComponent<Rigidbody>();
             rigid.angularDrag = 999;
@@ -66,6 +82,7 @@ namespace SA
 
             //Add the AnimatorHook component and run the Init
             a_hook = activeModel.AddComponent<AnimatorHook>();
+            a_hook.damageCollider = damageCollider;
             a_hook.Init(this);
 
             gameObject.layer = 8;
@@ -98,6 +115,40 @@ namespace SA
 
         public void FixedTick(float d)
         {
+            // - Death Logic -
+            Health _playersHealth = GetComponent<Health>();
+            if (_playersHealth.HP <= 0)
+            {
+                isDead = true;
+                gManager.SetCurrentGameState(GameManagerDexter.GameState.GameLose);
+                int _i = GetComponent<InputHandlerPeter>().deviceNumber;
+
+                if (_i == 0)
+                    GameObject.FindGameObjectWithTag("Player2").GetComponent<StateManagerPeter>().gManager.SetCurrentGameState(GameManagerDexter.GameState.GameWin);
+                else
+                    GameObject.FindGameObjectWithTag("Player1").GetComponent<StateManagerPeter>().gManager.SetCurrentGameState(GameManagerDexter.GameState.GameWin);
+
+                //Revive the player
+                if (revivePlayer)
+                {
+                    revivePlayer = false;
+                    _playersHealth.HP = 1000;
+                }
+            }
+            else
+            {
+                isDead = false;
+                gManager.SetCurrentGameState(GameManagerDexter.GameState.InGame);
+            }
+
+
+            if (isDead)
+                canControl = false;
+            else
+                canControl = true;
+
+
+
             delta = d;
 
             DetectAction();

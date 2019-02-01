@@ -11,6 +11,9 @@ namespace SA
 
         StateManagerPeter states;
 
+        //Weapon damage collider
+        public Collider damageCollider; // The StateManager needs to change this
+
         public float rmMultiplier;
         bool rolling;
         float rollT;
@@ -71,6 +74,16 @@ namespace SA
                 Vector3 _v2 = (_relative * rmMultiplier);
                 states.rigid.velocity = _v2;
             }
+        }
+
+        public void OpenDamageColliders()
+        {
+            damageCollider.enabled = true;
+        }
+
+        public void CloseDamageColliders()
+        {
+            damageCollider.enabled = false;
         }
     }
 }

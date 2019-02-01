@@ -6,10 +6,11 @@ namespace SA
 {
     public class InputHandlerPeter : MonoBehaviour
     {
+        
 
         //The number of the device
-        [SerializeField]
-        private int deviceNumber;
+        public int deviceNumber;
+
 
         float vertical;
         float horizontal;
@@ -29,6 +30,9 @@ namespace SA
         bool leftAxis_down;
         bool rightAxis_down;
 
+        private bool canControl;
+        private bool canPlayDeath = true;
+
         float delta;
         StateManagerPeter states;
         public CameraManagerPeter camManager;
@@ -40,10 +44,22 @@ namespace SA
             states = GetComponent<StateManagerPeter>();
             states.Init();
 
+            canControl = states.canControl;
+
             //camManager = CameraManagerPeter.singleton;
             camManager.Init(states);//Pass the state manager
 
-            print("Joystick: " + Input.GetJoystickNames()[deviceNumber]);
+
+            //Check the active Joysticks
+            int _joystickLength = Input.GetJoystickNames().Length;
+
+            if (deviceNumber == 0)
+            for (int i = 0; i < _joystickLength; i++)
+            {
+                print("Joystick" + i + "(" + (i+1) + ") : " + Input.GetJoystickNames()[i] + " - Is online.");
+            }
+
+            
         }
 
 
@@ -61,108 +77,114 @@ namespace SA
             //delta time
             delta = Time.deltaTime;
             states.Tick(delta);
+
+            canControl = states.canControl;
         }
 
         void GetInput()
         {
-            //print(gInput.gamepads.Count);
-            /*GamepadDevice _device = gInput.gamepads[deviceNumber];
 
-            if (gInput.gamepads.Count == 0)
-                print("No gamepads connected");
-            else
+            if (canControl)
             {
-                //GamepadDevice _device = gInput.gamepads[deviceNumber];
-            }*/
-            
+                //inputs
+                horizontal = Input.GetAxis("gp_" + deviceNumber + "_horizontal");
+                vertical = Input.GetAxis("gp_" + deviceNumber + "_vertical");
+                a_input = Input.GetButton("A");
+                b_input = Input.GetButton("gp_" + deviceNumber + "_B");
+                x_input = Input.GetButton("X");
+                y_input = Input.GetButton("Y");
 
-            
-            //inputs
-            horizontal = Input.GetAxis("gp_" + deviceNumber + "_horizontal");
-            vertical = Input.GetAxis("gp_" + deviceNumber + "_vertical");
-            a_input = Input.GetButton("A");
-            b_input = Input.GetButton("gp_" + deviceNumber + "_B");
-            x_input = Input.GetButton("X");
-            y_input = Input.GetButton("Y");
+                rt_input = Input.GetButton("gp_" + deviceNumber + "_RT");
+                rt_axis = Input.GetAxis("gp_" + deviceNumber + "_RT");
+                if (rt_axis != 0)
+                    rt_input = true;
 
-            print("Player" + deviceNumber + ": " + horizontal);
-            
+                /* Temporarily Disabled
+                lt_input = Input.GetButton("LT");
+                lt_axis = Input.GetAxis("LT");
+                if (lt_axis != 0)
+                    lt_input = true;
 
-            
-            //inputs
-            /*vertical = _device.GetAxis(GamepadAxis.LeftStickY); //Input.GetAxis("Vertical");
-            horizontal = _device.GetAxis(GamepadAxis.LeftStickX); //Input.GetAxis("Horizontal");
-            a_input = _device.GetButton(GamepadButton.Action1); //Input.GetButton("A");
-            b_input = _device.GetButton(GamepadButton.Action2); //Input.GetButton("B");
-            x_input = _device.GetButton(GamepadButton.Action3);
-            y_input = _device.GetButton(GamepadButton.Action4);*/
-            
-            rt_input = Input.GetButton("gp_" + deviceNumber + "_RT");
-            rt_axis = Input.GetAxis("gp_" + deviceNumber + "_RT");
-            if (rt_axis != 0)
-                rt_input = true;
+                rb_input = Input.GetButton("RB");
+                lb_input = Input.GetButton("LB");*/
 
-            lt_input = Input.GetButton("LT");
-            lt_axis = Input.GetAxis("LT");
-            if (lt_axis != 0)
-                lt_input = true;
+                rightAxis_down = Input.GetButtonUp("gp_" + deviceNumber + "_Lockon");
 
-            rb_input = Input.GetButton("RB");
-            lb_input = Input.GetButton("LB");
 
-            rightAxis_down = Input.GetButtonUp("gp_" + deviceNumber + "_Lockon");
-            
+                //Debug.Log(rt_input);
+            }
 
-            //Debug.Log(rt_input);
 
         }
 
         void UpdateStates()
         {
-            //alle states
-            states.vertical = vertical;
-            states.horizontal = horizontal;
 
-            Vector3 v = states.vertical * camManager.transform.forward;// 
-            Vector3 h = horizontal * camManager.transform.right;
-            states.moveDir = (v + h).normalized;
-            float m = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
-            states.moveAmount = Mathf.Clamp01(m);
-
-            states.rollInput = b_input;
-
-            if (b_input)
+            if (canControl)
             {
-                //states.run = (states.moveAmount > 0);
+                canPlayDeath = true;
+                states.anim.SetBool("isDead", false);
+
+                //alle states
+                states.vertical = vertical;
+                states.horizontal = horizontal;
+
+                Vector3 v = states.vertical * camManager.transform.forward;// 
+                Vector3 h = horizontal * camManager.transform.right;
+                states.moveDir = (v + h).normalized;
+                float m = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
+                states.moveAmount = Mathf.Clamp01(m);
+
+                states.rollInput = b_input;
+
+                if (b_input)
+                {
+                    //states.run = (states.moveAmount > 0);
+                }
+                else
+                {
+                    //states.run = false;
+                }
+
+                states.rt = rt_input;
+                states.lb = lt_input;
+                states.rb = rb_input;
+                states.lb = lb_input;
+
+                //Switch two handed
+                if (y_input)
+                {
+                    states.isTwoHanded = !states.isTwoHanded;
+                    states.HandleTwoHanded();
+                }
+
+                //Switch LockOn
+                if (rightAxis_down)
+                {
+                    states.lockOn = !states.lockOn;
+
+                    if (states.lockOnTarget == null)
+                        states.lockOn = false;
+
+                    camManager.lockonTarget = states.lockOnTarget;//transform
+                    states.lockOnTransform = camManager.lockonTransform;
+                    camManager.lockon = states.lockOn;
+                }
             }
             else
             {
-                //states.run = false;
-            }
+                //alle states
+                states.vertical = 0;
+                states.horizontal = 0;
 
-            states.rt = rt_input;
-            states.lb = lt_input;
-            states.rb = rb_input;
-            states.lb = lb_input;
+                states.lockOn = false;
 
-            //Switch two handed
-            if (y_input)
-            {
-                states.isTwoHanded = !states.isTwoHanded;
-                states.HandleTwoHanded();
-            }
-
-            //Switch LockOn
-            if (rightAxis_down)
-            {
-                states.lockOn = !states.lockOn;
-
-                if (states.lockOnTarget == null)
-                    states.lockOn = false;
-
-                camManager.lockonTarget = states.lockOnTarget;//transform
-                states.lockOnTransform = camManager.lockonTransform;
-                camManager.lockon = states.lockOn;
+                if (canPlayDeath)
+                {
+                    canPlayDeath = false;
+                    states.anim.SetBool("isDead", true);
+                    states.anim.Play("death");
+                }
             }
         }
     }
