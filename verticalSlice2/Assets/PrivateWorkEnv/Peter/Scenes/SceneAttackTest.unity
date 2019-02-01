@@ -152,6 +152,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 806129946}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &215997570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1541742901, guid: 88454d585dd1d6e47a3fba9a0c36a33a,
+    type: 3}
+  m_PrefabInstance: {fileID: 950379848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8430a45752acd42b3cdb1284731b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &218917867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400052, guid: 94dd59496a9825c4392be87838f4570d,
@@ -165,14 +177,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1557467569}
     m_Modifications:
-    - target: {fileID: 100000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
-      propertyPath: m_Name
-      value: Equipment_Shield
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.004
@@ -228,6 +232,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
+      propertyPath: m_Name
+      value: Equipment_Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -836,6 +848,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controller1
       objectReference: {fileID: 0}
+    - target: {fileID: 8065573779899416442, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8065573779899416447, guid: 8bb5d346524b2c643b2ce3486f465ce5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -890,6 +907,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065573779899416443, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: gManager
+      value: 
+      objectReference: {fileID: 1496622898}
+    - target: {fileID: 8065573779899416444, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: ui_Health
+      value: 
+      objectReference: {fileID: 315576658}
+    - target: {fileID: 8065573779899416444, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: ui_HealthDegen
+      value: 
+      objectReference: {fileID: 315576659}
+    - target: {fileID: 8065573779899416384, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: camManager
+      value: 
+      objectReference: {fileID: 215997570}
+    - target: {fileID: 8065573780190627644, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: oponentName
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb5d346524b2c643b2ce3486f465ce5, type: 3}
@@ -999,14 +1041,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1491926688}
     m_Modifications:
-    - target: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
-      propertyPath: m_Name
-      value: Viking Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -1062,6 +1096,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
+      propertyPath: m_Name
+      value: Viking Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
@@ -1354,10 +1396,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1736331972}
     m_Modifications:
-    - target: {fileID: 100000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
-      propertyPath: m_Name
-      value: Equipment_Shield
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000000059604645
@@ -1413,6 +1451,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
       propertyPath: m_LocalScale.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
+      propertyPath: m_Name
+      value: Equipment_Shield
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 20208fd7e93dc9749ba0e3e30db17511, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1518,7 +1560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100048, guid: 94dd59496a9825c4392be87838f4570d, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 94dd59496a9825c4392be87838f4570d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1669,6 +1711,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 806129946}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1507118619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7459390264744033661, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_Name
+      value: ENV
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033661, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459390264744033662, guid: 26ec9ad8ed8c25f4796a03d3a58b0916,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26ec9ad8ed8c25f4796a03d3a58b0916, type: 3}
 --- !u!1 &1540102757 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4,
@@ -1726,14 +1842,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 884611056}
     m_Modifications:
-    - target: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
-      propertyPath: m_Name
-      value: Viking Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -1789,6 +1897,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
+      propertyPath: m_Name
+      value: Viking Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db4ec39c7db9e714aa3fc3f7ee5fb2e4, type: 3}
@@ -2435,7 +2551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDamage: 0
   weaponPush: 0
-  oponentName: Enemy
+  oponentName: Player
 --- !u!65 &2134336406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2460,6 +2576,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arena
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795946315880847371, guid: 16f770d581197a040860964a6600dfba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8795946315880847368, guid: 16f770d581197a040860964a6600dfba,
         type: 3}

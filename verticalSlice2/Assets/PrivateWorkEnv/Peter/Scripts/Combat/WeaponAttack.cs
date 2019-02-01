@@ -38,21 +38,6 @@ namespace SA
             {
                 CollideOponent(_other);
             }
-            else if (_tag == "Player")//For the boss
-            {
-                //canDamage = false;
-
-                //Damage the oponent
-                CollideOponent(_other);
-
-                //InflictDamage(_other.gameObject, weaponDamage);
-
-                //Set the canDamage to true
-                //StartCoroutine(ResetCanDamage(3f));
-
-                //Pushes 
-                //PushOponent(this.gameObject.transform.parent.gameObject, _other.gameObject, weaponPush);
-            }
         }
 
         /// <summary>
@@ -86,17 +71,6 @@ namespace SA
             _other.GetComponent<Rigidbody>().AddForce(_dir * _force);
         }
 
-        /// <summary>
-        /// Resets the canDamage variable
-        /// </summary>
-        /// <param name="waitTime"></param>
-        /// <returns></returns>
-        private IEnumerator ResetCanDamage(float _waitTime)
-        {
-            yield return new WaitForSeconds(_waitTime);
-            canDamage = true;
-            print("Can damage again!");
-        }
 
 
         private void CollideOponent(Collider _other)
