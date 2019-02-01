@@ -21,11 +21,11 @@ namespace SA
             set { _canDamage = value; }
         }
 
-        private MainGameController mainGameController;
+        //private MainGameController mainGameController;
 
         void Start()
         {
-            mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
+            //mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
         }
 
         //When the weapon touches something
@@ -37,21 +37,6 @@ namespace SA
             if (_tag == oponentName)
             {
                 CollideOponent(_other);
-            }
-            else if (_tag == "Player")//For the boss
-            {
-                //canDamage = false;
-
-                //Damage the oponent
-                CollideOponent(_other);
-
-                //InflictDamage(_other.gameObject, weaponDamage);
-
-                //Set the canDamage to true
-                //StartCoroutine(ResetCanDamage(3f));
-
-                //Pushes 
-                //PushOponent(this.gameObject.transform.parent.gameObject, _other.gameObject, weaponPush);
             }
         }
 
@@ -86,17 +71,6 @@ namespace SA
             _other.GetComponent<Rigidbody>().AddForce(_dir * _force);
         }
 
-        /// <summary>
-        /// Resets the canDamage variable
-        /// </summary>
-        /// <param name="waitTime"></param>
-        /// <returns></returns>
-        private IEnumerator ResetCanDamage(float _waitTime)
-        {
-            yield return new WaitForSeconds(_waitTime);
-            canDamage = true;
-            print("Can damage again!");
-        }
 
 
         private void CollideOponent(Collider _other)
@@ -109,6 +83,7 @@ namespace SA
             //Make a sound
             //mainGameController.audioSystem.PlayThisSound(1);//Weapon slash
             _other.gameObject.GetComponent<StateManagerPeter>().audioSystem.PlayThisSound(1);
+            _other.gameObject.GetComponent<StateManagerPeter>().audioSystem.PlayThisSound((int)Mathf.Round(Random.Range(6f, 9f)));
         }
     }
 }

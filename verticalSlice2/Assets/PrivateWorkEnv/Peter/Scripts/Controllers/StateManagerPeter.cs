@@ -239,7 +239,11 @@ namespace SA
             if (rb)
                 targetAnim = "oh_attack_1";
             if (rt)
+            {
                 targetAnim = "oh_attack_2";
+                audioSystem.PlayThisSound(5);
+            }
+                
             if (lb)
                 targetAnim = "oh_attack_3";
             if (lt)

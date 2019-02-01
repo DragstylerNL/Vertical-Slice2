@@ -213,34 +213,6 @@ Transform:
   m_Father: {fileID: 8065573779886496676}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -6.484, y: -45.971, z: 92.866005}
---- !u!65 &8065573780190627645
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8065573780908603366}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.013228694, y: 0.062150866, z: 0.0031147925}
-  m_Center: {x: 0.000000033360983, y: 0.017989803, z: -0.0000000053932308}
---- !u!114 &8065573780190627644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8065573780908603366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4ea118452d6eb4b9c46849ef062c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponDamage: 250
-  weaponPush: 500
-  oponentName: Player2
 --- !u!1 &8065573780435196757
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +273,14 @@ MonoBehaviour:
   mList:
   - {fileID: 8300000, guid: 944b587aa2479404fb71bd28a3f4b255, type: 3}
   - {fileID: 8300000, guid: dd527c6736e9f414ba2cca7ff02891b1, type: 3}
+  - {fileID: 8300000, guid: dfcd1126dc49fc94dac91865150a1b8a, type: 3}
+  - {fileID: 8300000, guid: 5589dab6cb3269d4f869f5652adfe691, type: 3}
+  - {fileID: 8300000, guid: ff09db3d60220cd4f9232a2f759a949f, type: 3}
+  - {fileID: 8300000, guid: 9a33aa3b00916b04893b6cacf3c67098, type: 3}
+  - {fileID: 8300000, guid: 31573004f4082f345b913fa5d546f63e, type: 3}
+  - {fileID: 8300000, guid: 76d66ace1ae223d4aa45c6177c42244a, type: 3}
+  - {fileID: 8300000, guid: d3b1f1dcc33624a419fd04949c0363b4, type: 3}
+  - {fileID: 8300000, guid: 156c89e11bf3e1841ace3f9bf9d2045f, type: 3}
 --- !u!82 &8065573780435196759
 AudioSource:
   m_ObjectHideFlags: 0
@@ -428,19 +408,34 @@ Transform:
   m_Father: {fileID: 8065573779886496726}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8065573781299546630
+--- !u!65 &8065573780190627645
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8065573781418981181}
+  m_GameObject: {fileID: 8065573780908603366}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.14581087, y: 0.053175367, z: 0.79271173}
-  m_Center: {x: 0.0000012702568, y: -0.00007979495, z: 0.038426273}
+  m_Size: {x: 0.013228694, y: 0.062150866, z: 0.0031147925}
+  m_Center: {x: 0.000000033360983, y: 0.017989803, z: -0.0000000053932308}
+--- !u!114 &8065573780190627644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8065573780908603366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4ea118452d6eb4b9c46849ef062c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 250
+  weaponPush: 500
+  oponentName: Player2
 --- !u!1 &8065573781416526288
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +467,19 @@ Transform:
   m_Father: {fileID: 8065573779886496718}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 38.761, z: -67.18}
+--- !u!65 &8065573781299546630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8065573781418981181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14581087, y: 0.053175367, z: 0.79271173}
+  m_Center: {x: 0.0000012702568, y: -0.00007979495, z: 0.038426273}
 --- !u!1001 &8065573779748125953
 PrefabInstance:
   m_ObjectHideFlags: 0
