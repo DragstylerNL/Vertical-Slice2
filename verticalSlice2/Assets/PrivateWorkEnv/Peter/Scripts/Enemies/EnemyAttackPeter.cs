@@ -107,12 +107,12 @@ namespace AI
         void OnDrawGizmos()
         {
             //Range between player and enemy
-            UnityEditor.Handles.color = Color.red;
+            /*UnityEditor.Handles.color = Color.red;
             UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, currentRange);
 
             //Attack range
             UnityEditor.Handles.color = Color.yellow;
-            UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, attackRange);
+            UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, attackRange);*/
         }
     }
 }

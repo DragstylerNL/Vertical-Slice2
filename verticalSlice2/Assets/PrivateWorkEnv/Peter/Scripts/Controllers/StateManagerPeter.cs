@@ -12,6 +12,9 @@ namespace SA
         public bool canControl = true;
         public GameManagerDexter gManager;
 
+        [HideInInspector]
+        public AudioSystem audioSystem;
+
         public bool revivePlayer = false;
 
         [Header("Init")]
@@ -69,6 +72,8 @@ namespace SA
         //rigid body setup
         public void Init()
         {
+            audioSystem = transform.GetChild(0).GetComponent<AudioSystem>();
+
             SetupAnimator();
             rigid = GetComponent<Rigidbody>();
             rigid.angularDrag = 999;
@@ -234,7 +239,11 @@ namespace SA
             if (rb)
                 targetAnim = "oh_attack_1";
             if (rt)
+            {
                 targetAnim = "oh_attack_2";
+                audioSystem.PlayThisSound(5);
+            }
+                
             if (lb)
                 targetAnim = "oh_attack_3";
             if (lt)
