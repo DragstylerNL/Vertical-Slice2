@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Animation_Player_Jog_Strafe_left_walk.ma
-//Last modified: Fri, Feb 01, 2019 03:47:41 PM
+//Name: Jog_Backwards.ma
+//Last modified: Fri, Feb 01, 2019 03:46:53 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -1616,7 +1616,7 @@ createNode parentConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 		-2.7755575615628926e-17 ;
 	setAttr ".tg[0].tor" -type "double3" 6.361109362927032e-15 -6.3611093629270304e-15 
 		-8.7465253740246656e-15 ;
-	setAttr ".lr" -type "double3" 56.53427995918873 17.128461792176328 -172.76574505327827 ;
+	setAttr ".lr" -type "double3" 55.568316244594776 17.247031997743584 -173.04955021071592 ;
 	setAttr ".rst" -type "double3" 0.234833486254451 0.2312857611819123 -0.074919549986547665 ;
 	setAttr ".rsrr" -type "double3" 55.576776438901327 -8.5491540390939225 186.29702028882662 ;
 	setAttr -k on ".w0";
@@ -1677,7 +1677,7 @@ createNode parentConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 		8.326672684688679e-17 ;
 	setAttr ".tg[0].tor" -type "double3" 2.2263882770244624e-14 -7.9513867036587919e-15 
 		1.5902773407317584e-15 ;
-	setAttr ".lr" -type "double3" 22.209714689632907 73.120576233038136 156.70633383914128 ;
+	setAttr ".lr" -type "double3" 36.840474207197275 63.213282084228261 160.4337115166922 ;
 	setAttr ".rst" -type "double3" -0.23483294874104488 0.23132121125294619 -0.074831317179314322 ;
 	setAttr ".rsrr" -type "double3" 56.681156904276975 8.1815110216279034 -186.32061058137347 ;
 	setAttr -k on ".w0";
@@ -3736,12 +3736,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:global_CTRL";
 	rename -uid "0FF3096C-4F16-9916-D7B8-B1AF02A4883A";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" 0.53220466840725456 4.1690791301035626 -0.21682619403712125 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" 128.27761234096585 99.596124912306195 39.782051187489458 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -3749,12 +3751,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftForeArm_IK_CTRL_parent_POS_GRP";
 	rename -uid "EB1C1F93-4C10-1E0D-D5D0-80BE3A7011C9";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
+	setAttr ".t" -type "double3" 5.5511151231257827e-17 0 0 ;
+	setAttr -av -k off ".tx";
 	setAttr -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".r" -type "double3" -6.361109362927032e-15 -6.361109362927032e-15 6.361109362927032e-15 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000004 1.0000000000000002 ;
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
@@ -3767,6 +3771,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 1.8864014148712158 -0.098460808396339417 7.3610053062438965 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -3801,6 +3806,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" -2.8954458236694336 -0.4147188663482666 -15.298931121826172 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -3999,12 +4005,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:global_CTRL";
 	rename -uid "CBBE9BA5-4EA6-7E4F-413B-F1926618405C";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" 0.532204668407254 4.1690791301035635 -0.21682619403712156 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" 128.2776123409657 99.596124912306195 39.782051187489337 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -4012,12 +4020,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftHand_IK_CTRL_grandparent_POS_GRP";
 	rename -uid "5124C57A-4587-7A79-9510-1FB0F4F0CB99";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" -1.6653345369377348e-16 -1.1102230246251565e-16 3.5527136788005009e-15 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" 6.361109362927032e-15 -6.361109362927032e-15 -6.361109362927032e-15 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr ".s" -type "double3" 1 1 1.0000000000000002 ;
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
@@ -4030,6 +4040,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 1.8864014148712158 -0.098460808396339417 7.3610053062438965 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4093,6 +4104,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" -2.8954458236694336 -0.4147188663482666 -15.298931121826172 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4127,6 +4139,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 18.89600944519043 -6.9498135417234153e-05 0.00039719080086797481 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4302,12 +4315,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:global_CTRL";
 	rename -uid "A00CFA95-4B87-8DBE-E61D-F3B132E07038";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" -0.53091919544376143 4.1690965233103565 -0.20057235346352564 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" 128.99716211875028 -99.008783557468277 -40.45942550076655 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -4315,12 +4330,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:RightForeArm_IK_CTRL_parent_POS_GRP";
 	rename -uid "E77D1755-40D0-9AAE-A004-24B58E227B5C";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" 1.1102230246251565e-16 1.1102230246251565e-16 -1.7763568394002505e-15 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" -7.9450313364902864e-31 -9.5416640443905503e-15 9.5416640443905503e-15 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -4332,6 +4349,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 1.8006551265716551 0.086242757737636566 -6.8432574272155762 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4366,6 +4384,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" -2.8404877185821533 0.41519936919212341 15.628761291503904 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4565,12 +4584,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:global_CTRL";
 	rename -uid "A50BD380-4A6A-3A2F-4D5B-21B51B7E5B46";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" -0.53091919544376132 4.1690965233103556 -0.20057235346352564 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" 128.99716211875028 -99.008783557468277 -40.45942550076655 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -4578,12 +4599,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:RightHand_IK_CTRL_grandparent_POS_GRP";
 	rename -uid "E98C433B-47B1-2A76-6C11-E4949C5C9B2E";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" 1.1102230246251565e-16 3.3306690738754696e-16 -1.7763568394002505e-15 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" -7.9450313364902864e-31 -9.5416640443905503e-15 9.5416640443905503e-15 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -4595,6 +4618,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 1.8006551265716551 0.086242757737636566 -6.8432574272155762 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4658,6 +4682,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" -2.8404877185821533 0.41519936919212341 15.628761291503904 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4692,6 +4717,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 4.7142214775085449 0.025186913087964058 -0.61201757192611694 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4867,12 +4893,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:global_CTRL";
 	rename -uid "11AE6FC9-4711-AF9E-73A6-149155D4EE5F";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" 0.23482365129260771 2.6280325243188805 -0.00074200775869264456 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" -5.5751968015754763 0.416756101864518 -175.79272718756394 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -4880,12 +4908,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftLeg_IK_CTRL_parent_POS_GRP";
 	rename -uid "3BC4C07B-4B44-12E6-AEC0-6F8A912F7D84";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
+	setAttr ".t" -type "double3" -5.5511151231257827e-17 0 0 ;
+	setAttr -av -k off ".tx";
 	setAttr -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".r" -type "double3" -1.5902773407317584e-15 7.4544250346801236e-17 4.7801500534886255e-15 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr ".s" -type "double3" 1 1.0000000000000002 1.0000000000000002 ;
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
@@ -4898,6 +4928,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 6.5814805030822763 0.57954192161560059 -4.9370994567871094 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4932,6 +4963,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" -8.7539720535278338 0.083368994295597076 -0.096219919621944427 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -4963,6 +4995,10 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 29;
+	setAttr ".t" -type "double3" 0.29355281325754451 0.0193611286795826 1.9481088012983623 ;
+	setAttr -av ".tx";
+	setAttr -av ".ty";
+	setAttr -av ".tz";
 	setAttr -l on -k off ".rx";
 	setAttr -l on -k off ".ry";
 	setAttr -l on -k off ".rz";
@@ -5057,7 +5093,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Knee_GRP" 
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Foot_GRP";
 	rename -uid "CCDEEAEC-4F4D-3DC4-B929-C3B2B2BCF3F8";
-	setAttr ".t" -type "double3" 2.7755575615628914e-17 0 0.88271118890740929 ;
+	setAttr ".t" -type "double3" 2.7755575615628914e-17 0 0.93006691425516785 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 1 ;
 createNode pointConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Knee_GRP_pointConstraint1" 
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftLeg_IK_CTRL_Follow_Knee_GRP";
@@ -5097,7 +5133,7 @@ createNode parentConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.054666952068826269 1.1597573889557637 0.15561351600069062 ;
 	setAttr ".tg[0].tor" -type "double3" -7.8372359698386251 13.043923485132881 175.52188190586577 ;
-	setAttr ".lr" -type "double3" -2.379147089627077 14.907592003100055 25.093387307816283 ;
+	setAttr ".lr" -type "double3" -2.1806141172666407 25.573171380299517 2.2562203601254232 ;
 	setAttr ".rst" -type "double3" 0 4.4408920985006262e-16 1.1102230246251565e-16 ;
 	setAttr ".rsrr" -type "double3" 9.6554200269847217e-32 1.5902773407317584e-15 6.9574633657014427e-15 ;
 	setAttr -k on ".w0";
@@ -5162,12 +5198,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:global_CTRL";
 	rename -uid "AD800262-4EAF-0493-AA42-E5BA677370C8";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" 0.23482365129260749 2.6280325243188805 -0.00074200775869259078 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" -5.5751968015754771 0.416756101864518 -175.79272718756394 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -5175,12 +5213,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftFoot_IK_CTRL_grandparent_POS_GRP";
 	rename -uid "9DAFCA3E-42AA-0412-CA86-6B88596A6C8A";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
+	setAttr ".t" -type "double3" -1.1102230246251565e-16 0 0 ;
+	setAttr -av -k off ".tx";
 	setAttr -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".r" -type "double3" -1.5902773407317584e-15 4.9696166897867517e-17 4.7785970482730672e-15 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr ".s" -type "double3" 1 1.0000000000000002 1.0000000000000002 ;
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
@@ -5192,6 +5232,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 6.5814805030822763 0.57954192161560059 -4.9370994567871094 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -5255,6 +5296,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" -8.7539720535278338 0.083368994295597076 -0.096219919621944427 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -5287,6 +5329,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 3.0180957317352295 3.7630131244659424 2.8656260967254639 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -5348,6 +5391,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 29;
+	setAttr ".t" -type "double3" 0.61389776120270112 -0.052733113149385342 0.64920476107416747 ;
+	setAttr -av ".tx";
+	setAttr -av ".ty";
+	setAttr -av ".tz";
+	setAttr ".r" -type "double3" 0.8483012345225297 -25.790692037139806 -0.38000958145265862 ;
+	setAttr -av ".rx";
+	setAttr -av ".ry";
+	setAttr -av ".rz";
 	setAttr ".s" -type "double3" 0.99999999999999978 0.99999999999999989 1 ;
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
@@ -5602,12 +5653,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:global_CTRL";
 	rename -uid "686B4C36-46AD-8F0D-C7F2-608CE6DDE44C";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" -0.23482709469824981 2.6286846573318692 -0.0036357201873412105 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" -5.7184832602374795 -0.43235574453306641 175.63574180390714 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -5615,12 +5668,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:RightLeg_IK_CTRL_parent_POS_GRP";
 	rename -uid "E7EED539-4E7A-E5B8-09F8-C6AC0012C643";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
+	setAttr ".t" -type "double3" -5.5511151231257827e-17 4.4408920985006262e-16 0 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".r" -type "double3" 2.3854160110976376e-15 2.236327510404035e-16 1.5964893615939918e-15 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr ".s" -type "double3" 1 1.0000000000000002 1.0000000000000002 ;
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
@@ -5633,6 +5688,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 6.8154544830322266 -0.60058724880218506 5.0913453102111816 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -5667,6 +5723,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" -8.6583271026611328 -0.091902308166027069 0.098090976476669312 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -5700,6 +5757,10 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 10;
+	setAttr ".t" -type "double3" 0.55929924416359533 -0.64778185968918567 0.2541781136071124 ;
+	setAttr -av ".tx";
+	setAttr -av ".ty";
+	setAttr -av ".tz";
 	setAttr -l on -k off ".rx";
 	setAttr -l on -k off ".ry";
 	setAttr -l on -k off ".rz";
@@ -5835,7 +5896,7 @@ createNode parentConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -0.057721271736880908 1.1609182325088236 0.14760418615390852 ;
 	setAttr ".tg[0].tor" -type "double3" -7.4159738352486446 -12.575116991026571 -175.53033335048698 ;
-	setAttr ".lr" -type "double3" -5.4877891857519154 67.095204661420738 2.9202264783311844 ;
+	setAttr ".lr" -type "double3" -3.7488408030418854 56.587083791075308 2.8949257599598819 ;
 	setAttr ".rst" -type "double3" 2.7755575615628914e-17 4.4408920985006262e-16 1.5265566588595902e-16 ;
 	setAttr ".rsrr" -type "double3" 7.9513867036587919e-16 1.5902773407317584e-15 -1.5902773407317584e-15 ;
 	setAttr -k on ".w0";
@@ -5902,12 +5963,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:global_CTRL";
 	rename -uid "F7DE0376-4A7B-5D66-64A9-57A8B7F422D8";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".t" -type "double3" -0.23482709469824972 2.6286846573318687 -0.0036357201873412556 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
+	setAttr -av -k off ".tz";
+	setAttr ".r" -type "double3" -5.7184832602374804 -0.43235574453306641 175.63574180390714 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -5915,12 +5978,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:RightFoot_IK_CTRL_grandparent_POS_GRP";
 	rename -uid "E33AA84B-4BF2-274D-9951-ED9168FF564E";
 	setAttr -l on -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
+	setAttr ".t" -type "double3" -1.6653345369377348e-16 4.4408920985006262e-16 0 ;
+	setAttr -av -k off ".tx";
+	setAttr -av -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
+	setAttr ".r" -type "double3" 2.3854160110976376e-15 2.484808344893372e-16 1.5980423668095501e-15 ;
+	setAttr -av -k off ".rx";
+	setAttr -av -k off ".ry";
+	setAttr -av -k off ".rz";
 	setAttr ".s" -type "double3" 1 1.0000000000000002 1.0000000000000002 ;
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
@@ -5933,6 +5998,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 6.8154544830322266 -0.60058724880218506 5.0913453102111816 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -5997,6 +6063,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" -8.6583271026611328 -0.091902308166027069 0.098090976476669312 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -6031,6 +6098,7 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
+	setAttr ".r" -type "double3" 2.6632094383239746 -3.8897867202758794 -2.8052387237548828 ;
 	setAttr -k off ".rx";
 	setAttr -k off ".ry";
 	setAttr -k off ".rz";
@@ -6092,6 +6160,14 @@ createNode transform -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_
 	setAttr -l on -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 10;
+	setAttr ".t" -type "double3" -0.75675735214962059 -0.022518502625292588 -0.0075291745930535069 ;
+	setAttr -av ".tx";
+	setAttr -av ".ty";
+	setAttr -av ".tz";
+	setAttr ".r" -type "double3" 15.838558707596238 -55.226393679164154 -12.481773262677482 ;
+	setAttr -av ".rx";
+	setAttr -av ".ry";
+	setAttr -av ".rz";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -16608,7 +16684,7 @@ createNode joint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off ".v";
 	setAttr ".t" -type "double3" -2.601570903149053e-10 0.36198306083679199 -9.9960217880834534e-10 ;
-	setAttr ".r" -type "double3" -168.03057095974509 -28.417748163700111 -18.306061277334429 ;
+	setAttr ".r" -type "double3" -9.2313021854383113 9.2879363615040393 -54.756705987399151 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 1 1.0000000000000004 ;
 	setAttr ".jo" -type "double3" -15.509483557984417 -9.9392333795734924e-17 -4.8385040439913301 ;
 	setAttr ".ssc" no;
@@ -16664,7 +16740,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -176.95211128845773 -23.979856794070908 12.898017482406264 ;
+	setAttr ".lr" -type "double3" 26.3360067275284 -11.243930786827464 19.14589856875185 ;
 	setAttr ".rsrr" -type "double3" 18.923406915400051 4.0547025334394009 1.3890201400010043 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:effector1" 
@@ -17636,7 +17712,7 @@ createNode joint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off ".v";
 	setAttr ".t" -type "double3" -1.0544573547655034e-10 0.3619830310344696 7.570819526847572e-10 ;
-	setAttr ".r" -type "double3" 8.0482651111834471 21.102252702414248 6.7628159462933066 ;
+	setAttr ".r" -type "double3" 8.5645580885338788 9.593935130555252 43.281475556114309 ;
 	setAttr ".s" -type "double3" 0.99999999999999967 1 0.99999999999999956 ;
 	setAttr ".jo" -type "double3" -15.641987337018703 -9.9392333795734887e-17 6.1069951162511593 ;
 	setAttr ".ssc" no;
@@ -17650,7 +17726,7 @@ createNode joint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -1.1087461782022245e-09 0.63374131917953502 -5.5723070602198277e-10 ;
-	setAttr ".r" -type "double3" -2.8659050671406288 7.5621934010448175 16.274911096677656 ;
+	setAttr ".r" -type "double3" -2.8524619761236871 3.7821889270653646 -31.66732171973149 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 1.0000000000000002 ;
 	setAttr ".jo" -type "double3" 2.9645102869309339 -3.1805546814635168e-15 -16.628345178029576 ;
 	setAttr ".ssc" no;
@@ -17691,7 +17767,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 8.0400212104274065 -0.2059983920350312 -4.3840969764394568 ;
+	setAttr ".lr" -type "double3" 13.483121103589051 8.8379719132055108 8.9069303550991403 ;
 	setAttr ".rsrr" -type "double3" 4.7054197529609887 -4.1744964505999596 -0.9572452925612841 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:effector2" 
@@ -20817,7 +20893,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -2.8033039240828362e-06 0 -1.4725910718455771e-06 ;
+	setAttr ".lr" -type "double3" -2.8033039366062687e-06 0 -1.4725910654844677e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:LeftToeBase_FK_IK_Constraint" 
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:Bind_LeftToeBase";
@@ -20837,7 +20913,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -1.8359257133805942e-05 3.7458881769488072e-06 8.2776567583385214e-06 ;
+	setAttr ".lr" -type "double3" -3.3786619622302609e-05 2.9726446073093994e-06 7.1769000512797362e-06 ;
 	setAttr ".rsrr" -type "double3" 2.8033038950602729e-06 3.9310730680819577e-15 1.4725910575330808e-06 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -20860,7 +20936,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 13.109160743389952 -1.0644076351732703 10.823581618954581 ;
+	setAttr ".lr" -type "double3" 15.59158462775342 -7.6980813158158021 -16.804226625241377 ;
 	setAttr ".rsrr" -type "double3" 2.7102729957397784 0.47349247594769339 8.2361920965170246 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -20894,7 +20970,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -59.08969454966622 -1.2784316032334146 -0.65531319680641331 ;
+	setAttr ".lr" -type "double3" -44.011511371985435 -1.7278452796854336 -0.87273574080558491 ;
 	setAttr ".rsrr" -type "double3" -8.7539720535278338 0.083368994295597618 -0.096219919621938446 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21186,7 +21262,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 41.317225699232829 3.792870384468447 12.886071936275741 ;
+	setAttr ".lr" -type "double3" 30.643295984019577 -0.79111116502450307 15.505022668675212 ;
 	setAttr ".rsrr" -type "double3" 6.5814805030822789 0.57954192161560092 -4.9370994567871147 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21276,7 +21352,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 6.5280312799370637e-06 1.2751483725103011e-06 -7.7478915359869004e-06 ;
+	setAttr ".lr" -type "double3" 6.5280312784461765e-06 1.2751483709200247e-06 -7.7478915296257948e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:RightToeBase_FK_IK_Constraint" 
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:Bind_RightToeBase";
@@ -21296,7 +21372,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -5.2668810995544271e-05 -5.846883493117802e-06 1.0623261524372038e-05 ;
+	setAttr ".lr" -type "double3" 0.0005252500519890577 0.00013476472734491704 0.00021845589906654817 ;
 	setAttr ".rsrr" -type "double3" -6.5280314239006884e-06 -1.2751474818764517e-06 
 		7.7478916714452276e-06 ;
 	setAttr ".int" 2;
@@ -21320,7 +21396,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -3.1625493441049533 0.32380560978956097 7.8419047817513841 ;
+	setAttr ".lr" -type "double3" 2.3976765995627001 11.843414953526954 2.1806217776308983 ;
 	setAttr ".rsrr" -type "double3" 2.3855868133203955 -0.83481771724786125 -8.0882211410088036 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21354,7 +21430,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" -41.963931669562186 1.9579120672553281 0.89777519373464809 ;
+	setAttr ".lr" -type "double3" -47.5485434596159 1.7747121540968185 0.8183934678823569 ;
 	setAttr ".rsrr" -type "double3" -8.6583271026611115 -0.091902308166027055 0.098090976476670547 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21645,7 +21721,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 35.321377582923567 51.201482667883084 -6.1558111181908952 ;
+	setAttr ".lr" -type "double3" 35.627999773956162 29.398512747065347 -11.990840900507301 ;
 	setAttr ".rsrr" -type "double3" 6.8154544830322283 -0.60058724880218461 5.0913453102111852 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -21957,7 +22033,7 @@ createNode joint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off ".v";
 	setAttr ".t" -type "double3" 0.23482553660869598 -0.16696316003799438 0.014158837497234344 ;
-	setAttr ".r" -type "double3" 41.317225699232814 3.7928703844684462 12.886071936275737 ;
+	setAttr ".r" -type "double3" 30.643295984019584 -0.79111116502450285 15.505022668675212 ;
 	setAttr ".s" -type "double3" 1 0.99999999999999989 0.99999999999999989 ;
 	setAttr ".jo" -type "double3" -5.5745065648456844 0.41918817932166841 -175.713167345172 ;
 	setAttr ".ssc" no;
@@ -21973,7 +22049,7 @@ createNode joint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -3.5660152608585349e-09 1.2296211719512948 -5.0649649335765545e-09 ;
-	setAttr ".r" -type "double3" -59.089694549666206 -1.2784316032334149 -0.65531319680641464 ;
+	setAttr ".r" -type "double3" -44.011511371985421 -1.727845279685434 -0.87273574080558614 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999978 1.0000000000000002 ;
 	setAttr ".jo" -type "double3" 3.0766170610184984 1.987846675914698e-16 1.6191518769718669 ;
 	setAttr ".ssc" no;
@@ -22039,7 +22115,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -2.8033039240828358e-06 5.6498000615042044e-30 -1.4725910718455767e-06 ;
+	setAttr ".lr" -type "double3" -2.8033039366062687e-06 0 -1.4725910654844672e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:IK_LeftToeBase_orientConstraint1" 
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:IK_LeftToeBase";
@@ -22058,7 +22134,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -1.835925715338623e-05 3.7458881725755461e-06 8.2776567599287986e-06 ;
+	setAttr ".lr" -type "double3" -3.3786619641783513e-05 2.9726446041288461e-06 7.1769000528700117e-06 ;
 	setAttr ".rsrr" -type "double3" 2.8033038765732998e-06 1.9237492749100844e-14 1.4725910559428042e-06 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:effector5" 
@@ -22083,7 +22159,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 48.677053533621041 -15.190339158914348 7.4469474382030443 ;
+	setAttr ".lr" -type "double3" 51.739289701487159 -21.647584392967627 -20.960179536462654 ;
 	setAttr ".rsrr" -type "double3" 37.278611702656896 -17.276621417811814 13.080652563206741 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:effector3" 
@@ -22124,7 +22200,7 @@ createNode joint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off ".v";
 	setAttr ".t" -type "double3" -0.23482553660869598 -0.16696316003799438 0.011244822293519974 ;
-	setAttr ".r" -type "double3" 35.321377582923589 51.201482667883099 -6.1558111181908926 ;
+	setAttr ".r" -type "double3" 35.627999773956155 29.398512747065354 -11.990840900507303 ;
 	setAttr ".jo" -type "double3" -5.7181632289658584 -0.42984795906964657 175.71529420313414 ;
 	setAttr ".ssc" no;
 	setAttr ".pa" -type "double3" 51.730436756983636 -4.0231680016036497 3.1799842573140809 ;
@@ -22139,7 +22215,7 @@ createNode joint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 7.1854050487374366e-10 1.2299259901046751 -2.7527439980246093e-09 ;
-	setAttr ".r" -type "double3" -41.9639316695622 1.9579120672553283 0.89777519373464709 ;
+	setAttr ".r" -type "double3" -47.548543459615892 1.7747121540968187 0.81839346788235579 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999967 1 ;
 	setAttr ".jo" -type "double3" 2.9431321120562086 9.9392333795734899e-17 -1.6181807643777948 ;
 	setAttr ".ssc" no;
@@ -22206,7 +22282,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 6.528031279937062e-06 1.2751483725103009e-06 -7.7478915359868987e-06 ;
+	setAttr ".lr" -type "double3" 6.5280312784461748e-06 1.2751483709200243e-06 -7.7478915296257931e-06 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:IK_RightToeBase_orientConstraint1" 
 		-p "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:IK_RightToeBase";
@@ -22225,7 +22301,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -5.2668811014826366e-05 -5.8468835092193537e-06 1.0623261531528291e-05 ;
+	setAttr ".lr" -type "double3" 0.00052525005196371252 0.00013476472732821911 0.00021845589907449944 ;
 	setAttr ".rsrr" -type "double3" -6.5280314840330549e-06 -1.2751475023512705e-06 
 		7.7478916444105159e-06 ;
 	setAttr -k on ".w0";
@@ -22251,7 +22327,7 @@ createNode orientConstraint -n "Animation_Player_Jog_Strafe_left_walk:Animation_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 30.794686253935975 15.771088672229892 6.9656797881098056 ;
+	setAttr ".lr" -type "double3" 36.7226740235729 27.300136522529215 2.9004865390366525 ;
 	setAttr ".rsrr" -type "double3" 35.997550619162297 17.64487933112833 -12.877682211185837 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:effector4" 
@@ -45303,8 +45379,7 @@ createNode animCurveTU -n "Animation_Player_Jog_Strafe_left_walk:pCube1_scaleZ";
 	setAttr ".tan" 18;
 	setAttr ".ktv[0]"  6 1.7140248014431962;
 select -ne :time1;
-	setAttr ".o" 25;
-	setAttr ".unw" 25;
+	setAttr ".o" 0;
 select -ne :renderPartition;
 	setAttr -s 16 ".st";
 select -ne :renderGlobalsList1;
@@ -53924,4 +53999,4 @@ connectAttr "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:ikSCsol
 		 -na;
 connectAttr "Animation_Player_Jog_Strafe_left_walk:Animation_Player_walk:ikRPsolver.msg" ":ikSystem.sol"
 		 -na;
-// End of Animation_Player_Jog_Strafe_left_walk.ma
+// End of Jog_Backwards.ma
