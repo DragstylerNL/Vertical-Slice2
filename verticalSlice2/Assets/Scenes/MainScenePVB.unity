@@ -1079,7 +1079,7 @@ PrefabInstance:
     - target: {fileID: 3276011362574115487, guid: 88454d585dd1d6e47a3fba9a0c36a33a,
         type: 3}
       propertyPath: m_Name
-      value: Camera Holder (1)
+      value: Camera Holder
       objectReference: {fileID: 0}
     - target: {fileID: 1541742901, guid: 88454d585dd1d6e47a3fba9a0c36a33a, type: 3}
       propertyPath: target
