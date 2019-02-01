@@ -935,6 +935,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 8065573779886131114, guid: 8bb5d346524b2c643b2ce3486f465ce5,
+        type: 3}
+      propertyPath: m_Name
+      value: boxMan2
+      objectReference: {fileID: 0}
     - target: {fileID: 8065573779899416447, guid: 8bb5d346524b2c643b2ce3486f465ce5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1024,11 +1029,6 @@ PrefabInstance:
         type: 3}
       propertyPath: deviceNumber
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8065573779886131114, guid: 8bb5d346524b2c643b2ce3486f465ce5,
-        type: 3}
-      propertyPath: m_Name
-      value: boxMan2
       objectReference: {fileID: 0}
     - target: {fileID: 8065573780435196757, guid: 8bb5d346524b2c643b2ce3486f465ce5,
         type: 3}
