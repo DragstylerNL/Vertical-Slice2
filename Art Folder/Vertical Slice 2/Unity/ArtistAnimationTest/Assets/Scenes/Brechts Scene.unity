@@ -306,8 +306,10 @@ MonoBehaviour:
   oh_attacks:
   - oh_attack_1
   - oh_attack_2
+  - oh_attack_3
   th_attacks:
   - th_attack_1
+  - th_attack_2
   - th_attack_2
   twoHanded: 0
   enableRM: 0
@@ -467,7 +469,15 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 58969f6d891f1fc4aa82853ba0958377, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 76a5e3da03e204647b3d568124f45685, type: 2}
+      objectReference: {fileID: 9100000, guid: 465334c204f9d8a47bc27622014e50bd, type: 2}
+    - target: {fileID: 400264, guid: 58969f6d891f1fc4aa82853ba0958377, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0841693
+      objectReference: {fileID: 0}
+    - target: {fileID: 400264, guid: 58969f6d891f1fc4aa82853ba0958377, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.57097286
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58969f6d891f1fc4aa82853ba0958377, type: 3}
 --- !u!1 &1159086572
