@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/PrivateWorkEnv/Dexter/Scenes/StartMenuScene.unity
-    guid: 6ff1507379c9f4c408eeef0302629f2a
+    path: Assets/Scenes/StartMenuScene.unity
+    guid: 0d3e60a4f75419047a7c1f602b6489cf
   - enabled: 1
-    path: Assets/PrivateWorkEnv/Dexter/Scenes/CanvasScene.unity
-    guid: 96700a1b82a0546d3898c343734be631
+    path: Assets/Scenes/MainScenePVB.unity
+    guid: 2b2762bcd37a99749b9f3e4538a36122
+  - enabled: 1
+    path: Assets/Scenes/MainScenePVP.unity
+    guid: f1fdd32017c78614991fe4807309f483
   m_configObjects: {}

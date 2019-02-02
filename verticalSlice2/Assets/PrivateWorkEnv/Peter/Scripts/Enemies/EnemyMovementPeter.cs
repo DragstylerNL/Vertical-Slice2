@@ -17,6 +17,8 @@ namespace AI
         private Transform _player;
         private EnemyAttackPeter EAP;
 
+        public bool inRange = false;
+
         void Start()
         {
             EAP = GetComponent<EnemyAttackPeter>();
@@ -28,6 +30,9 @@ namespace AI
 
         void Update()
         {
+            if (inRange == false)
+                return;
+
             bool run = true;
 
             if (EAP.currentRange > EAP.attackRange)
