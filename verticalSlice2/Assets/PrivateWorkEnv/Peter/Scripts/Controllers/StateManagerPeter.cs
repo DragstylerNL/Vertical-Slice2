@@ -67,6 +67,8 @@ namespace SA
         [HideInInspector]
         public LayerMask ignoreLayers;
 
+        private bool transToMenu = true;
+
         float _actionDelay;
 
         //rigid body setup
@@ -123,10 +125,24 @@ namespace SA
                 gManager.SetCurrentGameState(GameManagerDexter.GameState.GameLose);
                 int _i = GetComponent<InputHandlerPeter>().deviceNumber;
 
+                //Game win canvas
                 if (_i == 0)
+                {
                     GameObject.FindGameObjectWithTag("Player2").GetComponent<StateManagerPeter>().gManager.SetCurrentGameState(GameManagerDexter.GameState.GameWin);
+
+                    if (transToMenu)
+                        GameObject.Find("TransitionCanvas").GetComponent<TransitionBlack>().StartIncreaseAlpha();
+                    transToMenu = false;
+                }  
                 else
+                {
                     GameObject.FindGameObjectWithTag("Player1").GetComponent<StateManagerPeter>().gManager.SetCurrentGameState(GameManagerDexter.GameState.GameWin);
+
+                    if (transToMenu)
+                        GameObject.Find("TransitionCanvas").GetComponent<TransitionBlack>().StartIncreaseAlpha();
+                    transToMenu = false;
+                }
+                    
 
                 //Revive the player
                 if (revivePlayer)

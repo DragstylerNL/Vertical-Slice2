@@ -133,7 +133,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_TargetDisplay: 0
 --- !u!114 &6188173332662434392
 MonoBehaviour:
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6188173332662434374}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -186,4 +186,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298a32849cb463c42be72416054b4be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transCanvas: {fileID: 7381046165597346384}
+  blackImage: {fileID: 7381046165597346384}
+  speed: 0.45
